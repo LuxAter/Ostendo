@@ -11,7 +11,7 @@ namespace ostendo {
   Pos std_scr;
 }
 
-void ostendo::InitOstendo() {
+void ostendo::InitOstendo(int time_out) {
   initscr();
   cbreak();
   keypad(stdscr, true);
@@ -19,11 +19,15 @@ void ostendo::InitOstendo() {
   getmaxyx(stdscr, std_scr_w, std_scr_h);
   noecho();
   curs_set(0);
+  timeout(time_out);
   refresh();
   start_color();
 }
 
 void ostendo::TermOstendo() {
+  nocbreak();
+  echo();
+  curs_set(1);
   refresh();
   endwin();
 }
