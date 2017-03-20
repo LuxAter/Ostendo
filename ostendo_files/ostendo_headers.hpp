@@ -1,3 +1,3 @@
 #include "ostendo.hpp"
-#include "pos.hpp"
+#include "types.hpp"
 #include "window.hpp"

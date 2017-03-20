@@ -4,11 +4,10 @@
 #include <string>
 #include <utility>
 #include "ostendo.hpp"
-#include "pos.hpp"
+#include "types.hpp"
 
 namespace ostendo {
-  void (*log_handle)(std::string);
-  std::queue<std::pair<int, std::string>> ostendo_log;
+  void (*log_handle)(std::string, std::string, std::string) = NULL;
   Pos std_scr;
 }
 
@@ -21,21 +20,27 @@ void ostendo::InitOstendo() {
   noecho();
   curs_set(0);
   refresh();
+  start_color();
 }
 
 void ostendo::TermOstendo() {
   refresh();
   endwin();
-  while (ostendo_log.empty() == false) {
-    ostendo_log.pop();
-  }
 }
 
 void ostendo::OstendoLog(int error_code, std::string log_string,
                          std::string function_string) {
-  log_string += ">>[" + function_string + "]";
-  ostendo_log.push(std::make_pair(error_code, log_string));
-  log_handle(log_string);
+  std::string log_type = "";
+  std::string error_str = std::to_string(error_code);
+  if (error_str[0] == '1') {
+    log_type = "ERROR";
+  }
+  if (log_handle != NULL) {
+    log_handle(log_type, log_string, function_string);
+  }
 }
 
-void ostendo::SetLogHandle(void (*handle)(std::string)) { log_handle = handle; }
+void ostendo::SetLogHandle(void (*handle)(std::string, std::string,
+                                          std::string)) {
+  log_handle = handle;
+}
