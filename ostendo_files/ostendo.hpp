@@ -6,7 +6,7 @@
 #include "pos.hpp"
 namespace ostendo {
   extern void (*log_handle)(std::string);
-  extern std::queue<std::pair<int, std::string>> ostendo_log;
+  extern std::queue<std::pair<int, std::string> > ostendo_log;
   extern Pos std_scr;
   void InitOstendo();
   void TermOstendo();

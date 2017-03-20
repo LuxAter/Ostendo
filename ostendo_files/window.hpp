@@ -1,6 +1,7 @@
 #ifndef OSTENDO_WINDOW_HPP
 #define OSTENDO_WINDOW_HPP
 #include "pos.hpp"
+#include <string>
 namespace ostendo {
   class Window {
    public:
@@ -12,7 +13,7 @@ namespace ostendo {
     ~Window();
 
    private:
-    std::string window_name = "";
+    std::string window_name;
     Pos window_pos;
   };
 }
