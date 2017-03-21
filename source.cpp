@@ -9,9 +9,9 @@ int main(int argc, char const* argv[]) {
   pessum::InitializePessum(true, true);
   ostendo::InitOstendo(100);
   ostendo::SetLogHandle(pessum::logging::Log);
-  ostendo::Window win(10, 10, 20, 20);
+  ostendo::Window win(40, 20);
   win.SetWindowOption(ostendo::WIN_BORDER, true);
-  while(getch() == ERR){
+  while (getch() == ERR) {
   }
   win.~Window();
   ostendo::TermOstendo();

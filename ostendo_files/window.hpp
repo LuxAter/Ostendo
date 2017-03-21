@@ -5,8 +5,14 @@
 #include <vector>
 #include "types.hpp"
 namespace ostendo {
-  extern int color_index, pair_index;
-  enum Window_Option { WIN_BORDER = 0, WIN_TITLE = 1, WIN_MENU_BAR = 2 };
+  extern int pair_index;
+  enum Window_Option {
+    WIN_BORDER = 0,
+    WIN_TITLE = 1,
+    WIN_MENU_BAR = 2,
+    WIN_TEXT = 3,
+    WIN_BACKGROUND = 4
+  };
   class Window {
    public:
     Window();
@@ -27,7 +33,9 @@ namespace ostendo {
     void SetAttr(int attrs);
     void SetAttr(std::vector<int> attrs);
 
-    int SetColor(Color col);
+    int DispColor(Color col);
+
+    void SetColor(int option, Color col);
 
     inline WINDOW* operator()() { return (window_pointer); }
 
@@ -43,7 +51,8 @@ namespace ostendo {
     std::vector<unsigned long> border_character_set = {
         ACS_VLINE,    ACS_VLINE,    ACS_HLINE,    ACS_HLINE,
         ACS_ULCORNER, ACS_URCORNER, ACS_LLCORNER, ACS_LRCORNER};
-    Color border_color, text_color, background_color;
+    Color border_color, text_color, background_color, title_color,
+        menu_bar_color;
     Pos window_pos;
   };
 }

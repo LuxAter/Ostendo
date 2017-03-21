@@ -1,5 +1,8 @@
 #ifndef OSTENDO_TYPES_HPP
 #define OSTENDO_TYPES_HPP
+#include <ncurses.h>
+#include <map>
+#include <string>
 namespace ostendo {
   struct Pos {
     Pos() {
@@ -29,51 +32,43 @@ namespace ostendo {
 
   struct Color {
     Color() {
-      color_data[0] = float();
-      color_data[1] = float();
-      color_data[2] = float();
-      color_data[3] = float();
-      color_data[4] = float();
-      color_data[5] = float();
+      color_data[0] = int();
+      color_data[1] = int();
     }
-    Color(float c) {
+    Color(int c) {
       color_data[0] = c;
-      color_data[1] = c;
-      color_data[2] = c;
-      color_data[3] = c;
-      color_data[4] = c;
-      color_data[5] = c;
+      color_data[1] = int();
     }
-    Color(float fg, float bg) {
+    Color(int fg, int bg) {
       color_data[0] = fg;
-      color_data[1] = fg;
-      color_data[2] = fg;
-      color_data[3] = bg;
-      color_data[4] = bg;
-      color_data[5] = bg;
+      color_data[1] = bg;
     }
-    Color(float red, float green, float blue) {
-      color_data[0] = red;
-      color_data[1] = green;
-      color_data[2] = blue;
-      color_data[3] = float();
-      color_data[4] = float();
-      color_data[5] = float();
-    }
-    Color(float red, float green, float blue, float bg_red, float bg_green,
-          float bg_blue) {
-      color_data[0] = red;
-      color_data[1] = green;
-      color_data[2] = blue;
-      color_data[3] = bg_red;
-      color_data[4] = bg_green;
-      color_data[5] = bg_blue;
-    }
-    inline float operator[](int i) { return (color_data[i]); }
-    float color_data[6];
+    inline int operator[](int i) { return (color_data[i]); }
+    int color_data[2];
   };
-  inline Color make_color(float r, float b, float g) {
-    return (Color(r, b, g));
+  inline Color make_color(int fg, int bg) { return (Color(fg, bg)); }
+  inline Color make_color_str(std::string fg, std::string bg) {
+    std::map<std::string, int> color_map;
+    color_map["black"] = COLOR_BLACK;
+    color_map["red"] = COLOR_RED;
+    color_map["green"] = COLOR_GREEN;
+    color_map["yellow"] = COLOR_YELLOW;
+    color_map["blue"] = COLOR_BLUE;
+    color_map["magenta"] = COLOR_MAGENTA;
+    color_map["cyan"] = COLOR_CYAN;
+    color_map["white"] = COLOR_WHITE;
+    int fg_i = 0, bg_i = 0;
+    if (color_map.find(fg) == color_map.end()) {
+      fg_i = COLOR_WHITE;
+    } else {
+      fg_i = color_map.find(fg)->second;
+    }
+    if (color_map.find(bg) == color_map.end()) {
+      bg_i = COLOR_BLACK;
+    } else {
+      bg_i = color_map.find(bg)->second;
+    }
+    return (Color(fg_i, bg_i));
   }
 }
 #endif

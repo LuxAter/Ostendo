@@ -20,8 +20,8 @@ void ostendo::InitOstendo(int time_out) {
   noecho();
   curs_set(0);
   timeout(time_out);
-  refresh();
   start_color();
+  refresh();
 }
 
 void ostendo::TermOstendo() {
