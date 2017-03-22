@@ -139,6 +139,7 @@ void ostendo::Window::SetAttr(std::vector<int> attrs) {
 void ostendo::Window::Clear(bool all) {
   if (window_pointer != NULL) {
     wclear(window_pointer);
+    curs = std::make_pair(0, 0);
     if (all == false) {
       if (window_border == true) {
         DrawBorder();
@@ -147,7 +148,29 @@ void ostendo::Window::Clear(bool all) {
         DrawTitle();
       }
     }
+    if (window_border == true || window_title == true) {
+      curs.second++;
+    }
+    if (window_border == true) {
+      curs.first++;
+    }
   }
+}
+
+void ostendo::Window::ClearLine(int line) {
+  if (line == -1) {
+    line = curs.second;
+  }
+  if (window_pointer != NULL) {
+    if (window_border == true) {
+      curs.first = 1;
+      mvwhline(window_pointer, line, 1, ' ', window_pos.w - 2);
+    } else {
+      curs.first = 0;
+      mvwhline(window_pointer, line, 0, ' ', window_pos.w);
+    }
+  }
+  Update();
 }
 
 int ostendo::Window::Print(std::string str, ...) {
@@ -242,13 +265,6 @@ void ostendo::Window::DrawTitle() {
 void ostendo::Window::LastLine() {
   if (window_scroll == false && window_pointer != NULL) {
     Clear();
-    curs = std::make_pair(0, 0);
-    if (window_border == true || window_title == true) {
-      curs.second++;
-    }
-    if (window_border == true) {
-      curs.first++;
-    }
   } else if (window_scroll == true && window_pointer != NULL) {
     curs.second = window_pos.h - window_border - 1;
     int start = 1;

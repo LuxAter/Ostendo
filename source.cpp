@@ -10,29 +10,35 @@ int main(int argc, char const* argv[]) {
   ostendo::InitOstendo(1);
   ostendo::SetLogHandle(pessum::logging::Log);
   ostendo::Window win(40, 20);
-  // ostendo::Window win(40, 20);
   win.ToggleTitle("Hello Window!");
   win.ToggleBorder();
   win.ToggleScroll();
-  // win.Print(
-  // "Hello Arden!\nThis is a test? will it work correctly lets find out!!");
-  // win.Print("A");
   int counter = 0;
   int pause = 0;
-  while (true) {
+  std::string input = "";
+  bool update = true, running = true;
+  while (running == true) {
+    if (update == true) {
+      update = false;
+      win.ClearLine();
+      win.Print(">>%s", input.c_str());
+    }
     int in = getch();
-    if (pause > 1) {
-      win.Print("%i\n", counter);
-      counter++;
-      pause = 0;
+    if (in == 10) {
+      win.Print("\n");
+      // RunInput(input);
+      input = "";
+    } else if (in == KEY_BACKSPACE) {
+      if (input.length() > 0) {
+        input.pop_back();
+        update = true;
+      }
+    } else if (in != ERR) {
+      input += char(in);
+      update = true;
     }
-    if (in == int('q')) {
-      break;
-    }
-    pause++;
   }
   win.DelWin();
-  // ostendo::TermWindow(win);
   ostendo::TermOstendo();
   pessum::TerminatePessum();
   return 0;

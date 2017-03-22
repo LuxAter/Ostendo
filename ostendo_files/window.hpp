@@ -32,6 +32,7 @@ namespace ostendo {
     void SetAttr(std::vector<int> attrs);
 
     void Clear(bool all = false);
+    void ClearLine(int line = -1);
     int Print(std::string str, ...);
     void SetCurs(int y = -1, int x = -1);
 
