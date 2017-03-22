@@ -1,18 +1,11 @@
 #ifndef OSTENDO_WINDOW_HPP
 #define OSTENDO_WINDOW_HPP
 #include <ncurses.h>
+#include <map>
 #include <string>
 #include <vector>
 #include "types.hpp"
 namespace ostendo {
-  extern int pair_index;
-  enum Window_Option {
-    WIN_BORDER = 0,
-    WIN_TITLE = 1,
-    WIN_MENU_BAR = 2,
-    WIN_TEXT = 3,
-    WIN_BACKGROUND = 4
-  };
   class Window {
    public:
     Window();
@@ -20,12 +13,17 @@ namespace ostendo {
     Window(int width, int height, int pos_x, int pos_y);
     Window(Pos pos);
     Window(const Window& win);
-    ~Window();
+
+    void DelWin();
+
+    void NewWindow();
+    void NewWindow(int width, int height);
+    void NewWindow(int width, int height, int pos_x, int pos_y);
 
     void Update();
-    void SetWindowOption(int option, bool setting);
-    void SetWindowOption(int option, std::string setting);
-    void SetWindowOption(int option, std::vector<std::string> setting);
+    void ToggleBorder();
+    void ToggleScroll();
+    void ToggleTitle(std::string setting = "");
     void AttrOn(int attrs);
     void AttrOn(std::vector<int> attrs);
     void AttrOff(int attrs);
@@ -33,9 +31,9 @@ namespace ostendo {
     void SetAttr(int attrs);
     void SetAttr(std::vector<int> attrs);
 
-    int DispColor(Color col);
-
-    void SetColor(int option, Color col);
+    void Clear(bool all = false);
+    int Print(std::string str, ...);
+    void SetCurs(int y = -1, int x = -1);
 
     inline WINDOW* operator()() { return (window_pointer); }
 
@@ -43,17 +41,16 @@ namespace ostendo {
     void GenWindow();
     void DrawBorder();
     void DrawTitle();
-    void DrawMenuBar();
+    void LastLine();
 
     WINDOW* window_pointer = nullptr;
-    bool window_border = false, window_title = false, window_menu_bar = false;
-    std::vector<std::string> menu_bar_options = {}, title_set = {};
+    bool window_border = false, window_title = false, window_scroll = false;
+    std::string window_title_str;
     std::vector<unsigned long> border_character_set = {
         ACS_VLINE,    ACS_VLINE,    ACS_HLINE,    ACS_HLINE,
         ACS_ULCORNER, ACS_URCORNER, ACS_LLCORNER, ACS_LRCORNER};
-    Color border_color, text_color, background_color, title_color,
-        menu_bar_color;
     Pos window_pos;
+    std::pair<int, int> curs;
   };
 }
 #endif

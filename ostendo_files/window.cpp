@@ -5,10 +5,6 @@
 #include "types.hpp"
 #include "window.hpp"
 
-namespace ostendo {
-  int pair_index = 0;
-}
-
 ostendo::Window::Window() {
   window_pos = std_scr;
   GenWindow();
@@ -35,15 +31,28 @@ ostendo::Window::Window(const Window& win) {
   GenWindow();
 }
 
-ostendo::Window::~Window() {
+void ostendo::Window::DelWin() {
   wclear(window_pointer);
   wrefresh(window_pointer);
   delwin(window_pointer);
-  window_border = false;
-  window_title = false;
-  window_menu_bar = false;
-  window_pos = Pos();
-  window_pointer = NULL;
+}
+
+void ostendo::Window::NewWindow() {
+  DelWin();
+  window_pos = std_scr;
+  GenWindow();
+}
+
+void ostendo::Window::NewWindow(int width, int height) {
+  DelWin();
+  window_pos = Pos(0, 0, width, height);
+  GenWindow();
+}
+
+void ostendo::Window::NewWindow(int width, int height, int pos_x, int pos_y) {
+  DelWin();
+  window_pos = Pos(pos_x, pos_y, width, height);
+  GenWindow();
 }
 
 void ostendo::Window::Update() {
@@ -52,44 +61,31 @@ void ostendo::Window::Update() {
   }
 }
 
-void ostendo::Window::SetWindowOption(int option, bool setting) {
-  if (option == WIN_BORDER) {
-    if (window_border != setting) {
-      window_border = setting;
-      DrawBorder();
-    }
-  } else if (option == WIN_TITLE) {
-    if (window_title != setting) {
-      window_title = setting;
-      DrawTitle();
-    }
-  } else if (option == WIN_MENU_BAR) {
-    if (window_menu_bar != setting) {
-      window_menu_bar = setting;
-      DrawMenuBar();
-    }
+void ostendo::Window::ToggleBorder() {
+  window_border = !window_border;
+  if (window_border == true && curs.first == 0) {
+    curs.first++;
   }
-  Update();
-}
-void ostendo::Window::SetWindowOption(int option, std::string setting) {
-  if (option == WIN_BORDER) {
-    // border_character_set = {setting};
-  } else if (option == WIN_TITLE) {
-    // title_set = {setting};
-  } else if (option == WIN_MENU_BAR) {
-    // menu_bar_options = {setting};
+  if (window_border == true && curs.second == 0) {
+    curs.second++;
+  }
+  DrawBorder();
+  if (window_title == true) {
+    DrawTitle();
   }
 }
 
-void ostendo::Window::SetWindowOption(int option,
-                                      std::vector<std::string> setting) {
-  if (option == WIN_BORDER) {
-    // border_character_set = setting;
-  } else if (option == WIN_TITLE) {
-    title_set = setting;
-  } else if (option == WIN_MENU_BAR) {
-    menu_bar_options = setting;
+void ostendo::Window::ToggleScroll() { window_scroll = !window_scroll; }
+
+void ostendo::Window::ToggleTitle(std::string setting) {
+  window_title = !window_title;
+  if (setting != "") {
+    window_title_str = setting;
   }
+  if (window_title == true && curs.second == 0) {
+    curs.second++;
+  }
+  DrawTitle();
 }
 
 void ostendo::Window::AttrOn(int attrs) {
@@ -140,29 +136,75 @@ void ostendo::Window::SetAttr(std::vector<int> attrs) {
   }
 }
 
-int ostendo::Window::DispColor(Color col) {
-  int pair = pair_index++;
-  init_pair(pair, (short)col[0], (short)col[1]);
-  AttrOn(COLOR_PAIR(pair));
-  return (pair);
+void ostendo::Window::Clear(bool all) {
+  if (window_pointer != NULL) {
+    wclear(window_pointer);
+    if (all == false) {
+      if (window_border == true) {
+        DrawBorder();
+      }
+      if (window_title == true) {
+        DrawTitle();
+      }
+    }
+  }
 }
 
-void ostendo::Window::SetColor(int option, Color col) {
-  if (option == WIN_BORDER) {
-    border_color = col;
-  } else if (option == WIN_TITLE) {
-    title_color = col;
-  } else if (option == WIN_MENU_BAR) {
-    menu_bar_color = col;
-  } else if (option == WIN_TEXT) {
-    text_color = col;
-  } else if (option == WIN_BACKGROUND) {
-    background_color = col;
+int ostendo::Window::Print(std::string str, ...) {
+  if (window_pointer == NULL) {
+    return (-1);
+  }
+  va_list args;
+  va_start(args, str);
+  char* formated_string = new char[256];
+  vsprintf(formated_string, str.c_str(), args);
+  va_end(args);
+  str = std::string(formated_string);
+  std::string substring;
+  for (int i = 0; i < str.length(); i++) {
+    if (str[i] == '\n') {
+      if (curs.second >= window_pos.h - window_border) {
+        LastLine();
+      }
+      mvwprintw(window_pointer, curs.second, curs.first, substring.c_str());
+      substring = "";
+      curs.first = window_border;
+      curs.second++;
+    } else if (substring.length() + curs.second >
+               window_pos.w - window_border) {
+      if (curs.second >= window_pos.h - window_border) {
+        LastLine();
+      }
+      mvwprintw(window_pointer, curs.second, curs.first, substring.c_str());
+      substring = "";
+      curs.first = window_border;
+      curs.second++;
+      i--;
+    } else {
+      substring += str[i];
+    }
+  }
+  if (substring != "" && curs.second >= window_pos.h - window_border) {
+    LastLine();
+  }
+  mvwprintw(window_pointer, curs.second, curs.first, substring.c_str());
+  curs.first += substring.length();
+  substring = "";
+  Update();
+  return (0);
+}
+
+void ostendo::Window::SetCurs(int y, int x) {
+  if (x >= 0) {
+    curs.first = x;
+  }
+  if (y >= 0) {
+    curs.second = y;
   }
 }
 
 void ostendo::Window::GenWindow() {
-  border_color = Color(COLOR_GREEN, COLOR_BLACK);
+  curs = std::make_pair(0, 0);
   window_pointer =
       newwin(window_pos.h, window_pos.w, window_pos.y, window_pos.x);
   if (window_pointer == NULL) {
@@ -173,18 +215,51 @@ void ostendo::Window::GenWindow() {
 
 void ostendo::Window::DrawBorder() {
   if (window_border == true && window_pointer != NULL) {
-    int pair = DispColor(border_color);
     wborder(window_pointer, border_character_set[0], border_character_set[1],
             border_character_set[2], border_character_set[3],
             border_character_set[4], border_character_set[5],
             border_character_set[6], border_character_set[7]);
-    AttrOff(COLOR_PAIR(pair));
-    pair_index--;
   } else if (window_border == false && window_pointer != NULL) {
     wborder(window_pointer, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
   }
+  Update();
 }
 
-void ostendo::Window::DrawTitle() {}
+void ostendo::Window::DrawTitle() {
+  if (window_title == true && window_pointer != NULL) {
+    int pos = (window_pos.w - window_title_str.length()) / 2;
+    mvwprintw(window_pointer, 0, pos, window_title_str.c_str());
+  } else if (window_title == false && window_pointer != NULL) {
+    unsigned long ch = int(' ');
+    if (window_border == true) {
+      ch = border_character_set[2];
+    }
+    mvwhline(window_pointer, 0, 1, ch, window_pos.w - 2);
+  }
+  Update();
+}
 
-void ostendo::Window::DrawMenuBar() {}
+void ostendo::Window::LastLine() {
+  if (window_scroll == false && window_pointer != NULL) {
+    Clear();
+    curs = std::make_pair(0, 0);
+    if (window_border == true || window_title == true) {
+      curs.second++;
+    }
+    if (window_border == true) {
+      curs.first++;
+    }
+  } else if (window_scroll == true && window_pointer != NULL) {
+    curs.second = window_pos.h - window_border - 1;
+    int start = 1;
+    if (window_border == true || window_title == true) {
+      start++;
+    }
+    for (int i = start; i < window_pos.h - window_border; i++) {
+      for (int j = window_border; j < window_pos.w - window_border; j++) {
+        unsigned long ch = mvwinch(window_pointer, i, j);
+        mvwaddch(window_pointer, i - 1, j, ch);
+      }
+    }
+  }
+}
