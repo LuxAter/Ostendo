@@ -277,5 +277,6 @@ void ostendo::Window::LastLine() {
         mvwaddch(window_pointer, i - 1, j, ch);
       }
     }
+    ClearLine(window_pos.h - window_border - 1);
   }
 }
