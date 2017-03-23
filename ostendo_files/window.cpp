@@ -165,7 +165,7 @@ void ostendo::Window::ClearLine(int line) {
     if (window_border == true) {
       curs.first = 1;
       mvwhline(window_pointer, line, 1, ' ', window_pos.w - 2);
-    } else {
+    } else if (window_border == false) {
       curs.first = 0;
       mvwhline(window_pointer, line, 0, ' ', window_pos.w);
     }
@@ -267,6 +267,7 @@ void ostendo::Window::LastLine() {
     Clear();
   } else if (window_scroll == true && window_pointer != NULL) {
     curs.second = window_pos.h - window_border - 1;
+    curs.first = window_border;
     int start = 1;
     if (window_border == true || window_title == true) {
       start++;
