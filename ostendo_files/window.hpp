@@ -6,6 +6,12 @@
 #include <vector>
 #include "types.hpp"
 namespace ostendo {
+  enum WINDOW_PARTS{
+    WIN_BORDER = 1,
+    WIN_TITLE = 2,
+    WIN_TEXT = 3,
+    WIN_BACKGROUND = 4
+  };
   class Window {
    public:
     Window();
@@ -30,6 +36,7 @@ namespace ostendo {
     void AttrOff(std::vector<int> attrs);
     void SetAttr(int attrs);
     void SetAttr(std::vector<int> attrs);
+    void SetColor(int color, int value);
 
     void Clear(bool all = false);
     void ClearLine(int line = -1);
@@ -52,6 +59,7 @@ namespace ostendo {
         ACS_ULCORNER, ACS_URCORNER, ACS_LLCORNER, ACS_LRCORNER};
     Pos window_pos;
     std::pair<int, int> curs;
+    int border_color = 70, title_color = 70, background_color = 70, text_color = 70;
   };
 }
 #endif

@@ -90,54 +90,30 @@ void ostendo::Window::ToggleTitle(std::string setting) {
 
 void ostendo::Window::AttrOn(int attrs) {
   if (window_pointer != NULL) {
-    wattron(window_pointer, attrs);
+    wattron(window_pointer, COLOR_PAIR(attrs));
   }
 }
-
-void ostendo::Window::AttrOn(std::vector<int> attrs) {
-  int att = 0;
-  for (int i = 0; i < attrs.size(); i++) {
-    att = att | attrs[i];
-  }
-  if (window_pointer != NULL) {
-    wattron(window_pointer, att);
-  }
-}
-
 void ostendo::Window::AttrOff(int attrs) {
   if (window_pointer != NULL) {
-    wattroff(window_pointer, attrs);
+    wattroff(window_pointer, COLOR_PAIR(attrs));
   }
 }
 
-void ostendo::Window::AttrOff(std::vector<int> attrs) {
-  int att = 0;
-  for (int i = 0; i < attrs.size(); i++) {
-    att = att | attrs[i];
-  }
-  if (window_pointer != NULL) {
-    wattroff(window_pointer, att);
-  }
-}
-
-void ostendo::Window::SetAttr(int attrs) {
-  if (window_pointer != NULL) {
-    wattrset(window_pointer, attrs);
-  }
-}
-
-void ostendo::Window::SetAttr(std::vector<int> attrs) {
-  int att = 0;
-  for (int i = 0; i < attrs.size(); i++) {
-    att = att | attrs[i];
-  }
-  if (window_pointer != NULL) {
-    wattrset(window_pointer, att);
+void ostendo::Window::SetColor(int color, int value){
+  if(color == 1){
+    border_color = value;
+  }else if(color == 2){
+    title_color = value;
+  }else if(color == 3){
+    text_color = value;
+  } else if(color == 4){
+    background_color = value;
   }
 }
 
 void ostendo::Window::Clear(bool all) {
   if (window_pointer != NULL) {
+    AttrOn(background_color);
     wclear(window_pointer);
     curs = std::make_pair(0, 0);
     if (all == false) {
@@ -154,6 +130,7 @@ void ostendo::Window::Clear(bool all) {
     if (window_border == true) {
       curs.first++;
     }
+    AttrOff(background_color);
   }
 }
 
@@ -162,6 +139,7 @@ void ostendo::Window::ClearLine(int line) {
     line = curs.second;
   }
   if (window_pointer != NULL) {
+    AttrOn(background_color);
     if (window_border == true) {
       curs.first = 1;
       mvwhline(window_pointer, line, 1, ' ', window_pos.w - 2);
@@ -169,6 +147,7 @@ void ostendo::Window::ClearLine(int line) {
       curs.first = 0;
       mvwhline(window_pointer, line, 0, ' ', window_pos.w);
     }
+    AttrOff(background_color);
   }
   Update();
 }
@@ -177,6 +156,7 @@ int ostendo::Window::Print(std::string str, ...) {
   if (window_pointer == NULL) {
     return (-1);
   }
+  AttrOn(text_color);
   va_list args;
   va_start(args, str);
   char* formated_string = new char[256];
@@ -185,7 +165,25 @@ int ostendo::Window::Print(std::string str, ...) {
   str = std::string(formated_string);
   std::string substring;
   for (int i = 0; i < str.length(); i++) {
-    if (str[i] == '\n') {
+    if(str[i] == '#' && str.size() > i + 3 && str[i + 1] == 'a'){
+      std::string attr_str = "";
+      attr_str += str[i+2];
+      attr_str += str[i+3];
+      if(int(attr_str[0]) >= 48 && int(attr_str[0]) <= 57 && int(attr_str[1]) >= 48 && int(attr_str[1]) <= 57){
+        int attr_int = stoi(attr_str);
+        AttrOn(attr_int);
+        i += 3;
+      }
+    } else if(str[i] == '#' && str.size() > i + 3 && str[i + 1] == 't'){
+      std::string attr_str = "";
+      attr_str += str[i+2];
+      attr_str += str[i+3];
+      if(int(attr_str[0]) >= 48 && int(attr_str[0]) <= 57 && int(attr_str[1]) >= 48 && int(attr_str[1]) <= 57){
+        int attr_int = stoi(attr_str);
+        AttrOff(attr_int);
+        i += 3;
+      }
+    } else if (str[i] == '\n') {
       if (curs.second >= window_pos.h - window_border) {
         LastLine();
       }
@@ -193,7 +191,7 @@ int ostendo::Window::Print(std::string str, ...) {
       substring = "";
       curs.first = window_border;
       curs.second++;
-    } else if (substring.length() + curs.second >
+    } else if (substring.length() + curs.first >=
                window_pos.w - window_border) {
       if (curs.second >= window_pos.h - window_border) {
         LastLine();
@@ -213,6 +211,7 @@ int ostendo::Window::Print(std::string str, ...) {
   mvwprintw(window_pointer, curs.second, curs.first, substring.c_str());
   curs.first += substring.length();
   substring = "";
+  AttrOff(text_color);
   Update();
   return (0);
 }
@@ -234,30 +233,45 @@ void ostendo::Window::GenWindow() {
     OstendoLog(10, "Failed to genorate window", "GenWindow");
   }
   Update();
+  Clear();
 }
 
 void ostendo::Window::DrawBorder() {
   if (window_border == true && window_pointer != NULL) {
+    AttrOn(border_color);
     wborder(window_pointer, border_character_set[0], border_character_set[1],
             border_character_set[2], border_character_set[3],
             border_character_set[4], border_character_set[5],
             border_character_set[6], border_character_set[7]);
+    AttrOff(border_color);
   } else if (window_border == false && window_pointer != NULL) {
+    AttrOn(background_color);
     wborder(window_pointer, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+    AttrOff(background_color);
   }
   Update();
 }
 
 void ostendo::Window::DrawTitle() {
   if (window_title == true && window_pointer != NULL) {
+    AttrOn(title_color);
     int pos = (window_pos.w - window_title_str.length()) / 2;
     mvwprintw(window_pointer, 0, pos, window_title_str.c_str());
+    AttrOff(title_color);
   } else if (window_title == false && window_pointer != NULL) {
     unsigned long ch = int(' ');
     if (window_border == true) {
+      AttrOn(border_color);
       ch = border_character_set[2];
+    }else{
+      AttrOn(background_color);
     }
     mvwhline(window_pointer, 0, 1, ch, window_pos.w - 2);
+    if(window_border == true){
+      AttrOff(border_color);
+    } else{
+      AttrOff(background_color);
+    }
   }
   Update();
 }
