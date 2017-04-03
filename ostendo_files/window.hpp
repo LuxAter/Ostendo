@@ -12,11 +12,24 @@ namespace ostendo {
     WIN_TEXT = 3,
     WIN_BACKGROUND = 4
   };
+  enum ATTRS{
+    ALTCHAR = 1,
+    BLINK = 2,
+    BOLD = 3,
+    DIM = 4,
+    INVIS = 5,
+    PROTECT = 5,
+    REVERSE = 6,
+    STANDOUT = 7,
+    UNDERLINE = 8
+  };
   class Window {
    public:
     Window();
     Window(int width, int height);
+    Window(double width, double height);
     Window(int width, int height, int pos_x, int pos_y);
+    Window(double width, double height, double pos_x, double pos_y);
     Window(Pos pos);
     Window(const Window& win);
 
@@ -24,18 +37,21 @@ namespace ostendo {
 
     void NewWindow();
     void NewWindow(int width, int height);
+    void NewWindow(double width, double height);
     void NewWindow(int width, int height, int pos_x, int pos_y);
+    void NewWindow(double width, double height, double pos_x, double pos_y);
 
     void Update();
     void ToggleBorder();
     void ToggleScroll();
     void ToggleTitle(std::string setting = "");
+
+    void SetAutoUpdate(bool setting = true);
+
+    void ColorOn(int attrs);
+    void ColorOff(int attrs);
     void AttrOn(int attrs);
-    void AttrOn(std::vector<int> attrs);
     void AttrOff(int attrs);
-    void AttrOff(std::vector<int> attrs);
-    void SetAttr(int attrs);
-    void SetAttr(std::vector<int> attrs);
     void SetColor(int color, int value);
 
     void Clear(bool all = false);
@@ -44,15 +60,18 @@ namespace ostendo {
     void SetCurs(int y = -1, int x = -1);
 
     inline WINDOW* operator()() { return (window_pointer); }
+    
+    Pos window_space;
 
    private:
     void GenWindow();
     void DrawBorder();
     void DrawTitle();
     void LastLine();
+    bool IsInt(char ch);
 
     WINDOW* window_pointer = nullptr;
-    bool window_border = false, window_title = false, window_scroll = false;
+    bool window_border = false, window_title = false, window_scroll = false, auto_update = true;
     std::string window_title_str;
     std::vector<unsigned long> border_character_set = {
         ACS_VLINE,    ACS_VLINE,    ACS_HLINE,    ACS_HLINE,

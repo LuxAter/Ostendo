@@ -10,14 +10,18 @@ int main(int argc, char const* argv[]) {
   ostendo::InitOstendo(true, 1);
   ostendo::SetLogHandle(pessum::logging::Log);
   ostendo::Window win(40, 20);
-  win.SetColor(ostendo::WIN_BORDER, 12);
-  win.SetColor(ostendo::WIN_TITLE, 34);
-  win.SetColor(ostendo::WIN_TEXT, 56);
   win.Clear();
   win.ToggleTitle("Hello Window!");
   win.ToggleBorder();
-  win.Print("Hello arden how are you this is a long line to test to see if it works, and the new line functions don't seem to work correctly. This does not seem to be working right every time there is a new line it seems to jump to a new line a little sooner.");
+  //win.Print("Hello World\n");
+  //win.Print("#l#ounleft#fun just\n#c#o15center just#f15\n#rright just\n");
+  std::vector<ostendo::Var> fields;
+  fields.push_back(ostendo::Var("Int Val", 0));
+  fields.push_back(ostendo::Var("Bool Val", false));
+  fields.push_back(ostendo::Var("String Val", ""));
+  ostendo::Form(win, fields);
   while(getch() != int('q')){
+
   }
   win.DelWin();
   ostendo::TermOstendo();
