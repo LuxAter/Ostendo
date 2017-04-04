@@ -17,9 +17,13 @@ int main(int argc, char const* argv[]) {
   //win.Print("#l#ounleft#fun just\n#c#o15center just#f15\n#rright just\n");
   std::vector<ostendo::Var> fields;
   fields.push_back(ostendo::Var("Int Val", 0));
-  fields.push_back(ostendo::Var("Bool Val", false));
-  fields.push_back(ostendo::Var("String Val", ""));
-  ostendo::Form(win, fields);
+  fields.push_back(ostendo::Var("Double Val", 0.0));
+  fields.push_back(ostendo::Var("String Val", "HELLO?"));
+  //fields.push_back(ostendo::Var("Bool Val", false));
+  for(int i = 0; i < fields.size(); i++){
+    win.Print("field type: %i \n", fields[i].var_type);
+  }
+  //ostendo::Form(win, fields);
   while(getch() != int('q')){
 
   }

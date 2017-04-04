@@ -4,7 +4,7 @@
 #include <map>
 #include <string>
 namespace ostendo {
-  enum VarType { INT = 0, DOUBLE = 1, STRING = 3, BOOL = 4 };
+  enum VarType { INT = 0, DOUBLE = 1, STRING = 2, BOOL = 3 };
   struct Pos {
     Pos() {
       x = int();
