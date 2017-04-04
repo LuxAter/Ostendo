@@ -1,8 +1,7 @@
 #ifndef OSTENDO_TYPES_HPP
 #define OSTENDO_TYPES_HPP
-#include <ncurses.h>
-#include <map>
 #include <string>
+#include <iostream>
 namespace ostendo {
   enum VarType { INT = 0, DOUBLE = 1, STRING = 2, BOOL = 3 };
   struct Pos {

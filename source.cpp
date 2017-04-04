@@ -13,17 +13,18 @@ int main(int argc, char const* argv[]) {
   win.Clear();
   win.ToggleTitle("Hello Window!");
   win.ToggleBorder();
-  //win.Print("Hello World\n");
-  //win.Print("#l#ounleft#fun just\n#c#o15center just#f15\n#rright just\n");
+  win.Print("Hello World\n");
+  win.Print("#l#ounleft#fun just\n#c#o15center just#f15\n#rright just\n");
   std::vector<ostendo::Var> fields;
   fields.push_back(ostendo::Var("Int Val", 0));
   fields.push_back(ostendo::Var("Double Val", 0.0));
-  fields.push_back(ostendo::Var("String Val", "HELLO?"));
-  //fields.push_back(ostendo::Var("Bool Val", false));
+  fields.push_back(ostendo::Var("String Val", std::string("")));
+  fields.push_back(ostendo::Var("Bool Val", false));
   for(int i = 0; i < fields.size(); i++){
-    win.Print("field type: %i \n", fields[i].var_type);
+    //printf("field %i type:%i\n", i, fields[i].var_type);
+    //win.Print("field type: %i \n", 15);
   }
-  //ostendo::Form(win, fields);
+  ostendo::Form(win, fields);
   while(getch() != int('q')){
 
   }

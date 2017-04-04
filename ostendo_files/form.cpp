@@ -105,7 +105,6 @@ std::vector<ostendo::Var> ostendo::Form(ostendo::Window win, std::vector<Var> fi
         update = true;
       }else if(fields[selected].var_type == STRING){
         fields[selected].str_value += char(in);
-        fields[selected].str_value += 'A';
         update = true;
       }else{
         fields[selected].str_value += std::to_string(fields[selected].var_type);
