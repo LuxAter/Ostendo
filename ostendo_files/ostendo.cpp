@@ -22,10 +22,10 @@ void ostendo::InitOstendo(bool color, int time_out) {
   noecho();
   curs_set(0);
   timeout(time_out);
-  if(color == true){
-    if(has_colors() == FALSE){
+  if (color == true) {
+    if (has_colors() == FALSE) {
       OstendoLog(12, "Current terminal does not support color", "InitOstendo");
-    }else{
+    } else {
       start_color();
       LoadColors();
     }
@@ -58,15 +58,14 @@ void ostendo::SetLogHandle(void (*handle)(std::string, std::string,
   log_handle = handle;
 }
 
-void ostendo::InitWindow(std::string name) {
-  windows[name] = Window();
-}
+void ostendo::InitWindow(std::string name) { windows[name] = Window(); }
 
 void ostendo::InitWindow(std::string name, int width, int height) {
   windows[name] = Window(width, height);
 }
 
-void ostendo::InitWindow(std::string name, int width, int height, int x, int y) {
+void ostendo::InitWindow(std::string name, int width, int height, int x,
+                         int y) {
   windows[name] = Window(width, height, x, y);
 }
 
@@ -75,9 +74,9 @@ void ostendo::TermWindow(std::string name) {
   windows.erase(name);
 }
 
-void ostendo::LoadColors(){
-  for(int i = 0; i <= 7; i++){
-    for(int j = 0; j <= 7; j++){
+void ostendo::LoadColors() {
+  for (int i = 0; i <= 7; i++) {
+    for (int j = 0; j <= 7; j++) {
       init_pair((short)(i * 10 + j), (short)i, (short)j);
     }
   }

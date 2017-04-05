@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include "window.hpp"
-namespace ostendo{
+namespace ostendo {
   std::string Menu(ostendo::Window win, std::vector<std::string> options);
 }
 #endif

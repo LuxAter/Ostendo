@@ -15,8 +15,8 @@ ostendo::Window::Window(int width, int height) {
   GenWindow();
 }
 
-ostendo::Window::Window(double width, double height){
-  window_pos = Pos(0,0,std_scr.w * width, std_scr.h * height);
+ostendo::Window::Window(double width, double height) {
+  window_pos = Pos(0, 0, std_scr.w * width, std_scr.h * height);
   GenWindow();
 }
 
@@ -25,8 +25,10 @@ ostendo::Window::Window(int width, int height, int pos_x, int pos_y) {
   GenWindow();
 }
 
-ostendo::Window::Window(double width, double height, double pos_x, double pos_y){
-  window_pos = Pos(std_scr.w * pos_x, std_scr.h * pos_y, std_scr.w * width, std_scr.h * height);
+ostendo::Window::Window(double width, double height, double pos_x,
+                        double pos_y) {
+  window_pos = Pos(std_scr.w * pos_x, std_scr.h * pos_y, std_scr.w * width,
+                   std_scr.h * height);
   GenWindow();
 }
 
@@ -70,9 +72,9 @@ void ostendo::Window::NewWindow(int width, int height) {
   GenWindow();
 }
 
-void ostendo::Window::NewWindow(double width, double height){
+void ostendo::Window::NewWindow(double width, double height) {
   DelWin();
-  window_pos = Pos(0,0,std_scr.w * width, std_scr.h * height);
+  window_pos = Pos(0, 0, std_scr.w * width, std_scr.h * height);
   GenWindow();
 }
 
@@ -82,9 +84,11 @@ void ostendo::Window::NewWindow(int width, int height, int pos_x, int pos_y) {
   GenWindow();
 }
 
-void ostendo::Window::NewWindow(double width, double height, double pos_x, double pos_y){
+void ostendo::Window::NewWindow(double width, double height, double pos_x,
+                                double pos_y) {
   DelWin();
-  window_pos = Pos(std_scr.w * pos_x, std_scr.h * pos_y, std_scr.w * width, std_scr.h * height);
+  window_pos = Pos(std_scr.w * pos_x, std_scr.h * pos_y, std_scr.w * width,
+                   std_scr.h * height);
   GenWindow();
 }
 
@@ -121,9 +125,7 @@ void ostendo::Window::ToggleTitle(std::string setting) {
   DrawTitle();
 }
 
-void ostendo::Window::SetAutoUpdate(bool setting){
-  auto_update = setting;
-}
+void ostendo::Window::SetAutoUpdate(bool setting) { auto_update = setting; }
 
 void ostendo::Window::ColorOn(int attrs) {
   if (window_pointer != NULL) {
@@ -136,69 +138,69 @@ void ostendo::Window::ColorOff(int attrs) {
   }
 }
 
-void ostendo::Window::AttrOn(int attrs){
+void ostendo::Window::AttrOn(int attrs) {
   bool good = true;
-  if(attrs == ALTCHAR){
+  if (attrs == ALTCHAR) {
     attrs = A_ALTCHARSET;
-  }else if(attrs == BLINK){
+  } else if (attrs == BLINK) {
     attrs = A_BLINK;
-  }else if(attrs == BOLD){
+  } else if (attrs == BOLD) {
     attrs = A_BOLD;
-  }else if(attrs == DIM){
+  } else if (attrs == DIM) {
     attrs = A_DIM;
-  }else if(attrs == INVIS){
+  } else if (attrs == INVIS) {
     attrs = A_INVIS;
-  }else if(attrs == PROTECT){
+  } else if (attrs == PROTECT) {
     attrs = A_PROTECT;
-  }else if(attrs == REVERSE){
+  } else if (attrs == REVERSE) {
     attrs = A_REVERSE;
-  }else if(attrs == STANDOUT){
+  } else if (attrs == STANDOUT) {
     attrs = A_STANDOUT;
-  }else if(attrs == UNDERLINE){
+  } else if (attrs == UNDERLINE) {
     attrs = A_UNDERLINE;
-  }else{
+  } else {
     good = false;
   }
-  if(window_pointer != NULL && good == true){
+  if (window_pointer != NULL && good == true) {
     wattron(window_pointer, attrs);
   }
 }
 
-void ostendo::Window::AttrOff(int attrs){
+void ostendo::Window::AttrOff(int attrs) {
   bool good = true;
-  if(attrs == ALTCHAR){
+  if (attrs == ALTCHAR) {
     attrs = A_ALTCHARSET;
-  }else if(attrs == BLINK){
+  } else if (attrs == BLINK) {
     attrs = A_BLINK;
-  }else if(attrs == BOLD){
+  } else if (attrs == BOLD) {
     attrs = A_BOLD;
-  }else if(attrs == DIM){
+  } else if (attrs == DIM) {
     attrs = A_DIM;
-  }else if(attrs == INVIS){
+  } else if (attrs == INVIS) {
     attrs = A_INVIS;
-  }else if(attrs == PROTECT){
+  } else if (attrs == PROTECT) {
     attrs = A_PROTECT;
-  }else if(attrs == REVERSE){
+  } else if (attrs == REVERSE) {
     attrs = A_REVERSE;
-  }else if(attrs == STANDOUT){
+  } else if (attrs == STANDOUT) {
     attrs = A_STANDOUT;
-  }else if(attrs == UNDERLINE){
+  } else if (attrs == UNDERLINE) {
     attrs = A_UNDERLINE;
-  }else{
+  } else {
     good = false;
   }
-  if(window_pointer != NULL && good == true){
+  if (window_pointer != NULL && good == true) {
     wattroff(window_pointer, attrs);
   }
 }
-void ostendo::Window::SetColor(int color, int value){
-  if(color == 1){
+void ostendo::Window::SetColor(int color, int value) {
+  if (color == 1) {
     border_color = value;
-  }else if(color == 2){
+  } else if (color == 2) {
     title_color = value;
-  }else if(color == 3){
+  } else if (color == 3) {
     text_color = value;
-  } else if(color == 4){
+  } else if (color == 4) {
     background_color = value;
   }
 }
@@ -260,89 +262,89 @@ int ostendo::Window::Print(std::string str, ...) {
   str = std::string(formated_string);
   std::string substring;
   for (int i = 0; i < str.length(); i++) {
-    if(str[i] == '#'){
+    if (str[i] == '#') {
       bool off = false;
       int action = -1, index = 0;
-      if(str.size() > i + 1){
-        if(str[i+1] == 'o'){
+      if (str.size() > i + 1) {
+        if (str[i + 1] == 'o') {
           action = -2;
-        }else if(str[i + 1] == 'f'){
+        } else if (str[i + 1] == 'f') {
           off = true;
           action = -2;
-        }else if(str[i+1] == 'l'){
+        } else if (str[i + 1] == 'l') {
           action = 0;
-        }else if(str[i+1] == 'c'){
+        } else if (str[i + 1] == 'c') {
           action = 1;
-        }else if(str[i+1] == 'r'){
+        } else if (str[i + 1] == 'r') {
           action = 2;
         }
-        if(str.size() > i + 3 && action == -2){
-          if(str[i+1] == 'a' && str[i+2] == 'l'){
+        if (str.size() > i + 3 && action == -2) {
+          if (str[i + 1] == 'a' && str[i + 2] == 'l') {
             action = 3;
             index = ALTCHAR;
-          }else if(str[i+2] == 'b' && str[i+3] == 'l'){
+          } else if (str[i + 2] == 'b' && str[i + 3] == 'l') {
             action = 3;
             index = BLINK;
-          }else if(str[i+2] == 'b' && str[i+3] == 'o'){
+          } else if (str[i + 2] == 'b' && str[i + 3] == 'o') {
             action = 3;
             index = BOLD;
-          }else if(str[i+2] == 'd' && str[i+3] == 'i'){
+          } else if (str[i + 2] == 'd' && str[i + 3] == 'i') {
             action = 3;
             index = DIM;
-          }else if(str[i+2] == 'i' && str[i+3] == 'n'){
+          } else if (str[i + 2] == 'i' && str[i + 3] == 'n') {
             action = 3;
             index = INVIS;
-          }else if(str[i+2] == 'p' && str[i+3] == 'r'){
+          } else if (str[i + 2] == 'p' && str[i + 3] == 'r') {
             action = 3;
             index = PROTECT;
-          }else if(str[i+2] == 'r' && str[i+3] == 'e'){
+          } else if (str[i + 2] == 'r' && str[i + 3] == 'e') {
             action = 3;
             index = REVERSE;
-          }else if(str[i+2] == 's' && str[i+3] == 't'){
+          } else if (str[i + 2] == 's' && str[i + 3] == 't') {
             action = 3;
             index = STANDOUT;
-          }else if(str[i+2] == 'u' && str[i+3] == 'n'){
+          } else if (str[i + 2] == 'u' && str[i + 3] == 'n') {
             action = 3;
             index = UNDERLINE;
-          }else if(IsInt(str[i+2]) && IsInt(str[i+3])){
+          } else if (IsInt(str[i + 2]) && IsInt(str[i + 3])) {
             action = 4;
-            index = (10 * (int(str[i+2]) - 48)) + (int(str[i+3]) - 48);
+            index = (10 * (int(str[i + 2]) - 48)) + (int(str[i + 3]) - 48);
           }
         }
       }
-      if(action != -1){
-        if(align == 1){
+      if (action != -1) {
+        if (align == 1) {
           curs.first = (window_pos.w - substring.size()) / 2;
-        }else if(align == 2){
+        } else if (align == 2) {
           curs.first = (window_pos.w - substring.size()) - window_border;
         }
         mvwprintw(window_pointer, curs.second, curs.first, substring.c_str());
         curs.first += substring.length();
         substring = "";
       }
-      if(action == -1){
+      if (action == -1) {
         substring += str[i];
-      } else if(action == 0){
+      } else if (action == 0) {
         i += 1;
         align = 0;
-      } else if(action == 1){
+      } else if (action == 1) {
         i += 1;
         align = 1;
-      } else if(action == 2){
+      } else if (action == 2) {
         i += 1;
         align = 2;
-      } else if(action == 3){
+      } else if (action == 3) {
         i += 3;
-        if(off == false){
+        if (off == false) {
           AttrOn(index);
-        }else if(off == true){
+        } else if (off == true) {
           AttrOff(index);
         }
-      } else if(action == 4){
+      } else if (action == 4) {
         i += 3;
-        if(off == false){
+        if (off == false) {
           ColorOn(index);
-        }else if(off == true){
+        } else if (off == true) {
           ColorOff(index);
         }
       }
@@ -350,9 +352,9 @@ int ostendo::Window::Print(std::string str, ...) {
       if (curs.second >= window_pos.h - window_border) {
         LastLine();
       }
-      if(align == 1){
+      if (align == 1) {
         curs.first = (window_pos.w - substring.size()) / 2;
-      }else if(align == 2){
+      } else if (align == 2) {
         curs.first = (window_pos.w - substring.size()) - window_border;
       }
       mvwprintw(window_pointer, curs.second, curs.first, substring.c_str());
@@ -376,16 +378,16 @@ int ostendo::Window::Print(std::string str, ...) {
   if (substring != "" && curs.second >= window_pos.h - window_border) {
     LastLine();
   }
-  if(align == 1){
+  if (align == 1) {
     curs.first = (window_pos.w - substring.size()) / 2;
-  }else if(align == 2){
+  } else if (align == 2) {
     curs.first = (window_pos.w - substring.size()) - window_border;
   }
   mvwprintw(window_pointer, curs.second, curs.first, substring.c_str());
   curs.first += substring.length();
   substring = "";
   AttrOff(text_color);
-  if(auto_update == true){
+  if (auto_update == true) {
     Update();
   }
   return (0);
@@ -402,7 +404,7 @@ void ostendo::Window::SetCurs(int y, int x) {
 
 void ostendo::Window::GenWindow() {
   curs = std::make_pair(0, 0);
-  window_space = Pos(0,0,window_pos.h, window_pos.w);
+  window_space = Pos(0, 0, window_pos.h, window_pos.w);
   window_pointer =
       newwin(window_pos.h, window_pos.w, window_pos.y, window_pos.x);
   if (window_pointer == NULL) {
@@ -414,10 +416,10 @@ void ostendo::Window::GenWindow() {
 
 void ostendo::Window::DrawBorder() {
   if (window_border == true && window_pointer != NULL) {
-    if(window_title == true){
+    if (window_title == true) {
       window_space.h -= 1;
       window_space.w -= 2;
-    } else{
+    } else {
       window_space.h -= 2;
       window_space.w -= 2;
     }
@@ -428,10 +430,10 @@ void ostendo::Window::DrawBorder() {
             border_character_set[6], border_character_set[7]);
     ColorOff(border_color);
   } else if (window_border == false && window_pointer != NULL) {
-    if(window_title == true){
+    if (window_title == true) {
       window_space.h += 1;
       window_space.w += 2;
-    }else{
+    } else {
       window_space.h += 2;
       window_space.w += 2;
     }
@@ -444,7 +446,7 @@ void ostendo::Window::DrawBorder() {
 
 void ostendo::Window::DrawTitle() {
   if (window_title == true && window_pointer != NULL) {
-    if(window_border == false){
+    if (window_border == false) {
       window_space.h -= 1;
     }
     ColorOn(title_color);
@@ -456,14 +458,14 @@ void ostendo::Window::DrawTitle() {
     if (window_border == true) {
       ColorOn(border_color);
       ch = border_character_set[2];
-    }else{
+    } else {
       ColorOn(background_color);
     }
     mvwhline(window_pointer, 0, 1, ch, window_pos.w - 2);
-    if(window_border == true){
+    if (window_border == true) {
       window_space.h += 1;
       ColorOff(border_color);
-    } else{
+    } else {
       ColorOff(background_color);
     }
   }
@@ -490,10 +492,10 @@ void ostendo::Window::LastLine() {
   }
 }
 
-bool ostendo::Window::IsInt(char ch){
-  if(int(ch) >= 48 && int(ch) <= 57){
-    return(true);
-  }else{
-    return(false);
+bool ostendo::Window::IsInt(char ch) {
+  if (int(ch) >= 48 && int(ch) <= 57) {
+    return (true);
+  } else {
+    return (false);
   }
 }
