@@ -253,12 +253,14 @@ int ostendo::Window::Print(std::string str, ...) {
   }
   int align = 0;
   AttrOn(text_color);
-  va_list args;
+  va_list args, buff_args;
   va_start(args, str);
-  ssize_t buff_size = vsnprintf(NULL, 0, str.c_str(), args);
+  va_start(buff_args, str);
+  ssize_t buff_size = vsnprintf(NULL, 0, str.c_str(), buff_args);
   char* formated_string = new char[buff_size];
   vsprintf(formated_string, str.c_str(), args);
   va_end(args);
+  va_end(buff_args);
   str = std::string(formated_string);
   std::string substring;
   for (int i = 0; i < str.length(); i++) {
