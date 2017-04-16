@@ -410,7 +410,7 @@ void ostendo::Window::GenWindow() {
   window_pointer =
       newwin(window_pos.h, window_pos.w, window_pos.y, window_pos.x);
   if (window_pointer == NULL) {
-    OstendoLog(10, "Failed to genorate window", "GenWindow");
+    pessum::Log(pessum::WARNING, "Failed to genorate window", "ostendo/Window/GenWindow");
   }
   Update();
   Clear();

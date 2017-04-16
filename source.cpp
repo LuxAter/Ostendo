@@ -3,12 +3,10 @@
 #include <iostream>
 #include "ostendo_files/ostendo_headers.hpp"
 
-void log(std::string str) { pessum::logging::Log(str); }
+void log(std::string str) { pessum::Log(pessum::ERROR, str, "Ostendo"); }
 
 int main(int argc, char const* argv[]) {
-  pessum::InitializePessum(true, true);
   ostendo::InitOstendo(true, 1);
-  ostendo::SetLogHandle(pessum::logging::Log);
   ostendo::Window win(40, 20);
   win.Clear();
   win.ToggleTitle("Hello Window!");
@@ -20,6 +18,6 @@ int main(int argc, char const* argv[]) {
   }
   win.DelWin();
   ostendo::TermOstendo();
-  pessum::TerminatePessum();
+  pessum::SaveLog("out.log");
   return 0;
 }

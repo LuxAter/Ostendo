@@ -1,13 +1,10 @@
 #include <ncurses.h>
-#include <iostream>
-#include <queue>
+#include <pessum.h>
 #include <string>
-#include <utility>
 #include "ostendo.hpp"
 #include "types.hpp"
 
 namespace ostendo {
-  void (*log_handle)(std::string, std::string, std::string) = NULL;
   Pos std_scr;
   std::map<std::string, Window> windows;
   int win_index = 0;
@@ -24,7 +21,7 @@ void ostendo::InitOstendo(bool color, int time_out) {
   timeout(time_out);
   if (color == true) {
     if (has_colors() == FALSE) {
-      OstendoLog(12, "Current terminal does not support color", "InitOstendo");
+      pessum::Log(pessum::WARNING, "Current terminal does not support color", "ostendo/InitOstendo");
     } else {
       start_color();
       LoadColors();
@@ -39,23 +36,6 @@ void ostendo::TermOstendo() {
   curs_set(1);
   refresh();
   endwin();
-}
-
-void ostendo::OstendoLog(int error_code, std::string log_string,
-                         std::string function_string) {
-  std::string log_type = "";
-  std::string error_str = std::to_string(error_code);
-  if (error_str[0] == '1') {
-    log_type = "ERROR";
-  }
-  if (log_handle != NULL) {
-    log_handle(log_type, log_string, function_string);
-  }
-}
-
-void ostendo::SetLogHandle(void (*handle)(std::string, std::string,
-                                          std::string)) {
-  log_handle = handle;
 }
 
 void ostendo::InitWindow(std::string name) { windows[name] = Window(); }
