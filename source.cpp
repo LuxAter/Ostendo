@@ -11,11 +11,9 @@ int main(int argc, char const* argv[]) {
   win.Clear();
   win.ToggleTitle("Hello Window!");
   win.ToggleBorder();
-  win.Print("Hello World\n");
-  win.Print("#l#ounleft#fun just\n#c#o15center just#f15\n#rright just\n");
-  win.Print("Test int %i\nTest string %s\nTest double %f\n", 1998, "hello world", 3.1415);
-  while (getch() != int('q')) {
-  }
+  std::string out = ostendo::TextBox(win, "Hello World");
+  // while (getch() != int('q')) {
+  // }
   win.DelWin();
   ostendo::TermOstendo();
   pessum::SaveLog("out.log");
