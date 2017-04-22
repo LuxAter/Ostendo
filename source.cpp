@@ -11,7 +11,7 @@ int main(int argc, char const* argv[]) {
   win.Clear();
   win.ToggleTitle("Hello Window!");
   win.ToggleBorder();
-  std::string out = ostendo::TextBox(win, "Hello World");
+  std::string out = ostendo::TextBox(win, "Hello World My name is arden!!\n Did this work?");
   // while (getch() != int('q')) {
   // }
   win.DelWin();
