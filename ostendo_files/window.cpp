@@ -25,10 +25,20 @@ ostendo::Window::Window(int width, int height, int pos_x, int pos_y) {
   GenWindow();
 }
 
+ostendo::Window::Window(int width, int height, double pos_x, double pos_y) {
+  window_pos = Pos(std_scr.w * pos_x, std_scr.h * pos_y, width, height);
+  GenWindow();
+}
+
 ostendo::Window::Window(double width, double height, double pos_x,
                         double pos_y) {
   window_pos = Pos(std_scr.w * pos_x, std_scr.h * pos_y, std_scr.w * width,
                    std_scr.h * height);
+  GenWindow();
+}
+
+ostendo::Window::Window(double width, double height, int pos_x, int pos_y) {
+  window_pos = Pos(pos_x, pos_y, std_scr.w * width, std_scr.h * height);
   GenWindow();
 }
 
@@ -84,11 +94,25 @@ void ostendo::Window::NewWindow(int width, int height, int pos_x, int pos_y) {
   GenWindow();
 }
 
+void ostendo::Window::NewWindow(int width, int height, double pos_x,
+                                double pos_y) {
+  DelWin();
+  window_pos = Pos(std_scr.w * pos_x, std_scr.h * pos_y, width, height);
+  GenWindow();
+}
+
 void ostendo::Window::NewWindow(double width, double height, double pos_x,
                                 double pos_y) {
   DelWin();
   window_pos = Pos(std_scr.w * pos_x, std_scr.h * pos_y, std_scr.w * width,
                    std_scr.h * height);
+  GenWindow();
+}
+
+void ostendo::Window::NewWindow(double width, double height, int pos_x,
+                                int pos_y) {
+  DelWin();
+  window_pos = Pos(pos_x, pos_y, std_scr.w * width, std_scr.h * height);
   GenWindow();
 }
 
@@ -410,7 +434,8 @@ void ostendo::Window::GenWindow() {
   window_pointer =
       newwin(window_pos.h, window_pos.w, window_pos.y, window_pos.x);
   if (window_pointer == NULL) {
-    pessum::Log(pessum::WARNING, "Failed to genorate window", "ostendo/Window/GenWindow");
+    pessum::Log(pessum::WARNING, "Failed to genorate window",
+                "ostendo/Window/GenWindow");
   }
   Update();
   Clear();

@@ -29,7 +29,9 @@ namespace ostendo {
     Window(int width, int height);
     Window(double width, double height);
     Window(int width, int height, int pos_x, int pos_y);
+    Window(int width, int height, double pos_x, double pos_y);
     Window(double width, double height, double pos_x, double pos_y);
+    Window(double width, double height, int pos_x, int pos_y);
     Window(Pos pos);
     Window(const Window& win);
 
@@ -39,7 +41,9 @@ namespace ostendo {
     void NewWindow(int width, int height);
     void NewWindow(double width, double height);
     void NewWindow(int width, int height, int pos_x, int pos_y);
+    void NewWindow(int width, int height, double pos_x, double pos_y);
     void NewWindow(double width, double height, double pos_x, double pos_y);
+    void NewWindow(double width, double height, int pos_x, int pos_y);
 
     void Update();
     void ToggleBorder();
