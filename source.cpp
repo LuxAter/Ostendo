@@ -5,6 +5,10 @@
 
 int main(int argc, char const* argv[]) {
   ostendo::InitOstendo(true, 1);
+  ostendo::Window win(40, 20, 0, 0);
+  win.ToggleBorder();
+  win.ToggleTitle("HELLO");
+  TextBox(win);
   ostendo::TermOstendo();
   pessum::SaveLog("out.log");
   return 0;

@@ -56,6 +56,10 @@ std::string ostendo::TextBox(ostendo::Window win,
     } else if ((in == 10 || in == KEY_ENTER) && current_line == lines.size()) {
       running = false;
     } else if (in >= 32 && in <= 126 && current_line != lines.size()) {
+      if (lines[current_line].size() >= win.window_space.w - 1) {
+        lines.insert(lines.begin() + current_line + 1, "");
+        current_line++;
+      }
       lines[current_line] += char(in);
       update = true;
     }
@@ -142,9 +146,11 @@ void ostendo::DisplayLines(ostendo::Window win, std::vector<std::string> lines,
        i++) {
     win.SetCurs(i + 1, 1);
     if (i + start_line == current_line) {
-      win.Print("%s#ost #fst", lines[i + start_line].c_str());
+      win.Print(lines[i + start_line] + "#ost #fst");
+      // win.Print("%s#ost #fst", lines[i + start_line].c_str());
     } else if (i + start_line != current_line) {
-      win.Print("%s", lines[i + start_line].c_str());
+      win.Print(lines[i + start_line]);
+      // win.Print("%s", lines[i + start_line].c_str());
     }
   }
   if (current_line == lines.size()) {
