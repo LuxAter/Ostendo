@@ -5,7 +5,7 @@
 
 int main(int argc, char const* argv[]) {
   ostendo::InitOstendo(true, 1);
-  ostendo::Window win(40, 20, 0, 0);
+  ostendo::Window win;
   win.ToggleBorder();
   win.ToggleTitle("HELLO");
   TextBox(win);

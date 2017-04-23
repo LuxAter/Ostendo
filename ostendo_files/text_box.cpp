@@ -146,11 +146,11 @@ void ostendo::DisplayLines(ostendo::Window win, std::vector<std::string> lines,
        i++) {
     win.SetCurs(i + 1, 1);
     if (i + start_line == current_line) {
-      win.Print(lines[i + start_line] + "#ost #fst");
-      // win.Print("%s#ost #fst", lines[i + start_line].c_str());
+      win.Print("%s#ost #fst", lines[i + start_line].c_str());
+      // win.Print(lines[i + start_line] + "#ost #fst");
     } else if (i + start_line != current_line) {
-      win.Print(lines[i + start_line]);
-      // win.Print("%s", lines[i + start_line].c_str());
+      win.Print("%s", lines[i + start_line].c_str());
+      // win.Print(lines[i + start_line]);
     }
   }
   if (current_line == lines.size()) {

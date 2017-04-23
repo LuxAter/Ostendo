@@ -281,7 +281,8 @@ int ostendo::Window::Print(std::string str, ...) {
   va_start(args, str);
   va_start(buff_args, str);
   ssize_t buff_size = vsnprintf(NULL, 0, str.c_str(), buff_args);
-  char* formated_string = new char[buff_size];
+  char* formated_string = new char[buff_size + 1];
+  formated_string[buff_size] = '\0';
   vsprintf(formated_string, str.c_str(), args);
   va_end(args);
   va_end(buff_args);
