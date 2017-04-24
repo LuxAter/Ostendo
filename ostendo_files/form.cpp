@@ -45,9 +45,7 @@ std::vector<ostendo::Var> ostendo::Form(ostendo::Window win,
       win.Update();
     }
     int in = getch();
-    if (in == int('q')) {
-      running = false;
-    } else if (in == KEY_UP) {
+    if (in == KEY_UP) {
       if (selected > 0) {
         fields[selected] = UpArrow(fields[selected], win);
         selected--;
