@@ -1,0 +1,824 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structostendo_1_1Var" kind="struct" language="C++" prot="public">
+    <compoundname>ostendo::Var</compoundname>
+    <includes refid="types_8hpp" local="no">types.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structostendo_1_1Var_1a2ad63d508b2a224a9cc14479e5b1047a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ostendo::Var::has_set</definition>
+        <argsstring></argsstring>
+        <name>has_set</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Boolian determining if variable is a set. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="308" column="1" bodyfile="ostendo_files/types.hpp" bodystart="308" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structostendo_1_1Var_1a4cf546206d7a22a8008d7b3125a30660" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ostendo::Var::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Name of variable. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="309" column="1" bodyfile="ostendo_files/types.hpp" bodystart="309" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structostendo_1_1Var_1a92514adaf052e5007dbe53dda9de008f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ostendo::Var::var_type</definition>
+        <argsstring></argsstring>
+        <name>var_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Variable type setting from VarTypes.<simplesect kind="see"><para><ref refid="namespaceostendo_1ae78fb0e171a88eb8820d8d6a894463f4" kindref="member">VarType</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="310" column="1" bodyfile="ostendo_files/types.hpp" bodystart="310" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structostendo_1_1Var_1ad3e0add5d4dc88469d768bfa0c743379" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ostendo::Var::int_value</definition>
+        <argsstring></argsstring>
+        <name>int_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Integer value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="311" column="1" bodyfile="ostendo_files/types.hpp" bodystart="311" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structostendo_1_1Var_1a034ed342b05d98766cc628974ab4a0f5" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ostendo::Var::double_value</definition>
+        <argsstring></argsstring>
+        <name>double_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Double value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="312" column="1" bodyfile="ostendo_files/types.hpp" bodystart="312" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structostendo_1_1Var_1a8e4299f745a15349c7b665a25475bdca" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ostendo::Var::str_value</definition>
+        <argsstring></argsstring>
+        <name>str_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>String value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="313" column="1" bodyfile="ostendo_files/types.hpp" bodystart="313" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structostendo_1_1Var_1ad99e4f66f5e7ae44aa4bdd7f1a4e9f79" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ostendo::Var::bool_value</definition>
+        <argsstring></argsstring>
+        <name>bool_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Boolian value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="314" column="1" bodyfile="ostendo_files/types.hpp" bodystart="314" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structostendo_1_1Var_1a169462deb8fb9e599777840a58fffc0d" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; ostendo::Var::int_set</definition>
+        <argsstring></argsstring>
+        <name>int_set</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set of integer options. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="315" column="1" bodyfile="ostendo_files/types.hpp" bodystart="315" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structostendo_1_1Var_1a78ebcf6a3207f950286c6188cb97359c" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; ostendo::Var::double_set</definition>
+        <argsstring></argsstring>
+        <name>double_set</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set of double options. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="316" column="1" bodyfile="ostendo_files/types.hpp" bodystart="316" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structostendo_1_1Var_1ad900a259793059d2c7ed2ca1767bd6b8" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; ostendo::Var::str_set</definition>
+        <argsstring></argsstring>
+        <name>str_set</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set of string options. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="317" column="1" bodyfile="ostendo_files/types.hpp" bodystart="317" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structostendo_1_1Var_1addaf85e46b9bfd2d98b5bc8200b06c5b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ostendo::Var::Var</definition>
+        <argsstring>()</argsstring>
+        <name>Var</name>
+        <briefdescription>
+<para>Creates new <ref refid="structostendo_1_1Var" kindref="compound">Var</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates the default variable, with standard values for all terms. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="75" column="1" bodyfile="ostendo_files/types.hpp" bodystart="75" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1a271aecf1954157dc34985a7a2ef506b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ostendo::Var::Var</definition>
+        <argsstring>(int value)</argsstring>
+        <name>Var</name>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Creates new <ref refid="structostendo_1_1Var" kindref="compound">Var</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates new integer variable. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer value for variable. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="88" column="1" bodyfile="ostendo_files/types.hpp" bodystart="88" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1a77cedab74802b291425fddee5465df39" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ostendo::Var::Var</definition>
+        <argsstring>(double value)</argsstring>
+        <name>Var</name>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Creates new <ref refid="structostendo_1_1Var" kindref="compound">Var</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates new double variable. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Double value for variable. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="101" column="1" bodyfile="ostendo_files/types.hpp" bodystart="101" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1a6af5058ed312a3860389b3a15947aacd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ostendo::Var::Var</definition>
+        <argsstring>(std::string value)</argsstring>
+        <name>Var</name>
+        <param>
+          <type>std::string</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Creates new <ref refid="structostendo_1_1Var" kindref="compound">Var</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates new string variable. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String value for variable. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="114" column="1" bodyfile="ostendo_files/types.hpp" bodystart="114" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1a1c3bc2ea850b6748989a70f82f73c62a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ostendo::Var::Var</definition>
+        <argsstring>(bool value)</argsstring>
+        <name>Var</name>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Creates new <ref refid="structostendo_1_1Var" kindref="compound">Var</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates new boolian variable. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolian value for variable. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="127" column="1" bodyfile="ostendo_files/types.hpp" bodystart="127" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1a54737db1fa6cd70f182ad2a7b1904f7d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ostendo::Var::Var</definition>
+        <argsstring>(std::string str_name, int value)</argsstring>
+        <name>Var</name>
+        <param>
+          <type>std::string</type>
+          <declname>str_name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Creates new <ref refid="structostendo_1_1Var" kindref="compound">Var</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates a new integer variable. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of variable. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer value for variable. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="141" column="1" bodyfile="ostendo_files/types.hpp" bodystart="141" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1a12e2c20b81280d34d13a77b39c57f96d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ostendo::Var::Var</definition>
+        <argsstring>(std::string str_name, double value)</argsstring>
+        <name>Var</name>
+        <param>
+          <type>std::string</type>
+          <declname>str_name</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Creates new <ref refid="structostendo_1_1Var" kindref="compound">Var</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates a new double variable. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of variable. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Double value for variable. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="155" column="1" bodyfile="ostendo_files/types.hpp" bodystart="155" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1aa80859e63a7df5c1beab958e621637b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ostendo::Var::Var</definition>
+        <argsstring>(std::string str_name, std::string value)</argsstring>
+        <name>Var</name>
+        <param>
+          <type>std::string</type>
+          <declname>str_name</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Creates new <ref refid="structostendo_1_1Var" kindref="compound">Var</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates a new string variable. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of variable. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String value for variable. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="169" column="1" bodyfile="ostendo_files/types.hpp" bodystart="169" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1a2a1b2e8999f04386e78330662734fc52" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ostendo::Var::Var</definition>
+        <argsstring>(std::string str_name, bool value)</argsstring>
+        <name>Var</name>
+        <param>
+          <type>std::string</type>
+          <declname>str_name</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Creates new <ref refid="structostendo_1_1Var" kindref="compound">Var</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates a new boolian variable. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of variable. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolian value for variable. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="183" column="1" bodyfile="ostendo_files/types.hpp" bodystart="183" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1add66e15a270e6dc6dbdc81e707ebae2a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ostendo::Var::Var</definition>
+        <argsstring>(std::string str_name, std::vector&lt; int &gt; set, int value=0)</argsstring>
+        <name>Var</name>
+        <param>
+          <type>std::string</type>
+          <declname>str_name</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; int &gt;</type>
+          <declname>set</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Creates new <ref refid="structostendo_1_1Var" kindref="compound">Var</ref> set. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates new variable set of integers with given default. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of variable. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>set</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set of integer options. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Default option from the set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="198" column="1" bodyfile="ostendo_files/types.hpp" bodystart="198" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1ab359f9ded169486b261d4aca717acee1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ostendo::Var::Var</definition>
+        <argsstring>(std::string str_name, std::vector&lt; double &gt; set, int value=0)</argsstring>
+        <name>Var</name>
+        <param>
+          <type>std::string</type>
+          <declname>str_name</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; double &gt;</type>
+          <declname>set</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Creates new <ref refid="structostendo_1_1Var" kindref="compound">Var</ref> set. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates new variable set of doubles with given default. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of variable. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>set</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set of double options. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Default option from the set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="214" column="1" bodyfile="ostendo_files/types.hpp" bodystart="214" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1af987ac6b851f5d62984e32f54850ae70" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ostendo::Var::Var</definition>
+        <argsstring>(std::string str_name, std::vector&lt; std::string &gt; set, int value=0)</argsstring>
+        <name>Var</name>
+        <param>
+          <type>std::string</type>
+          <declname>str_name</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::string &gt;</type>
+          <declname>set</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Creates new <ref refid="structostendo_1_1Var" kindref="compound">Var</ref> set. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates new variable set of strings with given default. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of variable. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>set</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set of strings options. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Default option from the set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="230" column="1" bodyfile="ostendo_files/types.hpp" bodystart="230" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1a89b2842e7aad2fdf3ae21070655bb436" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ostendo::Var::operator=</definition>
+        <argsstring>(int value)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the value of the variable. </para>        </briefdescription>
+        <detaileddescription>
+<para>Sets the variable to the given integer value. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to set variable to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="244" column="1" bodyfile="ostendo_files/types.hpp" bodystart="244" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1a828c7ab4e4b53030cea5e94aa34d84d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ostendo::Var::operator=</definition>
+        <argsstring>(double value)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the value of the variable. </para>        </briefdescription>
+        <detaileddescription>
+<para>Sets the variable to the given double value. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to set variable to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="252" column="1" bodyfile="ostendo_files/types.hpp" bodystart="252" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1a5f9e9d7249cd02d28765d21bf3a80fe5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ostendo::Var::operator=</definition>
+        <argsstring>(std::string value)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>std::string</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the value of the variable. </para>        </briefdescription>
+        <detaileddescription>
+<para>Sets the variable to the given string value. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to set variable to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="260" column="1" bodyfile="ostendo_files/types.hpp" bodystart="260" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1a33de8632f442f7751af96d471dae1321" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ostendo::Var::operator=</definition>
+        <argsstring>(bool value)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the value of the variable. </para>        </briefdescription>
+        <detaileddescription>
+<para>Sets the variable to the given boolian value. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to set variable to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="268" column="1" bodyfile="ostendo_files/types.hpp" bodystart="268" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1a16f5d751d92892e903d3631707fd5ea0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ostendo::Var::SetSet</definition>
+        <argsstring>(std::vector&lt; int &gt; set)</argsstring>
+        <name>SetSet</name>
+        <param>
+          <type>std::vector&lt; int &gt;</type>
+          <declname>set</declname>
+        </param>
+        <briefdescription>
+<para>Sets the set of the variable. </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the variable set to a set of integers. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>set</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set of integers to use in the variable. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="276" column="1" bodyfile="ostendo_files/types.hpp" bodystart="276" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1a796286e938479ad4d3194915a702defa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ostendo::Var::SetSet</definition>
+        <argsstring>(std::vector&lt; double &gt; set)</argsstring>
+        <name>SetSet</name>
+        <param>
+          <type>std::vector&lt; double &gt;</type>
+          <declname>set</declname>
+        </param>
+        <briefdescription>
+<para>Sets the set of the variable. </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the variable set to a set of doubles. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>set</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set of doubles to use in the variable. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="284" column="1" bodyfile="ostendo_files/types.hpp" bodystart="284" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1aaa2ebfdc3a5099f234fe105a040cafca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ostendo::Var::SetSet</definition>
+        <argsstring>(std::vector&lt; std::string &gt; set)</argsstring>
+        <name>SetSet</name>
+        <param>
+          <type>std::vector&lt; std::string &gt;</type>
+          <declname>set</declname>
+        </param>
+        <briefdescription>
+<para>Sets the set of the variable. </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the variable set to a set of strings. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>set</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set of strings to use in the variable. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="292" column="1" bodyfile="ostendo_files/types.hpp" bodystart="292" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1a8112500b840ee7aaee88aeeca6fec4c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int ostendo::Var::Int</definition>
+        <argsstring>()</argsstring>
+        <name>Int</name>
+        <briefdescription>
+<para>Returns integer value of the variable. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="298" column="1" bodyfile="ostendo_files/types.hpp" bodystart="298" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1ae9a72f83d152e152dfa0054f05a5bd1a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double ostendo::Var::Double</definition>
+        <argsstring>()</argsstring>
+        <name>Double</name>
+        <briefdescription>
+<para>Returns the double value of the varaible. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="300" column="1" bodyfile="ostendo_files/types.hpp" bodystart="300" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1a0121e8cbc76819c9aec406a0352654ed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ostendo::Var::String</definition>
+        <argsstring>()</argsstring>
+        <name>String</name>
+        <briefdescription>
+<para>Returns the string value of the variable. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="302" column="1" bodyfile="ostendo_files/types.hpp" bodystart="302" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1a0a7a7fb0f19d34d6e2b5da7eff8ed331" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostendo::Var::Bool</definition>
+        <argsstring>()</argsstring>
+        <name>Bool</name>
+        <briefdescription>
+<para>Returns the boolian value of the variable. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="304" column="1" bodyfile="ostendo_files/types.hpp" bodystart="304" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Var_1a27b5e7f947ca4e37a827d8a4b6614a04" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ostendo::Var::Name</definition>
+        <argsstring>()</argsstring>
+        <name>Name</name>
+        <briefdescription>
+<para>Returns the name of the variable. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="306" column="1" bodyfile="ostendo_files/types.hpp" bodystart="306" bodyend="306"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure to use as general variable. </para>    </briefdescription>
+    <detaileddescription>
+<para>Structure that can act as a variable for int, double, string, or bool </para>    </detaileddescription>
+    <location file="ostendo_files/types.hpp" line="72" column="1" bodyfile="ostendo_files/types.hpp" bodystart="72" bodyend="318"/>
+    <listofallmembers>
+      <member refid="structostendo_1_1Var_1a0a7a7fb0f19d34d6e2b5da7eff8ed331" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>Bool</name></member>
+      <member refid="structostendo_1_1Var_1ad99e4f66f5e7ae44aa4bdd7f1a4e9f79" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>bool_value</name></member>
+      <member refid="structostendo_1_1Var_1ae9a72f83d152e152dfa0054f05a5bd1a" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>Double</name></member>
+      <member refid="structostendo_1_1Var_1a78ebcf6a3207f950286c6188cb97359c" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>double_set</name></member>
+      <member refid="structostendo_1_1Var_1a034ed342b05d98766cc628974ab4a0f5" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>double_value</name></member>
+      <member refid="structostendo_1_1Var_1a2ad63d508b2a224a9cc14479e5b1047a" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>has_set</name></member>
+      <member refid="structostendo_1_1Var_1a8112500b840ee7aaee88aeeca6fec4c0" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>Int</name></member>
+      <member refid="structostendo_1_1Var_1a169462deb8fb9e599777840a58fffc0d" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>int_set</name></member>
+      <member refid="structostendo_1_1Var_1ad3e0add5d4dc88469d768bfa0c743379" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>int_value</name></member>
+      <member refid="structostendo_1_1Var_1a27b5e7f947ca4e37a827d8a4b6614a04" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>Name</name></member>
+      <member refid="structostendo_1_1Var_1a4cf546206d7a22a8008d7b3125a30660" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>name</name></member>
+      <member refid="structostendo_1_1Var_1a89b2842e7aad2fdf3ae21070655bb436" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>operator=</name></member>
+      <member refid="structostendo_1_1Var_1a828c7ab4e4b53030cea5e94aa34d84d5" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>operator=</name></member>
+      <member refid="structostendo_1_1Var_1a5f9e9d7249cd02d28765d21bf3a80fe5" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>operator=</name></member>
+      <member refid="structostendo_1_1Var_1a33de8632f442f7751af96d471dae1321" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>operator=</name></member>
+      <member refid="structostendo_1_1Var_1a16f5d751d92892e903d3631707fd5ea0" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>SetSet</name></member>
+      <member refid="structostendo_1_1Var_1a796286e938479ad4d3194915a702defa" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>SetSet</name></member>
+      <member refid="structostendo_1_1Var_1aaa2ebfdc3a5099f234fe105a040cafca" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>SetSet</name></member>
+      <member refid="structostendo_1_1Var_1ad900a259793059d2c7ed2ca1767bd6b8" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>str_set</name></member>
+      <member refid="structostendo_1_1Var_1a8e4299f745a15349c7b665a25475bdca" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>str_value</name></member>
+      <member refid="structostendo_1_1Var_1a0121e8cbc76819c9aec406a0352654ed" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>String</name></member>
+      <member refid="structostendo_1_1Var_1addaf85e46b9bfd2d98b5bc8200b06c5b" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>Var</name></member>
+      <member refid="structostendo_1_1Var_1a271aecf1954157dc34985a7a2ef506b9" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>Var</name></member>
+      <member refid="structostendo_1_1Var_1a77cedab74802b291425fddee5465df39" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>Var</name></member>
+      <member refid="structostendo_1_1Var_1a6af5058ed312a3860389b3a15947aacd" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>Var</name></member>
+      <member refid="structostendo_1_1Var_1a1c3bc2ea850b6748989a70f82f73c62a" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>Var</name></member>
+      <member refid="structostendo_1_1Var_1a54737db1fa6cd70f182ad2a7b1904f7d" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>Var</name></member>
+      <member refid="structostendo_1_1Var_1a12e2c20b81280d34d13a77b39c57f96d" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>Var</name></member>
+      <member refid="structostendo_1_1Var_1aa80859e63a7df5c1beab958e621637b8" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>Var</name></member>
+      <member refid="structostendo_1_1Var_1a2a1b2e8999f04386e78330662734fc52" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>Var</name></member>
+      <member refid="structostendo_1_1Var_1add66e15a270e6dc6dbdc81e707ebae2a" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>Var</name></member>
+      <member refid="structostendo_1_1Var_1ab359f9ded169486b261d4aca717acee1" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>Var</name></member>
+      <member refid="structostendo_1_1Var_1af987ac6b851f5d62984e32f54850ae70" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>Var</name></member>
+      <member refid="structostendo_1_1Var_1a92514adaf052e5007dbe53dda9de008f" prot="public" virt="non-virtual"><scope>ostendo::Var</scope><name>var_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

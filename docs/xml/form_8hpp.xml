@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="form_8hpp" kind="file" language="C++">
+    <compoundname>form.hpp</compoundname>
+    <includes local="no">vector</includes>
+    <includes refid="types_8hpp" local="yes">types.hpp</includes>
+    <includes refid="window_8hpp" local="yes">window.hpp</includes>
+    <includedby refid="ostendo__headers_8hpp" local="yes">ostendo_files/ostendo_headers.hpp</includedby>
+    <includedby refid="form_8cpp" local="yes">ostendo_files/form.cpp</includedby>
+    <incdepgraph>
+      <node id="33">
+        <label>types.hpp</label>
+        <link refid="types_8hpp_source"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>string</label>
+      </node>
+      <node id="37">
+        <label>map</label>
+      </node>
+      <node id="32">
+        <label>vector</label>
+      </node>
+      <node id="36">
+        <label>ncurses.h</label>
+      </node>
+      <node id="31">
+        <label>ostendo_files/form.hpp</label>
+        <link refid="form.hpp"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>window.hpp</label>
+        <link refid="window_8hpp_source"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="40">
+        <label>ostendo.h</label>
+        <link refid="ostendo_8h_source"/>
+      </node>
+      <node id="39">
+        <label>ostendo_files/ostendo_headers.hpp</label>
+        <link refid="ostendo__headers_8hpp_source"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>ostendo_files/form.hpp</label>
+        <link refid="form.hpp"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceostendo">ostendo</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>OSTENDO_FORM_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OSTENDO_FORM_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;types.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;window.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="namespaceostendo" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceostendo" kindref="compound">ostendo</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/>std::vector&lt;Var&gt;<sp/><ref refid="namespaceostendo_1a6de3757551a0461ef565d035547e4408" kindref="member">Form</ref>(<ref refid="classostendo_1_1Window" kindref="compound">ostendo::Window</ref><sp/>win,<sp/>std::vector&lt;Var&gt;<sp/>fields);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="namespaceostendo_1a75491bb403d248c50aafc1f5eb310d75" kindref="member">GetVarStr</ref>(<ref refid="structostendo_1_1Var" kindref="compound">Var</ref><sp/>in_var,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><ref refid="structostendo_1_1Var" kindref="compound">Var</ref><sp/><ref refid="namespaceostendo_1a0eff2d6c60790fa96f06511e3a01f3a4" kindref="member">DownArrow</ref>(<ref refid="structostendo_1_1Var" kindref="compound">Var</ref><sp/>in_var,<sp/><ref refid="classostendo_1_1Window" kindref="compound">Window</ref><sp/>win);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><ref refid="structostendo_1_1Var" kindref="compound">Var</ref><sp/><ref refid="namespaceostendo_1abd61a4387f4057a821127c78c5de14df" kindref="member">UpArrow</ref>(<ref refid="structostendo_1_1Var" kindref="compound">Var</ref><sp/>in_var,<sp/><ref refid="classostendo_1_1Window" kindref="compound">Window</ref><sp/>win);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><ref refid="structostendo_1_1Var" kindref="compound">Var</ref><sp/><ref refid="namespaceostendo_1a9306123175f6b620de11b774fbfb5ec5" kindref="member">RightArrow</ref>(<ref refid="structostendo_1_1Var" kindref="compound">Var</ref><sp/>in_var,<sp/><ref refid="classostendo_1_1Window" kindref="compound">Window</ref><sp/>win);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><ref refid="structostendo_1_1Var" kindref="compound">Var</ref><sp/><ref refid="namespaceostendo_1ab912de20925f952a5056414bfbdaeeda" kindref="member">LeftArrow</ref>(<ref refid="structostendo_1_1Var" kindref="compound">Var</ref><sp/>in_var,<sp/><ref refid="classostendo_1_1Window" kindref="compound">Window</ref><sp/>win);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><ref refid="structostendo_1_1Var" kindref="compound">Var</ref><sp/><ref refid="namespaceostendo_1a9279674ead9b9c27ebc228430c1abfbe" kindref="member">Enter</ref>(<ref refid="structostendo_1_1Var" kindref="compound">Var</ref><sp/>in_var,<sp/><ref refid="classostendo_1_1Window" kindref="compound">Window</ref><sp/>win);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><ref refid="structostendo_1_1Var" kindref="compound">Var</ref><sp/><ref refid="namespaceostendo_1ab4fddb801c2f32c114a4e3ef0c9bc953" kindref="member">Backspace</ref>(<ref refid="structostendo_1_1Var" kindref="compound">Var</ref><sp/>in_var,<sp/><ref refid="classostendo_1_1Window" kindref="compound">Window</ref><sp/>win);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><ref refid="structostendo_1_1Var" kindref="compound">Var</ref><sp/><ref refid="namespaceostendo_1ac7a01c5f1ce53b6361e62f349f8f5ee4" kindref="member">Add</ref>(<ref refid="structostendo_1_1Var" kindref="compound">Var</ref><sp/>in_var,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ch,<sp/><ref refid="classostendo_1_1Window" kindref="compound">Window</ref><sp/>win);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ostendo_files/form.hpp"/>
+  </compounddef>
+</doxygen>

@@ -417,7 +417,7 @@ int ostendo::Window::Print(std::string str, ...) {
   if (auto_update == true) {
     Update();
   }
-  return (0);
+  return(0);
 }
 
 void ostendo::Window::SetCurs(int y, int x) {

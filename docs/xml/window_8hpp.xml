@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="window_8hpp" kind="file" language="C++">
+    <compoundname>window.hpp</compoundname>
+    <includes local="no">ncurses.h</includes>
+    <includes local="no">map</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes refid="types_8hpp" local="yes">types.hpp</includes>
+    <includedby refid="form_8hpp" local="yes">ostendo_files/form.hpp</includedby>
+    <includedby refid="menu_8hpp" local="yes">ostendo_files/menu.hpp</includedby>
+    <includedby refid="ostendo_8hpp" local="yes">ostendo_files/ostendo.hpp</includedby>
+    <includedby refid="text__box_8hpp" local="yes">ostendo_files/text_box.hpp</includedby>
+    <includedby refid="ostendo__headers_8hpp" local="yes">ostendo_files/ostendo_headers.hpp</includedby>
+    <includedby refid="form_8cpp" local="yes">ostendo_files/form.cpp</includedby>
+    <includedby refid="menu_8cpp" local="yes">ostendo_files/menu.cpp</includedby>
+    <includedby refid="text__box_8cpp" local="yes">ostendo_files/text_box.cpp</includedby>
+    <includedby refid="window_8cpp" local="yes">ostendo_files/window.cpp</includedby>
+    <incdepgraph>
+      <node id="155">
+        <label>types.hpp</label>
+        <link refid="types_8hpp_source"/>
+        <childnode refid="153" relation="include">
+        </childnode>
+        <childnode refid="154" relation="include">
+        </childnode>
+      </node>
+      <node id="153">
+        <label>string</label>
+      </node>
+      <node id="152">
+        <label>map</label>
+      </node>
+      <node id="154">
+        <label>vector</label>
+      </node>
+      <node id="151">
+        <label>ncurses.h</label>
+      </node>
+      <node id="150">
+        <label>ostendo_files/window.hpp</label>
+        <link refid="window.hpp"/>
+        <childnode refid="151" relation="include">
+        </childnode>
+        <childnode refid="152" relation="include">
+        </childnode>
+        <childnode refid="153" relation="include">
+        </childnode>
+        <childnode refid="154" relation="include">
+        </childnode>
+        <childnode refid="155" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="160">
+        <label>ostendo_files/menu.hpp</label>
+        <link refid="menu_8hpp_source"/>
+        <childnode refid="158" relation="include">
+        </childnode>
+      </node>
+      <node id="159">
+        <label>ostendo.h</label>
+        <link refid="ostendo_8h_source"/>
+      </node>
+      <node id="161">
+        <label>ostendo_files/ostendo.hpp</label>
+        <link refid="ostendo_8hpp_source"/>
+        <childnode refid="158" relation="include">
+        </childnode>
+      </node>
+      <node id="158">
+        <label>ostendo_files/ostendo_headers.hpp</label>
+        <link refid="ostendo__headers_8hpp_source"/>
+        <childnode refid="159" relation="include">
+        </childnode>
+      </node>
+      <node id="157">
+        <label>ostendo_files/form.hpp</label>
+        <link refid="form_8hpp_source"/>
+        <childnode refid="158" relation="include">
+        </childnode>
+      </node>
+      <node id="162">
+        <label>ostendo_files/text_box.hpp</label>
+        <link refid="text__box_8hpp_source"/>
+        <childnode refid="158" relation="include">
+        </childnode>
+      </node>
+      <node id="156">
+        <label>ostendo_files/window.hpp</label>
+        <link refid="window.hpp"/>
+        <childnode refid="157" relation="include">
+        </childnode>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="161" relation="include">
+        </childnode>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="158" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classostendo_1_1Window" prot="public">ostendo::Window</innerclass>
+    <innernamespace refid="namespaceostendo">ostendo</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>OSTENDO_WINDOW_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OSTENDO_WINDOW_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ncurses.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;types.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceostendo" kindref="compound">ostendo</ref><sp/>{</highlight></codeline>
+<codeline lineno="10" refid="namespaceostendo_1aa031b855a10fa72d112d6b7287c8f2ec" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespaceostendo_1aa031b855a10fa72d112d6b7287c8f2ec" kindref="member">WINDOW_PARTS</ref><sp/>{</highlight></codeline>
+<codeline lineno="11" refid="namespaceostendo_1aa031b855a10fa72d112d6b7287c8f2eca26a94c1892f3cbff5ab7e6d31b5cb77c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostendo_1aa031b855a10fa72d112d6b7287c8f2eca26a94c1892f3cbff5ab7e6d31b5cb77c" kindref="member">WIN_BORDER</ref><sp/>=<sp/>1,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="12" refid="namespaceostendo_1aa031b855a10fa72d112d6b7287c8f2eca9c4bc15f158c6523e71a9a66b020fbab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostendo_1aa031b855a10fa72d112d6b7287c8f2eca9c4bc15f158c6523e71a9a66b020fbab" kindref="member">WIN_TITLE</ref><sp/>=<sp/>2,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="13" refid="namespaceostendo_1aa031b855a10fa72d112d6b7287c8f2eca177402ad0ac6b02593972fedbc58020e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostendo_1aa031b855a10fa72d112d6b7287c8f2eca177402ad0ac6b02593972fedbc58020e" kindref="member">WIN_TEXT</ref><sp/>=<sp/>3,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="14" refid="namespaceostendo_1aa031b855a10fa72d112d6b7287c8f2ecac01b3c91073d3e21325cc8a082cd7baa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostendo_1aa031b855a10fa72d112d6b7287c8f2ecac01b3c91073d3e21325cc8a082cd7baa" kindref="member">WIN_BACKGROUND</ref><sp/>=<sp/>4<sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="17" refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6" kindref="member">ATTRS</ref><sp/>{</highlight></codeline>
+<codeline lineno="18" refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6aaf0b8945bf817b057d16dabd79fdbf05" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6aaf0b8945bf817b057d16dabd79fdbf05" kindref="member">ALTCHAR</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="19" refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6a0ad98e6d41bc73832fa0cec6194d02d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6a0ad98e6d41bc73832fa0cec6194d02d3" kindref="member">BLINK</ref><sp/>=<sp/>2,<sp/></highlight></codeline>
+<codeline lineno="20" refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6a434b908118752e03181b584a12f497fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6a434b908118752e03181b584a12f497fc" kindref="member">BOLD</ref><sp/>=<sp/>3,<sp/><sp/></highlight></codeline>
+<codeline lineno="21" refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6a6e9f2e6ee917da1f2ebfa80cf004c442" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6a6e9f2e6ee917da1f2ebfa80cf004c442" kindref="member">DIM</ref><sp/>=<sp/>4,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="22" refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6ae4cc920865a0016b81290e5259d9f60f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6ae4cc920865a0016b81290e5259d9f60f" kindref="member">INVIS</ref><sp/>=<sp/>5,<sp/></highlight></codeline>
+<codeline lineno="23" refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6af6041deb5c5e9bdc72db61bef8bbb0fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6af6041deb5c5e9bdc72db61bef8bbb0fd" kindref="member">PROTECT</ref><sp/>=<sp/>5,<sp/><sp/></highlight></codeline>
+<codeline lineno="24" refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6a88187ffc48ef6b41163c10634644e1a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6a88187ffc48ef6b41163c10634644e1a8" kindref="member">REVERSE</ref><sp/>=<sp/>6,<sp/><sp/></highlight></codeline>
+<codeline lineno="25" refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6a50201ccd0790154700be098072253dcd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6a50201ccd0790154700be098072253dcd" kindref="member">STANDOUT</ref><sp/>=<sp/>7,<sp/></highlight></codeline>
+<codeline lineno="26" refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6af00877dea0b044edc80f9205f5695f0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6af00877dea0b044edc80f9205f5695f0d" kindref="member">UNDERLINE</ref><sp/>=<sp/>8<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="29"></codeline>
+<codeline lineno="32" refid="classostendo_1_1Window" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classostendo_1_1Window" kindref="compound">Window</ref><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="35"></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostendo_1_1Window_1a3e01eaa1fdbbb8be629165078169b60c" kindref="member">Window</ref>();</highlight></codeline>
+<codeline lineno="39"></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostendo_1_1Window_1a3e01eaa1fdbbb8be629165078169b60c" kindref="member">Window</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="44"></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostendo_1_1Window_1a3e01eaa1fdbbb8be629165078169b60c" kindref="member">Window</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="51"></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostendo_1_1Window_1a3e01eaa1fdbbb8be629165078169b60c" kindref="member">Window</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos_x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos_y);</highlight></codeline>
+<codeline lineno="58"></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostendo_1_1Window_1a3e01eaa1fdbbb8be629165078169b60c" kindref="member">Window</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pos_x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pos_y);</highlight></codeline>
+<codeline lineno="68"></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostendo_1_1Window_1a3e01eaa1fdbbb8be629165078169b60c" kindref="member">Window</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pos_x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pos_y);</highlight></codeline>
+<codeline lineno="78"></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostendo_1_1Window_1a3e01eaa1fdbbb8be629165078169b60c" kindref="member">Window</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos_x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos_y);</highlight></codeline>
+<codeline lineno="87"></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostendo_1_1Window_1a3e01eaa1fdbbb8be629165078169b60c" kindref="member">Window</ref>(<ref refid="structostendo_1_1Pos" kindref="compound">Pos</ref><sp/>pos);</highlight></codeline>
+<codeline lineno="94"></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostendo_1_1Window_1a3e01eaa1fdbbb8be629165078169b60c" kindref="member">Window</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window" kindref="compound">Window</ref>&amp;<sp/>win);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*Deletes<sp/>all<sp/>window<sp/>data,<sp/>and<sp/>erases<sp/>ncurses<sp/>window.<sp/>Should<sp/>be<sp/>called</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>before<sp/>dereferencing<sp/>window<sp/>objects.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1a4d2cdcaf3c4a781e7c0e46b52c693e54" kindref="member">DelWin</ref>();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1a34de0bce2e7291c403dc0118309095fe" kindref="member">NewWindow</ref>();</highlight></codeline>
+<codeline lineno="109"></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1a34de0bce2e7291c403dc0118309095fe" kindref="member">NewWindow</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="114"></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1a34de0bce2e7291c403dc0118309095fe" kindref="member">NewWindow</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="121"></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1a34de0bce2e7291c403dc0118309095fe" kindref="member">NewWindow</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos_x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos_y);</highlight></codeline>
+<codeline lineno="128"></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1a34de0bce2e7291c403dc0118309095fe" kindref="member">NewWindow</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pos_x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pos_y);</highlight></codeline>
+<codeline lineno="138"></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1a34de0bce2e7291c403dc0118309095fe" kindref="member">NewWindow</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pos_x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pos_y);</highlight></codeline>
+<codeline lineno="148"></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1a34de0bce2e7291c403dc0118309095fe" kindref="member">NewWindow</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos_x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos_y);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1a31f6220b282ed1bf705a0d95d52cd051" kindref="member">Update</ref>();</highlight></codeline>
+<codeline lineno="163"></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1a0f4f6327f9f42fa76c08d18d97059d7c" kindref="member">ToggleBorder</ref>();</highlight></codeline>
+<codeline lineno="167"></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1ac02e38f9ad5b08a18f3bcc7b70a0944e" kindref="member">ToggleScroll</ref>();</highlight></codeline>
+<codeline lineno="171"></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1a7772b7589637c6ddebd87697c47aefc3" kindref="member">ToggleTitle</ref>(std::string<sp/>setting<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1a3d4579a58a6e14b7032390b17fca2313" kindref="member">SetAutoUpdate</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>setting<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1a4944301b33c64531c83c2bba55c35bc6" kindref="member">ColorOn</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>attrs);</highlight></codeline>
+<codeline lineno="188"></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1a903272ec03cce94e8505dcd9f3317375" kindref="member">ColorOff</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>attrs);</highlight></codeline>
+<codeline lineno="193"></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1ab91a9f66a8f05e9349905ec9b1623de4" kindref="member">AttrOn</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>attrs);</highlight></codeline>
+<codeline lineno="199"></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1aa2e4c33da0d446f52e7c34d1ec781bbc" kindref="member">AttrOff</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>attrs);</highlight></codeline>
+<codeline lineno="205"></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1adde21c9878a3d8dd0d94ae68d58040cb" kindref="member">SetColor</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>color,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="211"></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1ae4c005e63e6b15c5e9b940025a80b90d" kindref="member">Clear</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>all<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="216"></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1abaa3685e5937a29aabd7acf078b789c1" kindref="member">ClearLine</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line<sp/>=<sp/>-1);</highlight></codeline>
+<codeline lineno="222"></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1a1781807aea1eb5dedc9f2885e41fcd2b" kindref="member">Print</ref>(std::string<sp/>str,<sp/>...);</highlight></codeline>
+<codeline lineno="237"></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostendo_1_1Window_1a4e6839482997c00795f3c4191d80b3c4" kindref="member">SetCurs</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y<sp/>=<sp/>-1,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x<sp/>=<sp/>-1);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"></codeline>
+<codeline lineno="247" refid="classostendo_1_1Window_1a4a67da930b3dda1951fef1d506d83980" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>WINDOW*<sp/><ref refid="classostendo_1_1Window_1a4a67da930b3dda1951fef1d506d83980" kindref="member">operator()</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(window_pointer);<sp/>}</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249" refid="classostendo_1_1Window_1a17ba58f5d7098c05f56550db36b64a9b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structostendo_1_1Pos" kindref="compound">Pos</ref><sp/><ref refid="classostendo_1_1Window_1a17ba58f5d7098c05f56550db36b64a9b" kindref="member">window_space</ref>;<sp/></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="254"></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GenWindow();</highlight></codeline>
+<codeline lineno="260"></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>DrawBorder();</highlight></codeline>
+<codeline lineno="265"></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>DrawTitle();</highlight></codeline>
+<codeline lineno="270"></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>LastLine();</highlight></codeline>
+<codeline lineno="277"></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsInt(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>ch);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/>WINDOW*<sp/>window_pointer<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>window_border<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>window_title<sp/>=</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>window_scroll<sp/>=</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>auto_update<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>window_title_str;<sp/></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;unsigned<sp/>long&gt;<sp/>border_character_set<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ACS_VLINE,<sp/><sp/><sp/><sp/>ACS_VLINE,<sp/><sp/><sp/><sp/>ACS_HLINE,<sp/><sp/><sp/>ACS_HLINE,<sp/>ACS_ULCORNER,</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ACS_URCORNER,<sp/>ACS_LLCORNER,<sp/>ACS_LRCORNER};<sp/></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structostendo_1_1Pos" kindref="compound">Pos</ref><sp/>window_pos;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>std::pair&lt;int,<sp/>int&gt;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>curs;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>border_color<sp/>=<sp/>70,<sp/></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>title_color<sp/>=<sp/>70,<sp/><sp/></highlight><highlight class="comment">/*&lt;Color<sp/>to<sp/>draw<sp/>the<sp/>window<sp/>title*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>background_color<sp/>=<sp/>70,<sp/></highlight><highlight class="comment">/*&lt;Color<sp/>to<sp/>draw<sp/>the<sp/>background<sp/>of<sp/>the<sp/>window*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>text_color<sp/>=<sp/>70;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="308"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ostendo_files/window.hpp"/>
+  </compounddef>
+</doxygen>

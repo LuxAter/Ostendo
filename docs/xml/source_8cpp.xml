@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="source_8cpp" kind="file" language="C++">
+    <compoundname>source.cpp</compoundname>
+    <includes local="no">ncurses.h</includes>
+    <includes local="no">pessum.h</includes>
+    <includes local="no">iostream</includes>
+    <includes refid="ostendo__headers_8hpp" local="yes">ostendo_files/ostendo_headers.hpp</includes>
+    <incdepgraph>
+      <node id="176">
+        <label>queue</label>
+      </node>
+      <node id="170">
+        <label>types.hpp</label>
+        <link refid="types_8hpp_source"/>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+      </node>
+      <node id="163">
+        <label>source.cpp</label>
+        <link refid="source.cpp"/>
+        <childnode refid="164" relation="include">
+        </childnode>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+      </node>
+      <node id="174">
+        <label>menu.hpp</label>
+        <link refid="menu_8hpp_source"/>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+      </node>
+      <node id="175">
+        <label>ostendo.hpp</label>
+        <link refid="ostendo_8hpp_source"/>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="177" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+      </node>
+      <node id="171">
+        <label>string</label>
+      </node>
+      <node id="173">
+        <label>map</label>
+      </node>
+      <node id="165">
+        <label>pessum.h</label>
+      </node>
+      <node id="169">
+        <label>vector</label>
+      </node>
+      <node id="177">
+        <label>utility</label>
+      </node>
+      <node id="166">
+        <label>iostream</label>
+      </node>
+      <node id="164">
+        <label>ncurses.h</label>
+      </node>
+      <node id="167">
+        <label>ostendo_files/ostendo_headers.hpp</label>
+        <link refid="ostendo__headers_8hpp_source"/>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="174" relation="include">
+        </childnode>
+        <childnode refid="175" relation="include">
+        </childnode>
+        <childnode refid="178" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+      </node>
+      <node id="168">
+        <label>form.hpp</label>
+        <link refid="form_8hpp_source"/>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+      </node>
+      <node id="178">
+        <label>text_box.hpp</label>
+        <link refid="text__box_8hpp_source"/>
+        <childnode refid="172" relation="include">
+        </childnode>
+      </node>
+      <node id="172">
+        <label>window.hpp</label>
+        <link refid="window_8hpp_source"/>
+        <childnode refid="164" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="source_8cpp_1abf9e6b7e6f15df4b525a2e7705ba3089" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char const *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char const *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source.cpp" line="6" column="1" bodyfile="source.cpp" bodystart="6" bodyend="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;ncurses.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pessum.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ostendo_files/ostendo_headers.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>argv[])<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><ref refid="namespaceostendo_1acada6eef78aaae2a103761e6b3122a7c" kindref="member">ostendo::InitOstendo</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><ref refid="classostendo_1_1Window" kindref="compound">ostendo::Window</ref><sp/>win;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/>win.<ref refid="classostendo_1_1Window_1a0f4f6327f9f42fa76c08d18d97059d7c" kindref="member">ToggleBorder</ref>();</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/>win.<ref refid="classostendo_1_1Window_1a7772b7589637c6ddebd87697c47aefc3" kindref="member">ToggleTitle</ref>(</highlight><highlight class="stringliteral">&quot;HELLO&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><ref refid="namespaceostendo_1a3d2c591339109330938a42d576c9e81d" kindref="member">TextBox</ref>(win);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><ref refid="namespaceostendo_1ae151d449ffec660866ee7c8ac75892da" kindref="member">ostendo::TermOstendo</ref>();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/>pessum::SaveLog(</highlight><highlight class="stringliteral">&quot;out.log&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="source.cpp"/>
+  </compounddef>
+</doxygen>

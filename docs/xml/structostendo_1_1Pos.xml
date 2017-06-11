@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structostendo_1_1Pos" kind="struct" language="C++" prot="public">
+    <compoundname>ostendo::Pos</compoundname>
+    <includes refid="types_8hpp" local="no">types.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structostendo_1_1Pos_1a123081aea927725b236b54b208b491f7" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ostendo::Pos::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>X term of the position data. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="49" column="1" bodyfile="ostendo_files/types.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structostendo_1_1Pos_1a896a4cd18785ab58133d2f1eeea49fab" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ostendo::Pos::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Y term of the position data. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="50" column="1" bodyfile="ostendo_files/types.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structostendo_1_1Pos_1ab5fd0f24e24d324fbd2fdab6b474ad6d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ostendo::Pos::w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Width term for the position data. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="51" column="1" bodyfile="ostendo_files/types.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structostendo_1_1Pos_1a5767feb86934899b7916e5a0cc5093f0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ostendo::Pos::h</definition>
+        <argsstring></argsstring>
+        <name>h</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Height term for the position data. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="52" column="1" bodyfile="ostendo_files/types.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structostendo_1_1Pos_1a6d76a3381e3fa97a8491907f028e9584" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ostendo::Pos::Pos</definition>
+        <argsstring>()</argsstring>
+        <name>Pos</name>
+        <briefdescription>
+<para>Creates new position. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates position with zero for all terms </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="18" column="1" bodyfile="ostendo_files/types.hpp" bodystart="18" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Pos_1a2a22e8ea6064992f404769b93f685669" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ostendo::Pos::Pos</definition>
+        <argsstring>(int value_x, int value_y)</argsstring>
+        <name>Pos</name>
+        <param>
+          <type>int</type>
+          <declname>value_x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value_y</declname>
+        </param>
+        <briefdescription>
+<para>Creates new position. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates position with set x and y position, and width and height are set to zero <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value_x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for the X position. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for the y position. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="30" column="1" bodyfile="ostendo_files/types.hpp" bodystart="30" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structostendo_1_1Pos_1a3401ddc5e051daa5d6e485fc3c12edcf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ostendo::Pos::Pos</definition>
+        <argsstring>(int value_x, int value_y, int value_w, int value_h)</argsstring>
+        <name>Pos</name>
+        <param>
+          <type>int</type>
+          <declname>value_x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value_y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value_w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value_h</declname>
+        </param>
+        <briefdescription>
+<para>Creates new position. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates position data with set x, y, width, and height data <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value_x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for the x position. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for the y position. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value_w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for the width. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value_h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for the height. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ostendo_files/types.hpp" line="43" column="1" bodyfile="ostendo_files/types.hpp" bodystart="43" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure to contains position/size data. </para>    </briefdescription>
+    <detaileddescription>
+<para>Contains the x, y positional data, and the width, height size data. </para>    </detaileddescription>
+    <location file="ostendo_files/types.hpp" line="15" column="1" bodyfile="ostendo_files/types.hpp" bodystart="15" bodyend="53"/>
+    <listofallmembers>
+      <member refid="structostendo_1_1Pos_1a5767feb86934899b7916e5a0cc5093f0" prot="public" virt="non-virtual"><scope>ostendo::Pos</scope><name>h</name></member>
+      <member refid="structostendo_1_1Pos_1a6d76a3381e3fa97a8491907f028e9584" prot="public" virt="non-virtual"><scope>ostendo::Pos</scope><name>Pos</name></member>
+      <member refid="structostendo_1_1Pos_1a2a22e8ea6064992f404769b93f685669" prot="public" virt="non-virtual"><scope>ostendo::Pos</scope><name>Pos</name></member>
+      <member refid="structostendo_1_1Pos_1a3401ddc5e051daa5d6e485fc3c12edcf" prot="public" virt="non-virtual"><scope>ostendo::Pos</scope><name>Pos</name></member>
+      <member refid="structostendo_1_1Pos_1ab5fd0f24e24d324fbd2fdab6b474ad6d" prot="public" virt="non-virtual"><scope>ostendo::Pos</scope><name>w</name></member>
+      <member refid="structostendo_1_1Pos_1a123081aea927725b236b54b208b491f7" prot="public" virt="non-virtual"><scope>ostendo::Pos</scope><name>x</name></member>
+      <member refid="structostendo_1_1Pos_1a896a4cd18785ab58133d2f1eeea49fab" prot="public" virt="non-virtual"><scope>ostendo::Pos</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

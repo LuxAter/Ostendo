@@ -1,0 +1,2050 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Welcome to Pessum’s documentation! &#8212; Pessum 2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-pessum-s-documentation">
+<h1>Welcome to Pessum&#8217;s documentation!<a class="headerlink" href="#welcome-to-pessum-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="class">
+<dt id="_CPPv2N7ostendo3PosE">
+<span id="ostendo::Pos"></span><span class="target" id="Pessumstructostendo_1_1Pos"></span><em class="property">struct </em><code class="descname">Pos</code><a class="headerlink" href="#_CPPv2N7ostendo3PosE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;types.hpp&gt;</em><p>Structure to contains position/size data. </p>
+<p>Contains the x, y positional data, and the width, height size data. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Pos3PosEv">
+<span id="ostendo::Pos::Pos"></span><span class="target" id="Pessumstructostendo_1_1Pos_1a6d76a3381e3fa97a8491907f028e9584"></span><code class="descname">Pos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Pos3PosEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates new position. </p>
+<p>Creates position with zero for all terms </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Pos3PosEii">
+<span id="ostendo::Pos::Pos__i.i"></span><span class="target" id="Pessumstructostendo_1_1Pos_1a2a22e8ea6064992f404769b93f685669"></span><code class="descname">Pos</code><span class="sig-paren">(</span>int <em>value_x</em>, int <em>value_y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Pos3PosEii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates new position. </p>
+<p>Creates position with set x and y position, and width and height are set to zero <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">value_x</span></code>: Value for the X position. </li>
+<li><code class="docutils literal"><span class="pre">value_y</span></code>: Value for the y position. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Pos3PosEiiii">
+<span id="ostendo::Pos::Pos__i.i.i.i"></span><span class="target" id="Pessumstructostendo_1_1Pos_1a3401ddc5e051daa5d6e485fc3c12edcf"></span><code class="descname">Pos</code><span class="sig-paren">(</span>int <em>value_x</em>, int <em>value_y</em>, int <em>value_w</em>, int <em>value_h</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Pos3PosEiiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates new position. </p>
+<p>Creates position data with set x, y, width, and height data <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">value_x</span></code>: Value for the x position. </li>
+<li><code class="docutils literal"><span class="pre">value_y</span></code>: Value for the y position. </li>
+<li><code class="docutils literal"><span class="pre">value_w</span></code>: Value for the width. </li>
+<li><code class="docutils literal"><span class="pre">value_h</span></code>: Value for the height. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N7ostendo3Pos1xE">
+<span id="ostendo::Pos::x__i"></span><span class="target" id="Pessumstructostendo_1_1Pos_1a123081aea927725b236b54b208b491f7"></span>int <code class="descname">x</code><a class="headerlink" href="#_CPPv2N7ostendo3Pos1xE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>X term of the position data. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo3Pos1yE">
+<span id="ostendo::Pos::y__i"></span><span class="target" id="Pessumstructostendo_1_1Pos_1a896a4cd18785ab58133d2f1eeea49fab"></span>int <code class="descname">y</code><a class="headerlink" href="#_CPPv2N7ostendo3Pos1yE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Y term of the position data. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo3Pos1wE">
+<span id="ostendo::Pos::w__i"></span><span class="target" id="Pessumstructostendo_1_1Pos_1ab5fd0f24e24d324fbd2fdab6b474ad6d"></span>int <code class="descname">w</code><a class="headerlink" href="#_CPPv2N7ostendo3Pos1wE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Width term for the position data. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo3Pos1hE">
+<span id="ostendo::Pos::h__i"></span><span class="target" id="Pessumstructostendo_1_1Pos_1a5767feb86934899b7916e5a0cc5093f0"></span>int <code class="descname">h</code><a class="headerlink" href="#_CPPv2N7ostendo3Pos1hE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Height term for the position data. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7ostendo3VarE">
+<span id="ostendo::Var"></span><span class="target" id="Pessumstructostendo_1_1Var"></span><em class="property">struct </em><code class="descname">Var</code><a class="headerlink" href="#_CPPv2N7ostendo3VarE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;types.hpp&gt;</em><p>Structure to use as general variable. </p>
+<p>Structure that can act as a variable for int, double, string, or bool </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var3VarEv">
+<span id="ostendo::Var::Var"></span><span class="target" id="Pessumstructostendo_1_1Var_1addaf85e46b9bfd2d98b5bc8200b06c5b"></span><code class="descname">Var</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var3VarEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates new <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>. </p>
+<p>Creates the default variable, with standard values for all terms. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var3VarEi">
+<span id="ostendo::Var::Var__i"></span><span class="target" id="Pessumstructostendo_1_1Var_1a271aecf1954157dc34985a7a2ef506b9"></span><code class="descname">Var</code><span class="sig-paren">(</span>int <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var3VarEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates new <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>. </p>
+<p>Creates new integer variable. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">value</span></code>: Integer value for variable. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var3VarEd">
+<span id="ostendo::Var::Var__double"></span><span class="target" id="Pessumstructostendo_1_1Var_1a77cedab74802b291425fddee5465df39"></span><code class="descname">Var</code><span class="sig-paren">(</span>double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var3VarEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates new <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>. </p>
+<p>Creates new double variable. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">value</span></code>: Double value for variable. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var3VarENSt6stringE">
+<span id="ostendo::Var::Var__ss"></span><span class="target" id="Pessumstructostendo_1_1Var_1a6af5058ed312a3860389b3a15947aacd"></span><code class="descname">Var</code><span class="sig-paren">(</span>std::string <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var3VarENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates new <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>. </p>
+<p>Creates new string variable. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">value</span></code>: String value for variable. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var3VarEb">
+<span id="ostendo::Var::Var__b"></span><span class="target" id="Pessumstructostendo_1_1Var_1a1c3bc2ea850b6748989a70f82f73c62a"></span><code class="descname">Var</code><span class="sig-paren">(</span>bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var3VarEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates new <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>. </p>
+<p>Creates new boolian variable. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">value</span></code>: Boolian value for variable. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var3VarENSt6stringEi">
+<span id="ostendo::Var::Var__ss.i"></span><span class="target" id="Pessumstructostendo_1_1Var_1a54737db1fa6cd70f182ad2a7b1904f7d"></span><code class="descname">Var</code><span class="sig-paren">(</span>std::string <em>str_name</em>, int <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var3VarENSt6stringEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates new <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>. </p>
+<p>Creates a new integer variable. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">str_name</span></code>: Name of variable. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: Integer value for variable. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var3VarENSt6stringEd">
+<span id="ostendo::Var::Var__ss.double"></span><span class="target" id="Pessumstructostendo_1_1Var_1a12e2c20b81280d34d13a77b39c57f96d"></span><code class="descname">Var</code><span class="sig-paren">(</span>std::string <em>str_name</em>, double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var3VarENSt6stringEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates new <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>. </p>
+<p>Creates a new double variable. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">str_name</span></code>: Name of variable. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: Double value for variable. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var3VarENSt6stringENSt6stringE">
+<span id="ostendo::Var::Var__ss.ss"></span><span class="target" id="Pessumstructostendo_1_1Var_1aa80859e63a7df5c1beab958e621637b8"></span><code class="descname">Var</code><span class="sig-paren">(</span>std::string <em>str_name</em>, std::string <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var3VarENSt6stringENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates new <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>. </p>
+<p>Creates a new string variable. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">str_name</span></code>: Name of variable. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: String value for variable. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var3VarENSt6stringEb">
+<span id="ostendo::Var::Var__ss.b"></span><span class="target" id="Pessumstructostendo_1_1Var_1a2a1b2e8999f04386e78330662734fc52"></span><code class="descname">Var</code><span class="sig-paren">(</span>std::string <em>str_name</em>, bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var3VarENSt6stringEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates new <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>. </p>
+<p>Creates a new boolian variable. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">str_name</span></code>: Name of variable. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: Boolian value for variable. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var3VarENSt6stringENSt6vectorIiEEi">
+<span id="ostendo::Var::Var__ss.std::vector:i:.i"></span><span class="target" id="Pessumstructostendo_1_1Var_1add66e15a270e6dc6dbdc81e707ebae2a"></span><code class="descname">Var</code><span class="sig-paren">(</span>std::string <em>str_name</em>, std::vector&lt;int&gt; <em>set</em>, int <em>value</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var3VarENSt6stringENSt6vectorIiEEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates new <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> set. </p>
+<p>Creates new variable set of integers with given default. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">str_name</span></code>: Name of variable. </li>
+<li><code class="docutils literal"><span class="pre">set</span></code>: Set of integer options. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: Default option from the set. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var3VarENSt6stringENSt6vectorIdEEi">
+<span id="ostendo::Var::Var__ss.std::vector:double:.i"></span><span class="target" id="Pessumstructostendo_1_1Var_1ab359f9ded169486b261d4aca717acee1"></span><code class="descname">Var</code><span class="sig-paren">(</span>std::string <em>str_name</em>, std::vector&lt;double&gt; <em>set</em>, int <em>value</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var3VarENSt6stringENSt6vectorIdEEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates new <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> set. </p>
+<p>Creates new variable set of doubles with given default. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">str_name</span></code>: Name of variable. </li>
+<li><code class="docutils literal"><span class="pre">set</span></code>: Set of double options. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: Default option from the set. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var3VarENSt6stringENSt6vectorINSt6stringEEEi">
+<span id="ostendo::Var::Var__ss.std::vector:ss:.i"></span><span class="target" id="Pessumstructostendo_1_1Var_1af987ac6b851f5d62984e32f54850ae70"></span><code class="descname">Var</code><span class="sig-paren">(</span>std::string <em>str_name</em>, std::vector&lt;std::string&gt; <em>set</em>, int <em>value</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var3VarENSt6stringENSt6vectorINSt6stringEEEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates new <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> set. </p>
+<p>Creates new variable set of strings with given default. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">str_name</span></code>: Name of variable. </li>
+<li><code class="docutils literal"><span class="pre">set</span></code>: Set of strings options. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: Default option from the set. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3VaraSEi">
+<span id="ostendo::Var::assign-operator__i"></span><span class="target" id="Pessumstructostendo_1_1Var_1a89b2842e7aad2fdf3ae21070655bb436"></span>void <code class="descname">operator=</code><span class="sig-paren">(</span>int <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3VaraSEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the value of the variable. </p>
+<p>Sets the variable to the given integer value. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">value</span></code>: Value to set variable to. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3VaraSEd">
+<span id="ostendo::Var::assign-operator__double"></span><span class="target" id="Pessumstructostendo_1_1Var_1a828c7ab4e4b53030cea5e94aa34d84d5"></span>void <code class="descname">operator=</code><span class="sig-paren">(</span>double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3VaraSEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the value of the variable. </p>
+<p>Sets the variable to the given double value. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">value</span></code>: Value to set variable to. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3VaraSENSt6stringE">
+<span id="ostendo::Var::assign-operator__ss"></span><span class="target" id="Pessumstructostendo_1_1Var_1a5f9e9d7249cd02d28765d21bf3a80fe5"></span>void <code class="descname">operator=</code><span class="sig-paren">(</span>std::string <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3VaraSENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the value of the variable. </p>
+<p>Sets the variable to the given string value. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">value</span></code>: Value to set variable to. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3VaraSEb">
+<span id="ostendo::Var::assign-operator__b"></span><span class="target" id="Pessumstructostendo_1_1Var_1a33de8632f442f7751af96d471dae1321"></span>void <code class="descname">operator=</code><span class="sig-paren">(</span>bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3VaraSEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the value of the variable. </p>
+<p>Sets the variable to the given boolian value. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">value</span></code>: Value to set variable to. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var6SetSetENSt6vectorIiEE">
+<span id="ostendo::Var::SetSet__std::vector:i:"></span><span class="target" id="Pessumstructostendo_1_1Var_1a16f5d751d92892e903d3631707fd5ea0"></span>void <code class="descname">SetSet</code><span class="sig-paren">(</span>std::vector&lt;int&gt; <em>set</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var6SetSetENSt6vectorIiEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the set of the variable. </p>
+<p>Set the variable set to a set of integers. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">set</span></code>: Set of integers to use in the variable. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var6SetSetENSt6vectorIdEE">
+<span id="ostendo::Var::SetSet__std::vector:double:"></span><span class="target" id="Pessumstructostendo_1_1Var_1a796286e938479ad4d3194915a702defa"></span>void <code class="descname">SetSet</code><span class="sig-paren">(</span>std::vector&lt;double&gt; <em>set</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var6SetSetENSt6vectorIdEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the set of the variable. </p>
+<p>Set the variable set to a set of doubles. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">set</span></code>: Set of doubles to use in the variable. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var6SetSetENSt6vectorINSt6stringEEE">
+<span id="ostendo::Var::SetSet__std::vector:ss:"></span><span class="target" id="Pessumstructostendo_1_1Var_1aaa2ebfdc3a5099f234fe105a040cafca"></span>void <code class="descname">SetSet</code><span class="sig-paren">(</span>std::vector&lt;std::string&gt; <em>set</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var6SetSetENSt6vectorINSt6stringEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the set of the variable. </p>
+<p>Set the variable set to a set of strings. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">set</span></code>: Set of strings to use in the variable. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var3IntEv">
+<span id="ostendo::Var::Int"></span><span class="target" id="Pessumstructostendo_1_1Var_1a8112500b840ee7aaee88aeeca6fec4c0"></span>int <code class="descname">Int</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var3IntEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns integer value of the variable. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var6DoubleEv">
+<span id="ostendo::Var::Double"></span><span class="target" id="Pessumstructostendo_1_1Var_1ae9a72f83d152e152dfa0054f05a5bd1a"></span>double <code class="descname">Double</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var6DoubleEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the double value of the varaible. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var6StringEv">
+<span id="ostendo::Var::String"></span><span class="target" id="Pessumstructostendo_1_1Var_1a0121e8cbc76819c9aec406a0352654ed"></span>std::string <code class="descname">String</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var6StringEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the string value of the variable. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var4BoolEv">
+<span id="ostendo::Var::Bool"></span><span class="target" id="Pessumstructostendo_1_1Var_1a0a7a7fb0f19d34d6e2b5da7eff8ed331"></span>bool <code class="descname">Bool</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var4BoolEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the boolian value of the variable. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3Var4NameEv">
+<span id="ostendo::Var::Name"></span><span class="target" id="Pessumstructostendo_1_1Var_1a27b5e7f947ca4e37a827d8a4b6614a04"></span>std::string <code class="descname">Name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3Var4NameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the name of the variable. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N7ostendo3Var7has_setE">
+<span id="ostendo::Var::has_set__b"></span><span class="target" id="Pessumstructostendo_1_1Var_1a2ad63d508b2a224a9cc14479e5b1047a"></span>bool <code class="descname">has_set</code><a class="headerlink" href="#_CPPv2N7ostendo3Var7has_setE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Boolian determining if variable is a set. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo3Var4nameE">
+<span id="ostendo::Var::name__ss"></span><span class="target" id="Pessumstructostendo_1_1Var_1a4cf546206d7a22a8008d7b3125a30660"></span>std::string <code class="descname">name</code><a class="headerlink" href="#_CPPv2N7ostendo3Var4nameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Name of variable. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo3Var8var_typeE">
+<span id="ostendo::Var::var_type__i"></span><span class="target" id="Pessumstructostendo_1_1Var_1a92514adaf052e5007dbe53dda9de008f"></span>int <code class="descname">var_type</code><a class="headerlink" href="#_CPPv2N7ostendo3Var8var_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Variable type setting from VarTypes.<dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1ae78fb0e171a88eb8820d8d6a894463f4"><span class="std std-ref">VarType</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo3Var9int_valueE">
+<span id="ostendo::Var::int_value__i"></span><span class="target" id="Pessumstructostendo_1_1Var_1ad3e0add5d4dc88469d768bfa0c743379"></span>int <code class="descname">int_value</code><a class="headerlink" href="#_CPPv2N7ostendo3Var9int_valueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer value. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo3Var12double_valueE">
+<span id="ostendo::Var::double_value__double"></span><span class="target" id="Pessumstructostendo_1_1Var_1a034ed342b05d98766cc628974ab4a0f5"></span>double <code class="descname">double_value</code><a class="headerlink" href="#_CPPv2N7ostendo3Var12double_valueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Double value. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo3Var9str_valueE">
+<span id="ostendo::Var::str_value__ss"></span><span class="target" id="Pessumstructostendo_1_1Var_1a8e4299f745a15349c7b665a25475bdca"></span>std::string <code class="descname">str_value</code><a class="headerlink" href="#_CPPv2N7ostendo3Var9str_valueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>String value. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo3Var10bool_valueE">
+<span id="ostendo::Var::bool_value__b"></span><span class="target" id="Pessumstructostendo_1_1Var_1ad99e4f66f5e7ae44aa4bdd7f1a4e9f79"></span>bool <code class="descname">bool_value</code><a class="headerlink" href="#_CPPv2N7ostendo3Var10bool_valueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Boolian value. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo3Var7int_setE">
+<span id="ostendo::Var::int_set__std::vector:i:"></span><span class="target" id="Pessumstructostendo_1_1Var_1a169462deb8fb9e599777840a58fffc0d"></span>std::vector&lt;int&gt; <code class="descname">int_set</code><a class="headerlink" href="#_CPPv2N7ostendo3Var7int_setE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set of integer options. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo3Var10double_setE">
+<span id="ostendo::Var::double_set__std::vector:double:"></span><span class="target" id="Pessumstructostendo_1_1Var_1a78ebcf6a3207f950286c6188cb97359c"></span>std::vector&lt;double&gt; <code class="descname">double_set</code><a class="headerlink" href="#_CPPv2N7ostendo3Var10double_setE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set of double options. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo3Var7str_setE">
+<span id="ostendo::Var::str_set__std::vector:ss:"></span><span class="target" id="Pessumstructostendo_1_1Var_1ad900a259793059d2c7ed2ca1767bd6b8"></span>std::vector&lt;std::string&gt; <code class="descname">str_set</code><a class="headerlink" href="#_CPPv2N7ostendo3Var7str_setE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set of string options. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7ostendo6WindowE">
+<span id="ostendo::Window"></span><span class="target" id="Pessumclassostendo_1_1Window"></span><em class="property">class </em><code class="descname">Window</code><a class="headerlink" href="#_CPPv2N7ostendo6WindowE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;window.hpp&gt;</em><p>Core of everything output to the console. </p>
+<p>The <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> class is the base of everything that is output to the console. Everything output must be part of a window, and the windows controll all outputs, and output attributes. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window6WindowEv">
+<span id="ostendo::Window::Window"></span><span class="target" id="Pessumclassostendo_1_1Window_1a3e01eaa1fdbbb8be629165078169b60c"></span><code class="descname">Window</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window6WindowEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a new window. </p>
+<p>Creates a new window with the same base setting of std_scr. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1a4c5850c8a109e159e874ecce8a5dc62a"><span class="std std-ref">std_scr</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window6WindowEii">
+<span id="ostendo::Window::Window__i.i"></span><span class="target" id="Pessumclassostendo_1_1Window_1a080f0b58aef84dbda345d1f8b3591871"></span><code class="descname">Window</code><span class="sig-paren">(</span>int <em>width</em>, int <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window6WindowEii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a new window. </p>
+<p>Creates a new window with given width and height, at 0,0. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">width</span></code>: Width of window. </li>
+<li><code class="docutils literal"><span class="pre">height</span></code>: Height of window. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window6WindowEdd">
+<span id="ostendo::Window::Window__double.double"></span><span class="target" id="Pessumclassostendo_1_1Window_1a61857975d28428c0086f13180b582617"></span><code class="descname">Window</code><span class="sig-paren">(</span>double <em>width</em>, double <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window6WindowEdd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a new window. </p>
+<p>Creates a new window with width and height as a percentage of std_scr. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1a4c5850c8a109e159e874ecce8a5dc62a"><span class="std std-ref">std_scr</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">width</span></code>: Percentage of width. </li>
+<li><code class="docutils literal"><span class="pre">height</span></code>: Percentage of height. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window6WindowEiiii">
+<span id="ostendo::Window::Window__i.i.i.i"></span><span class="target" id="Pessumclassostendo_1_1Window_1a08054b16a51c101ea55ec27f628a88c3"></span><code class="descname">Window</code><span class="sig-paren">(</span>int <em>width</em>, int <em>height</em>, int <em>pos_x</em>, int <em>pos_y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window6WindowEiiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a new window. </p>
+<p>Creates a new window with given width and height, at given position. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">width</span></code>: Width of window. </li>
+<li><code class="docutils literal"><span class="pre">height</span></code>: Height of window. </li>
+<li><code class="docutils literal"><span class="pre">pos_x</span></code>: X position of window. </li>
+<li><code class="docutils literal"><span class="pre">pos_y</span></code>: Y position of window. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window6WindowEiidd">
+<span id="ostendo::Window::Window__i.i.double.double"></span><span class="target" id="Pessumclassostendo_1_1Window_1ab53551696f1078083f23a5d0eeb01ee3"></span><code class="descname">Window</code><span class="sig-paren">(</span>int <em>width</em>, int <em>height</em>, double <em>pos_x</em>, double <em>pos_y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window6WindowEiidd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a new window. </p>
+<p>Creates a new window with given width and height, and at x and y of percentage of std_scr. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1a4c5850c8a109e159e874ecce8a5dc62a"><span class="std std-ref">std_scr</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">width</span></code>: Width of window. </li>
+<li><code class="docutils literal"><span class="pre">height</span></code>: Height of window. </li>
+<li><code class="docutils literal"><span class="pre">pos_x</span></code>: Percentage of width. </li>
+<li><code class="docutils literal"><span class="pre">pos_y</span></code>: Percentage of height. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window6WindowEdddd">
+<span id="ostendo::Window::Window__double.double.double.double"></span><span class="target" id="Pessumclassostendo_1_1Window_1ab6788bb11963c0985833e93102e06b54"></span><code class="descname">Window</code><span class="sig-paren">(</span>double <em>width</em>, double <em>height</em>, double <em>pos_x</em>, double <em>pos_y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window6WindowEdddd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a new window. </p>
+<p>Creates a new window with width and height as a percentage of std_scr, and at x and y of percentage of std_scr. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1a4c5850c8a109e159e874ecce8a5dc62a"><span class="std std-ref">std_scr</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">width</span></code>: Percentace of width. </li>
+<li><code class="docutils literal"><span class="pre">height</span></code>: Percentage of height. </li>
+<li><code class="docutils literal"><span class="pre">pos_x</span></code>: Percentage of width. </li>
+<li><code class="docutils literal"><span class="pre">pos_y</span></code>: Percentage of height. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window6WindowEddii">
+<span id="ostendo::Window::Window__double.double.i.i"></span><span class="target" id="Pessumclassostendo_1_1Window_1acdd8f7fe6ea1dd1f2c0369f70ec9f7f0"></span><code class="descname">Window</code><span class="sig-paren">(</span>double <em>width</em>, double <em>height</em>, int <em>pos_x</em>, int <em>pos_y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window6WindowEddii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a new window. </p>
+<p>Creates a new window with given width and height, and at x and y. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1a4c5850c8a109e159e874ecce8a5dc62a"><span class="std std-ref">std_scr</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">width</span></code>: Percentage of width. </li>
+<li><code class="docutils literal"><span class="pre">height</span></code>: Percentage of height. </li>
+<li><code class="docutils literal"><span class="pre">pos_x</span></code>: X position of window. </li>
+<li><code class="docutils literal"><span class="pre">pos_y</span></code>: Y position of window. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window6WindowE3Pos">
+<span id="ostendo::Window::Window__Pos"></span><span class="target" id="Pessumclassostendo_1_1Window_1a24f1dce7d66fb8ffec6d36e191656ec9"></span><code class="descname">Window</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N7ostendo3PosE" title="ostendo::Pos">Pos</a> <em>pos</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window6WindowE3Pos" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a new window. </p>
+<p>Creates a window with the width, height, and position given by Position object. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Pos"><span class="std std-ref">Pos</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">pos</span></code>: Position definition of window. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window6WindowERK6Window">
+<span id="ostendo::Window::Window__WindowCR"></span><span class="target" id="Pessumclassostendo_1_1Window_1a28c857e8a69f68ee27b291e72e1053fb"></span><code class="descname">Window</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv2N7ostendo6Window6WindowEv" title="ostendo::Window::Window">Window</a> &amp;<em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window6WindowERK6Window" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copies a window. </p>
+<p>Creates a copy of a given window. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">win</span></code>: <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> to create a copy of. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window6DelWinEv">
+<span id="ostendo::Window::DelWin"></span><span class="target" id="Pessumclassostendo_1_1Window_1a4d2cdcaf3c4a781e7c0e46b52c693e54"></span>void <code class="descname">DelWin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window6DelWinEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Deletes window. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window9NewWindowEv">
+<span id="ostendo::Window::NewWindow"></span><span class="target" id="Pessumclassostendo_1_1Window_1a34de0bce2e7291c403dc0118309095fe"></span>void <code class="descname">NewWindow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window9NewWindowEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Deletes window and creates a new window. </p>
+<p>Creates a new window with the same base setting of std_scr. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1a4c5850c8a109e159e874ecce8a5dc62a"><span class="std std-ref">std_scr</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window9NewWindowEii">
+<span id="ostendo::Window::NewWindow__i.i"></span><span class="target" id="Pessumclassostendo_1_1Window_1a61cbdf968a481f95b6b806ca9332e6c4"></span>void <code class="descname">NewWindow</code><span class="sig-paren">(</span>int <em>width</em>, int <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window9NewWindowEii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Deletes window and creates a new window. </p>
+<p>Creates a new window with given width and height, at 0,0. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">width</span></code>: Width of window. </li>
+<li><code class="docutils literal"><span class="pre">height</span></code>: Height of window. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window9NewWindowEdd">
+<span id="ostendo::Window::NewWindow__double.double"></span><span class="target" id="Pessumclassostendo_1_1Window_1a5d79595ea48972fc2e1752890d5e815b"></span>void <code class="descname">NewWindow</code><span class="sig-paren">(</span>double <em>width</em>, double <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window9NewWindowEdd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Deletes window and creates a new window. </p>
+<p>Creates a new window with width and height as a percentage of std_scr. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1a4c5850c8a109e159e874ecce8a5dc62a"><span class="std std-ref">std_scr</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">width</span></code>: Percentage of width. </li>
+<li><code class="docutils literal"><span class="pre">height</span></code>: Percentage of height. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window9NewWindowEiiii">
+<span id="ostendo::Window::NewWindow__i.i.i.i"></span><span class="target" id="Pessumclassostendo_1_1Window_1a90b76ea8f13d3eca15a08baf0e971804"></span>void <code class="descname">NewWindow</code><span class="sig-paren">(</span>int <em>width</em>, int <em>height</em>, int <em>pos_x</em>, int <em>pos_y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window9NewWindowEiiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Deletes window and creates a new window. </p>
+<p>Creates a new window with given width and height, at given position. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">width</span></code>: Width of window. </li>
+<li><code class="docutils literal"><span class="pre">height</span></code>: Height of window. </li>
+<li><code class="docutils literal"><span class="pre">pos_x</span></code>: X position of window. </li>
+<li><code class="docutils literal"><span class="pre">pos_y</span></code>: Y position of window. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window9NewWindowEiidd">
+<span id="ostendo::Window::NewWindow__i.i.double.double"></span><span class="target" id="Pessumclassostendo_1_1Window_1abffbcc2ef23f156ca9b6a4e04372e57b"></span>void <code class="descname">NewWindow</code><span class="sig-paren">(</span>int <em>width</em>, int <em>height</em>, double <em>pos_x</em>, double <em>pos_y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window9NewWindowEiidd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Deletes window and creates a new window. </p>
+<p>Creates a new window with given width and height, and at x and y of percentage of std_scr. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1a4c5850c8a109e159e874ecce8a5dc62a"><span class="std std-ref">std_scr</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">width</span></code>: Width of window. </li>
+<li><code class="docutils literal"><span class="pre">height</span></code>: Height of window. </li>
+<li><code class="docutils literal"><span class="pre">pos_x</span></code>: Percentage of width. </li>
+<li><code class="docutils literal"><span class="pre">pos_y</span></code>: Percentage of height. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window9NewWindowEdddd">
+<span id="ostendo::Window::NewWindow__double.double.double.double"></span><span class="target" id="Pessumclassostendo_1_1Window_1a3cc8c66d73a4bf082332a38d1b6850bb"></span>void <code class="descname">NewWindow</code><span class="sig-paren">(</span>double <em>width</em>, double <em>height</em>, double <em>pos_x</em>, double <em>pos_y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window9NewWindowEdddd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Deletes window and creates a new window.. </p>
+<p>Creates a new window with width and height as a percentage of std_scr, and at x and y of percentage of std_scr. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1a4c5850c8a109e159e874ecce8a5dc62a"><span class="std std-ref">std_scr</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">width</span></code>: Percentace of width. </li>
+<li><code class="docutils literal"><span class="pre">height</span></code>: Percentage of height. </li>
+<li><code class="docutils literal"><span class="pre">pos_x</span></code>: Percentage of width. </li>
+<li><code class="docutils literal"><span class="pre">pos_y</span></code>: Percentage of height. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window9NewWindowEddii">
+<span id="ostendo::Window::NewWindow__double.double.i.i"></span><span class="target" id="Pessumclassostendo_1_1Window_1a12e3cedcaa35c674e2de4a35e9f6ae48"></span>void <code class="descname">NewWindow</code><span class="sig-paren">(</span>double <em>width</em>, double <em>height</em>, int <em>pos_x</em>, int <em>pos_y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window9NewWindowEddii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Deletes window and creates a new window. </p>
+<p>Creates a new window with given width and height, and at x and y. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1a4c5850c8a109e159e874ecce8a5dc62a"><span class="std std-ref">std_scr</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">width</span></code>: Percentage of width. </li>
+<li><code class="docutils literal"><span class="pre">height</span></code>: Percentage of height. </li>
+<li><code class="docutils literal"><span class="pre">pos_x</span></code>: X position of window. </li>
+<li><code class="docutils literal"><span class="pre">pos_y</span></code>: Y position of window. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window6UpdateEv">
+<span id="ostendo::Window::Update"></span><span class="target" id="Pessumclassostendo_1_1Window_1a31f6220b282ed1bf705a0d95d52cd051"></span>void <code class="descname">Update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window6UpdateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Updates window display. </p>
+<p>Updates the window display, to show recently printed outputs. Must be called for display to be visible. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window12ToggleBorderEv">
+<span id="ostendo::Window::ToggleBorder"></span><span class="target" id="Pessumclassostendo_1_1Window_1a0f4f6327f9f42fa76c08d18d97059d7c"></span>void <code class="descname">ToggleBorder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window12ToggleBorderEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Toggles drawing window border. </p>
+<p>Toggles wether the window border should be drawn. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window12ToggleScrollEv">
+<span id="ostendo::Window::ToggleScroll"></span><span class="target" id="Pessumclassostendo_1_1Window_1ac02e38f9ad5b08a18f3bcc7b70a0944e"></span>void <code class="descname">ToggleScroll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window12ToggleScrollEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Toggles window scrolling. </p>
+<p>Toggles if the window should handle last line output by scrolling. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window11ToggleTitleENSt6stringE">
+<span id="ostendo::Window::ToggleTitle__ss"></span><span class="target" id="Pessumclassostendo_1_1Window_1a7772b7589637c6ddebd87697c47aefc3"></span>void <code class="descname">ToggleTitle</code><span class="sig-paren">(</span>std::string <em>setting</em> = &quot;&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window11ToggleTitleENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Toggles window title. </p>
+<p>Toggles wether the window title should be drawn. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">setting</span></code>: String to set as the new window title. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window13SetAutoUpdateEb">
+<span id="ostendo::Window::SetAutoUpdate__b"></span><span class="target" id="Pessumclassostendo_1_1Window_1a3d4579a58a6e14b7032390b17fca2313"></span>void <code class="descname">SetAutoUpdate</code><span class="sig-paren">(</span>bool <em>setting</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window13SetAutoUpdateEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets window auto updating. </p>
+<p>Sets window auto updating to specified value. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">setting</span></code>: Value to set auto updating to. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window7ColorOnEi">
+<span id="ostendo::Window::ColorOn__i"></span><span class="target" id="Pessumclassostendo_1_1Window_1a4944301b33c64531c83c2bba55c35bc6"></span>void <code class="descname">ColorOn</code><span class="sig-paren">(</span>int <em>attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window7ColorOnEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables a color for output. </p>
+<p>Enables output color. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">attrs</span></code>: Color index represented by a two digit number. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window8ColorOffEi">
+<span id="ostendo::Window::ColorOff__i"></span><span class="target" id="Pessumclassostendo_1_1Window_1a903272ec03cce94e8505dcd9f3317375"></span>void <code class="descname">ColorOff</code><span class="sig-paren">(</span>int <em>attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window8ColorOffEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables a color for output. </p>
+<p>Disables previously enabled output color. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">attrs</span></code>: Color index represented by a two digit number. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window6AttrOnEi">
+<span id="ostendo::Window::AttrOn__i"></span><span class="target" id="Pessumclassostendo_1_1Window_1ab91a9f66a8f05e9349905ec9b1623de4"></span>void <code class="descname">AttrOn</code><span class="sig-paren">(</span>int <em>attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window6AttrOnEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables an attribute for output. </p>
+<p>Enables output attribute. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd>Attrs </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">attrs</span></code>: Attribute value from Attrs. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window7AttrOffEi">
+<span id="ostendo::Window::AttrOff__i"></span><span class="target" id="Pessumclassostendo_1_1Window_1aa2e4c33da0d446f52e7c34d1ec781bbc"></span>void <code class="descname">AttrOff</code><span class="sig-paren">(</span>int <em>attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window7AttrOffEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables an attribute for output. </p>
+<p>Disables previously enabled output attribute. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd>Attrs </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">attrs</span></code>: Attribute value from Attrs. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window8SetColorEii">
+<span id="ostendo::Window::SetColor__i.i"></span><span class="target" id="Pessumclassostendo_1_1Window_1adde21c9878a3d8dd0d94ae68d58040cb"></span>void <code class="descname">SetColor</code><span class="sig-paren">(</span>int <em>color</em>, int <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window8SetColorEii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets display color of window part. </p>
+<p>Sets the color of compnents of the window. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">color</span></code>: Color represented by two digit number. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> component to color. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window5ClearEb">
+<span id="ostendo::Window::Clear__b"></span><span class="target" id="Pessumclassostendo_1_1Window_1ae4c005e63e6b15c5e9b940025a80b90d"></span>void <code class="descname">Clear</code><span class="sig-paren">(</span>bool <em>all</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window5ClearEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clears window of outputs. </p>
+<p>Clears window of all ouputs. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">all</span></code>: If true, then clears window of border and title aswell. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window9ClearLineEi">
+<span id="ostendo::Window::ClearLine__i"></span><span class="target" id="Pessumclassostendo_1_1Window_1abaa3685e5937a29aabd7acf078b789c1"></span>void <code class="descname">ClearLine</code><span class="sig-paren">(</span>int <em>line</em> = -1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window9ClearLineEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clears the current line of window. </p>
+<p>Clears the current line of cursor y, and sets cursor x to begining of the line. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">line</span></code>: Specify line to clear. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window5PrintENSt6stringEz">
+<span id="ostendo::Window::Print__ss.z"></span><span class="target" id="Pessumclassostendo_1_1Window_1a1781807aea1eb5dedc9f2885e41fcd2b"></span>int <code class="descname">Print</code><span class="sig-paren">(</span>std::string <em>str</em>, ...<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window5PrintENSt6stringEz" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Print output to window. </p>
+<p>Main output function for ostendo. str is a formated string such as for printf, with additional arguments as required. Accepts additional excape sequenced initialized with a &#8216;#&#8217;. &#8216;#o__&#8217; will turn on specified attribute, while &#8216;#f__&#8217; will turn off the specified attribute. Attributes can be two digit numbers (0-7)(0-7), where the first number is the forground color, and the second number is the backround color. These attributes can also be any of the following: ac(alternate character set), bl(blink), bo(bold), di(dim), in(invisible), pr(protected), re(reverse), st(standout), un(underlined). <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>-1 if window has not been initialized, otherwise 0. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">str</span></code>: Format string. </li>
+<li><code class="docutils literal"><span class="pre">...</span></code>: Additional arguments as required. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window7SetCursEii">
+<span id="ostendo::Window::SetCurs__i.i"></span><span class="target" id="Pessumclassostendo_1_1Window_1a4e6839482997c00795f3c4191d80b3c4"></span>void <code class="descname">SetCurs</code><span class="sig-paren">(</span>int <em>y</em> = -1, int <em>x</em> = -1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window7SetCursEii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets cursor position in window. </p>
+<p>Sets the position of the output cursor for the window. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">x</span></code>: X position of the cursor. </li>
+<li><code class="docutils literal"><span class="pre">y</span></code>: Y position of the cursor. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6WindowclEv">
+<span id="ostendo::Window::call-operator"></span><span class="target" id="Pessumclassostendo_1_1Window_1a4a67da930b3dda1951fef1d506d83980"></span>WINDOW *<code class="descname">operator()</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6WindowclEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets ncurses window pointer. </p>
+<p>Gets the ncurses window pointer for the current window. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>pointer to ncurses window. </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N7ostendo6Window12window_spaceE">
+<span id="ostendo::Window::window_space__Pos"></span><span class="target" id="Pessumclassostendo_1_1Window_1a17ba58f5d7098c05f56550db36b64a9b"></span><a class="reference internal" href="#_CPPv2N7ostendo3PosE" title="ostendo::Pos">Pos</a> <code class="descname">window_space</code><a class="headerlink" href="#_CPPv2N7ostendo6Window12window_spaceE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> space avalible for output (Excluding borders/title). </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window9GenWindowEv">
+<span id="ostendo::Window::GenWindow"></span><span class="target" id="Pessumclassostendo_1_1Window_1a47e3c346e97daf8065969a293908c3c9"></span>void <code class="descname">GenWindow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window9GenWindowEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates ncurses window. </p>
+<p>Genorates the ncurses window based off of set values for window size and position. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumclassostendo_1_1Window_1a34de0bce2e7291c403dc0118309095fe"><span class="std std-ref">NewWindow()</span></a>, <a class="reference internal" href="#Pessumclassostendo_1_1Window_1a3e01eaa1fdbbb8be629165078169b60c"><span class="std std-ref">Window()</span></a>, window_pos </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window10DrawBorderEv">
+<span id="ostendo::Window::DrawBorder"></span><span class="target" id="Pessumclassostendo_1_1Window_1aecb54104edc6ff82b9b0a992d308509b"></span>void <code class="descname">DrawBorder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window10DrawBorderEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Draws window border. </p>
+<p>Draws the window border if window_border is true. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd>window_border, <a class="reference internal" href="#Pessumclassostendo_1_1Window_1a0f4f6327f9f42fa76c08d18d97059d7c"><span class="std std-ref">ToggleBorder()</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window9DrawTitleEv">
+<span id="ostendo::Window::DrawTitle"></span><span class="target" id="Pessumclassostendo_1_1Window_1a53fc7533923da80c2ca9f9e66d0ba775"></span>void <code class="descname">DrawTitle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window9DrawTitleEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Draws window title. </p>
+<p>Draws the set title for window if window_title is true. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd>window_title, <a class="reference internal" href="#Pessumclassostendo_1_1Window_1a7772b7589637c6ddebd87697c47aefc3"><span class="std std-ref">ToggleTitle()</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window8LastLineEv">
+<span id="ostendo::Window::LastLine"></span><span class="target" id="Pessumclassostendo_1_1Window_1a2acb1266b04bd95a4f3f96d5c35d1cdf"></span>void <code class="descname">LastLine</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window8LastLineEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Handles output when window is full. </p>
+<p>If window_scroll is true, then all previous outputs are shifted up one line, to alow for another line of output, otherwise the window is cleared, and the cursor is placed in the top left. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd>window_scroll, Printf(), <a class="reference internal" href="#Pessumclassostendo_1_1Window_1ac02e38f9ad5b08a18f3bcc7b70a0944e"><span class="std std-ref">ToggleScroll()</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo6Window5IsIntEc">
+<span id="ostendo::Window::IsInt__c"></span><span class="target" id="Pessumclassostendo_1_1Window_1aec58b5ba2a2f8d8dc6555c7c7291f08d"></span>bool <code class="descname">IsInt</code><span class="sig-paren">(</span>char <em>ch</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo6Window5IsIntEc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Checks if charicter is an integer value. </p>
+<p>Checks if given character is an integer. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>true if the charcter is an integer. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">ch</span></code>: Character to check. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="member">
+<dt id="_CPPv2N7ostendo6Window14window_pointerE">
+<span id="ostendo::Window::window_pointer__WINDOWP"></span><span class="target" id="Pessumclassostendo_1_1Window_1ab833855f6d1169d0ba14d91cb67eec3b"></span>WINDOW *<code class="descname">window_pointer</code> = nullptr<a class="headerlink" href="#_CPPv2N7ostendo6Window14window_pointerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Pointer to Ncurses window object. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo6Window13window_borderE">
+<span id="ostendo::Window::window_border__b"></span><span class="target" id="Pessumclassostendo_1_1Window_1a188d60e6ad271a79cd4538771f7512dc"></span>bool <code class="descname">window_border</code> = false<a class="headerlink" href="#_CPPv2N7ostendo6Window13window_borderE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the window border should be drawn. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo6Window12window_titleE">
+<span id="ostendo::Window::window_title__b"></span><span class="target" id="Pessumclassostendo_1_1Window_1af1e78c52f9ebcd3ec5f2c2a4ae9b9ebe"></span>bool <code class="descname">window_title</code> =
+             false<a class="headerlink" href="#_CPPv2N7ostendo6Window12window_titleE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the window title should be drawn. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo6Window13window_scrollE">
+<span id="ostendo::Window::window_scroll__b"></span><span class="target" id="Pessumclassostendo_1_1Window_1a3028fd2ead1996a400b73aca3211373f"></span>bool <code class="descname">window_scroll</code> =
+             false<a class="headerlink" href="#_CPPv2N7ostendo6Window13window_scrollE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the window scrolls when output reaches the end. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo6Window11auto_updateE">
+<span id="ostendo::Window::auto_update__b"></span><span class="target" id="Pessumclassostendo_1_1Window_1a778f4bbbea18d706232fb3957ec57901"></span>bool <code class="descname">auto_update</code> = true<a class="headerlink" href="#_CPPv2N7ostendo6Window11auto_updateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the window should update after every output. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo6Window16window_title_strE">
+<span id="ostendo::Window::window_title_str__ss"></span><span class="target" id="Pessumclassostendo_1_1Window_1a176d1c50b573e6502bd42c154321aeb3"></span>std::string <code class="descname">window_title_str</code><a class="headerlink" href="#_CPPv2N7ostendo6Window16window_title_strE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Title of the window. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo6Window20border_character_setE">
+<span id="ostendo::Window::border_character_set__std::vector:unsigned-l:"></span><span class="target" id="Pessumclassostendo_1_1Window_1af24e1abe39673aabb158eee6bbcaa976"></span>std::vector&lt;unsigned long&gt; <code class="descname">border_character_set</code> = {
+        ACS_VLINE,    ACS_VLINE,    ACS_HLINE,   ACS_HLINE, ACS_ULCORNER,
+        ACS_URCORNER, ACS_LLCORNER, ACS_LRCORNER}<a class="headerlink" href="#_CPPv2N7ostendo6Window20border_character_setE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Character set for the characters to draw the border with </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo6Window10window_posE">
+<span id="ostendo::Window::window_pos__Pos"></span><span class="target" id="Pessumclassostendo_1_1Window_1a4192792d4f87dd09315a60cfb66c37c6"></span><a class="reference internal" href="#_CPPv2N7ostendo3PosE" title="ostendo::Pos">Pos</a> <code class="descname">window_pos</code><a class="headerlink" href="#_CPPv2N7ostendo6Window10window_posE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> position and size. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Pos"><span class="std std-ref">Pos</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo6Window4cursE">
+<span id="ostendo::Window::curs__std::pair:i.i:"></span><span class="target" id="Pessumclassostendo_1_1Window_1aa91e44202a3a0e38ca67d501f065e2a8"></span>std::pair&lt;int, int&gt; <code class="descname">curs</code><a class="headerlink" href="#_CPPv2N7ostendo6Window4cursE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Current cursor position relative to the window. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo6Window12border_colorE">
+<span id="ostendo::Window::border_color__i"></span><span class="target" id="Pessumclassostendo_1_1Window_1a6df9230b231fa0994286d9d1a1f3e24a"></span>int <code class="descname">border_color</code> = 70<a class="headerlink" href="#_CPPv2N7ostendo6Window12border_colorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Color to draw the window border. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo6Window11title_colorE">
+<span id="ostendo::Window::title_color__i"></span><span class="target" id="Pessumclassostendo_1_1Window_1ab86faff3e72600a10db4a6787b34fa8a"></span>int <code class="descname">title_color</code> = 70<a class="headerlink" href="#_CPPv2N7ostendo6Window11title_colorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo6Window16background_colorE">
+<span id="ostendo::Window::background_color__i"></span><span class="target" id="Pessumclassostendo_1_1Window_1ad77f797ce9c5e4680ac5a7f687071571"></span>int <code class="descname">background_color</code> = 70<a class="headerlink" href="#_CPPv2N7ostendo6Window16background_colorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo6Window10text_colorE">
+<span id="ostendo::Window::text_color__i"></span><span class="target" id="Pessumclassostendo_1_1Window_1a60283e0c62aaad72988eb796ec870025"></span>int <code class="descname">text_color</code> = 70<a class="headerlink" href="#_CPPv2N7ostendo6Window10text_colorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Base color for text output. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="conf">
+<span class="target" id="Pessumnamespaceconf"></span><em class="property">namespace </em><code class="descname">conf</code><a class="headerlink" href="#conf" title="Permalink to this definition">¶</a></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Variables</p>
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1ae475e080536acb271a0a0efe56c3ba42"></span><code class="descname">list conf.extensions</code> = ['sphinx.ext.todo',
+    'sphinx.ext.imgmath',
+    'sphinx.ext.githubpages']</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1ae850ae634911b713e036b43894fdd525"></span><code class="descname">list conf.templates_path</code> = ['_templates']</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1a10af2a769eb3bd3322e874f677e435b1"></span><code class="descname">string conf.source_suffix</code> = '.rst'</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1a6fcd7e5236f355b1e1a55f9d95988810"></span><code class="descname">string conf.master_doc</code> = 'index'</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1a45653c983098153b78e33600e39230eb"></span><code class="descname">string conf.project</code> = u'Pessum'</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1a33fa97cf51dcb25970fbf53f10159589"></span><code class="descname">string conf.copyright</code> = u'2017, Arden Rasmussen'</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1a637c239d256432248aa8d9f3ab0b8c52"></span><code class="descname">string conf.author</code> = u'Arden Rasmussen'</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1ade15c5b54093b64d7c428ec19ca5b1cb"></span><code class="descname">string conf.version</code> = u'2.0'</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1a325dc746d8bf05c54d26351c35a21d90"></span><code class="descname">string conf.release</code> = u'2.0'</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="conf.language">
+<span class="target" id="Pessumconf_8py_1ad76a2e6d7bfa880ebb4042c08e8b4e12"></span><code class="descname">language</code> = None<a class="headerlink" href="#conf.language" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1a7ad48fb6f3e9b129c02346ea0d3527c1"></span><code class="descname">list conf.exclude_patterns</code> = ['_build', 'Thumbs.db', '.DS_Store']</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1a641130e096b26cba8a5d63ed38684de7"></span><code class="descname">string conf.pygments_style</code> = 'sphinx'</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1a8fe7f0d85f975f4ecba5cb6066959a09"></span><code class="descname">bool conf.todo_include_todos</code> = True</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1a6c3bfcc1a44546c1c75ce20f55bd0fd6"></span><code class="descname">string conf.html_theme</code> = 'alabaster'</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1af4fb5d8851ccaade135c2668dd3ced41"></span><code class="descname">list conf.html_static_path</code> = ['_static']</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1aab7fddb2766ce3c430d8246fbfdbc7b1"></span><code class="descname">string conf.htmlhelp_basename</code> = 'Pessumdoc'</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1a33619d385ad23765ac6ebb58bf82d43d"></span><code class="descname">dictionary conf.latex_elements</code> = {
+    # The paper size ('letterpaper' or 'a4paper').
+    #
+    # 'papersize': 'letterpaper',
+
+    # The font size ('10pt', '11pt' or '12pt').
+    #
+    # 'pointsize': '10pt',
+
+    # Additional stuff for the LaTeX preamble.
+    #
+    # 'preamble': '',
+
+    # Latex figure (float) alignment
+    #
+    # 'figure_align': 'htbp',
+}</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1a7812f49970f3de0d15dd7b9b9a10e3a1"></span><code class="descname">list conf.latex_documents</code> = [
+    (master_doc, 'Pessum.tex', u'Pessum Documentation',
+     u'Arden Rasmussen', 'manual'),
+]</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1a85efc5fee48a26fa2d651f6eeb38fc2b"></span><code class="descname">list conf.man_pages</code> = [
+    (master_doc, 'pessum', u'Pessum Documentation',
+     [author], 1)
+]</dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<span class="target" id="Pessumconf_8py_1a54b0faed214ac92017d5689efbb10672"></span><code class="descname">list conf.texinfo_documents</code> = [
+    (master_doc, 'Pessum', u'Pessum Documentation',
+     author, 'Pessum', 'One line description of project.',
+     'Miscellaneous'),
+]</dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv27ostendo">
+<span id="ostendo"></span><span class="target" id="Pessumnamespaceostendo"></span><em class="property">namespace </em><code class="descname">ostendo</code><a class="headerlink" href="#_CPPv27ostendo" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Core namespace for all Ostendo methods. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Enums</p>
+<dl class="type">
+<dt id="_CPPv2N7ostendo7VarTypeE">
+<span id="ostendo::VarType"></span><span class="target" id="Pessumnamespaceostendo_1ae78fb0e171a88eb8820d8d6a894463f4"></span><em class="property">enum </em><code class="descname">VarType</code><a class="headerlink" href="#_CPPv2N7ostendo7VarTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Declares the posible types of the variable structure. </p>
+<p><em>Values:</em></p>
+<dl class="member">
+<dt id="_CPPv2N7ostendo3INTE">
+<span id="ostendo::INT"></span><span class="target" id="Pessumnamespaceostendo_1ae78fb0e171a88eb8820d8d6a894463f4ab2b3795a506a3e38b4c00c96b9193b81"></span><code class="descname">INT</code> = 0<a class="headerlink" href="#_CPPv2N7ostendo3INTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the variable type to be integer </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo6DOUBLEE">
+<span id="ostendo::DOUBLE"></span><span class="target" id="Pessumnamespaceostendo_1ae78fb0e171a88eb8820d8d6a894463f4a62b746a7f8691e7b0010c7c78cc3714b"></span><code class="descname">DOUBLE</code> = 1<a class="headerlink" href="#_CPPv2N7ostendo6DOUBLEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the variable type to be doubles </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo6STRINGE">
+<span id="ostendo::STRING"></span><span class="target" id="Pessumnamespaceostendo_1ae78fb0e171a88eb8820d8d6a894463f4a26583ec8ca995b14e769c98e6025bbb3"></span><code class="descname">STRING</code> = 2<a class="headerlink" href="#_CPPv2N7ostendo6STRINGE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the variable type to be strings </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo4BOOLE">
+<span id="ostendo::BOOL"></span><span class="target" id="Pessumnamespaceostendo_1ae78fb0e171a88eb8820d8d6a894463f4a8c79b343b56c9861211e496c7276fb64"></span><code class="descname">BOOL</code> = 3<a class="headerlink" href="#_CPPv2N7ostendo4BOOLE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the variable type to be boolians </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv2N7ostendo12WINDOW_PARTSE">
+<span id="ostendo::WINDOW_PARTS"></span><span class="target" id="Pessumnamespaceostendo_1aa031b855a10fa72d112d6b7287c8f2ec"></span><em class="property">enum </em><code class="descname">WINDOW_PARTS</code><a class="headerlink" href="#_CPPv2N7ostendo12WINDOW_PARTSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Declaration for different components of the window. </p>
+<p><em>Values:</em></p>
+<dl class="member">
+<dt id="_CPPv2N7ostendo10WIN_BORDERE">
+<span id="ostendo::WIN_BORDER"></span><span class="target" id="Pessumnamespaceostendo_1aa031b855a10fa72d112d6b7287c8f2eca26a94c1892f3cbff5ab7e6d31b5cb77c"></span><code class="descname">WIN_BORDER</code> = 1<a class="headerlink" href="#_CPPv2N7ostendo10WIN_BORDERE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Selects the window border. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo9WIN_TITLEE">
+<span id="ostendo::WIN_TITLE"></span><span class="target" id="Pessumnamespaceostendo_1aa031b855a10fa72d112d6b7287c8f2eca9c4bc15f158c6523e71a9a66b020fbab"></span><code class="descname">WIN_TITLE</code> = 2<a class="headerlink" href="#_CPPv2N7ostendo9WIN_TITLEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Selects the window title. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo8WIN_TEXTE">
+<span id="ostendo::WIN_TEXT"></span><span class="target" id="Pessumnamespaceostendo_1aa031b855a10fa72d112d6b7287c8f2eca177402ad0ac6b02593972fedbc58020e"></span><code class="descname">WIN_TEXT</code> = 3<a class="headerlink" href="#_CPPv2N7ostendo8WIN_TEXTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Selects the window test. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo14WIN_BACKGROUNDE">
+<span id="ostendo::WIN_BACKGROUND"></span><span class="target" id="Pessumnamespaceostendo_1aa031b855a10fa72d112d6b7287c8f2ecac01b3c91073d3e21325cc8a082cd7baa"></span><code class="descname">WIN_BACKGROUND</code> = 4<a class="headerlink" href="#_CPPv2N7ostendo14WIN_BACKGROUNDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Selects the window background. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv2N7ostendo5ATTRSE">
+<span id="ostendo::ATTRS"></span><span class="target" id="Pessumnamespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6"></span><em class="property">enum </em><code class="descname">ATTRS</code><a class="headerlink" href="#_CPPv2N7ostendo5ATTRSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Declaration for different output attributes. </p>
+<p><em>Values:</em></p>
+<dl class="member">
+<dt id="_CPPv2N7ostendo7ALTCHARE">
+<span id="ostendo::ALTCHAR"></span><span class="target" id="Pessumnamespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6aaf0b8945bf817b057d16dabd79fdbf05"></span><code class="descname">ALTCHAR</code> = 1<a class="headerlink" href="#_CPPv2N7ostendo7ALTCHARE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Uses alternate character set. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo5BLINKE">
+<span id="ostendo::BLINK"></span><span class="target" id="Pessumnamespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6a0ad98e6d41bc73832fa0cec6194d02d3"></span><code class="descname">BLINK</code> = 2<a class="headerlink" href="#_CPPv2N7ostendo5BLINKE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets output to blinking (If posible in terminal emulator). </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo4BOLDE">
+<span id="ostendo::BOLD"></span><span class="target" id="Pessumnamespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6a434b908118752e03181b584a12f497fc"></span><code class="descname">BOLD</code> = 3<a class="headerlink" href="#_CPPv2N7ostendo4BOLDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets output to bold. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo3DIME">
+<span id="ostendo::DIM"></span><span class="target" id="Pessumnamespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6a6e9f2e6ee917da1f2ebfa80cf004c442"></span><code class="descname">DIM</code> = 4<a class="headerlink" href="#_CPPv2N7ostendo3DIME" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets output to dim colors. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo5INVISE">
+<span id="ostendo::INVIS"></span><span class="target" id="Pessumnamespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6ae4cc920865a0016b81290e5259d9f60f"></span><code class="descname">INVIS</code> = 5<a class="headerlink" href="#_CPPv2N7ostendo5INVISE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets output text to be invisable. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo7PROTECTE">
+<span id="ostendo::PROTECT"></span><span class="target" id="Pessumnamespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6af6041deb5c5e9bdc72db61bef8bbb0fd"></span><code class="descname">PROTECT</code> = 5<a class="headerlink" href="#_CPPv2N7ostendo7PROTECTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets output mode to protected. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo7REVERSEE">
+<span id="ostendo::REVERSE"></span><span class="target" id="Pessumnamespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6a88187ffc48ef6b41163c10634644e1a8"></span><code class="descname">REVERSE</code> = 6<a class="headerlink" href="#_CPPv2N7ostendo7REVERSEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets output to reverse mode. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo8STANDOUTE">
+<span id="ostendo::STANDOUT"></span><span class="target" id="Pessumnamespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6a50201ccd0790154700be098072253dcd"></span><code class="descname">STANDOUT</code> = 7<a class="headerlink" href="#_CPPv2N7ostendo8STANDOUTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets output to be heighlighted. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo9UNDERLINEE">
+<span id="ostendo::UNDERLINE"></span><span class="target" id="Pessumnamespaceostendo_1a804202ffcab31ce4e007ff0c9d5249c6af00877dea0b044edc80f9205f5695f0d"></span><code class="descname">UNDERLINE</code> = 8<a class="headerlink" href="#_CPPv2N7ostendo9UNDERLINEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets output to be underlined. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7ostendo4FormEN7ostendo6WindowENSt6vectorI3VarEE">
+<span id="ostendo::Form__ostendo::Window.std::vector:Var:"></span><span class="target" id="Pessumnamespaceostendo_1a6de3757551a0461ef565d035547e4408"></span>std::vector&lt;<a class="reference internal" href="#_CPPv27ostendo" title="ostendo">ostendo</a>::<a class="reference internal" href="#_CPPv2N7ostendo3VarE" title="ostendo::Var">Var</a>&gt; <code class="descname">Form</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27ostendo" title="ostendo">ostendo</a>::<a class="reference internal" href="#_CPPv2N7ostendo6WindowE" title="ostendo::Window">Window</a> <em>win</em>, std::vector&lt;<a class="reference internal" href="#_CPPv2N7ostendo3VarE" title="ostendo::Var">Var</a>&gt; <em>fields</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo4FormEN7ostendo6WindowENSt6vectorI3VarEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Simple form function to get several inputs from the user. This function takes a window, and a set of inputs to request of the user. After the user enters the values for the requested inputs, the values are returned. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Vector of <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>&#8216;s filled with user input. </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a>, <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">win</span></code>: <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> to use for displaying inputs. </li>
+<li><code class="docutils literal"><span class="pre">fields</span></code>: Vector of <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>&#8216;s for taking in input from the user. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo9GetVarStrE3Vari">
+<span id="ostendo::GetVarStr__Var.i"></span><span class="target" id="Pessumnamespaceostendo_1a75491bb403d248c50aafc1f5eb310d75"></span>std::string <code class="descname">GetVarStr</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N7ostendo3VarE" title="ostendo::Var">Var</a> <em>in_var</em>, int <em>width</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo9GetVarStrE3Vari" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the string representation of the variable to display. This function reads the <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> object, and creates a string to represent the data stored by the object. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>String representation of in_var. </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">in_var</span></code>: <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> to interpret. </li>
+<li><code class="docutils literal"><span class="pre">width</span></code>: Maximum width for return string. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo9DownArrowE3Var6Window">
+<span id="ostendo::DownArrow__Var.Window"></span><span class="target" id="Pessumnamespaceostendo_1a0eff2d6c60790fa96f06511e3a01f3a4"></span><a class="reference internal" href="#_CPPv27ostendo" title="ostendo">ostendo</a>::<a class="reference internal" href="#_CPPv2N7ostendo3VarE" title="ostendo::Var">Var</a> <code class="descname">DownArrow</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N7ostendo3VarE" title="ostendo::Var">Var</a> <em>in_var</em>, <a class="reference internal" href="#_CPPv2N7ostendo6WindowE" title="ostendo::Window">Window</a> <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo9DownArrowE3Var6Window" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Handles form user input arrow key down. Provides functionality for different <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> types for the user input of down arrow key. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> after action is applied. </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>, <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">in_var</span></code>: <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> to apply action to. </li>
+<li><code class="docutils literal"><span class="pre">win</span></code>: <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> to display to. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo7UpArrowE3Var6Window">
+<span id="ostendo::UpArrow__Var.Window"></span><span class="target" id="Pessumnamespaceostendo_1abd61a4387f4057a821127c78c5de14df"></span><a class="reference internal" href="#_CPPv27ostendo" title="ostendo">ostendo</a>::<a class="reference internal" href="#_CPPv2N7ostendo3VarE" title="ostendo::Var">Var</a> <code class="descname">UpArrow</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N7ostendo3VarE" title="ostendo::Var">Var</a> <em>in_var</em>, <a class="reference internal" href="#_CPPv2N7ostendo6WindowE" title="ostendo::Window">Window</a> <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo7UpArrowE3Var6Window" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Handles form user input arrow key up. Provides functionality for different <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> types for the user input of up arrow key. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> after action is applied. </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>, <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">in_var</span></code>: <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> to apply action to. </li>
+<li><code class="docutils literal"><span class="pre">win</span></code>: <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> to display to. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo10RightArrowE3Var6Window">
+<span id="ostendo::RightArrow__Var.Window"></span><span class="target" id="Pessumnamespaceostendo_1a9306123175f6b620de11b774fbfb5ec5"></span><a class="reference internal" href="#_CPPv27ostendo" title="ostendo">ostendo</a>::<a class="reference internal" href="#_CPPv2N7ostendo3VarE" title="ostendo::Var">Var</a> <code class="descname">RightArrow</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N7ostendo3VarE" title="ostendo::Var">Var</a> <em>in_var</em>, <a class="reference internal" href="#_CPPv2N7ostendo6WindowE" title="ostendo::Window">Window</a> <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo10RightArrowE3Var6Window" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Handles form user input arrow key right. Provides functionality for different <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> types for the user input of right arrow key. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> after action is applied. </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>, <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">in_var</span></code>: <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> to apply action to. </li>
+<li><code class="docutils literal"><span class="pre">win</span></code>: <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> to display to. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo9LeftArrowE3Var6Window">
+<span id="ostendo::LeftArrow__Var.Window"></span><span class="target" id="Pessumnamespaceostendo_1ab912de20925f952a5056414bfbdaeeda"></span><a class="reference internal" href="#_CPPv27ostendo" title="ostendo">ostendo</a>::<a class="reference internal" href="#_CPPv2N7ostendo3VarE" title="ostendo::Var">Var</a> <code class="descname">LeftArrow</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N7ostendo3VarE" title="ostendo::Var">Var</a> <em>in_var</em>, <a class="reference internal" href="#_CPPv2N7ostendo6WindowE" title="ostendo::Window">Window</a> <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo9LeftArrowE3Var6Window" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Handles form user input arrow key left. Provides functionality for different <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> types for the user input of left arrow key. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> after action is applied. </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>, <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">in_var</span></code>: <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> to apply action to. </li>
+<li><code class="docutils literal"><span class="pre">win</span></code>: <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> to display to. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo5EnterE3Var6Window">
+<span id="ostendo::Enter__Var.Window"></span><span class="target" id="Pessumnamespaceostendo_1a9279674ead9b9c27ebc228430c1abfbe"></span><a class="reference internal" href="#_CPPv27ostendo" title="ostendo">ostendo</a>::<a class="reference internal" href="#_CPPv2N7ostendo3VarE" title="ostendo::Var">Var</a> <code class="descname">Enter</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N7ostendo3VarE" title="ostendo::Var">Var</a> <em>in_var</em>, <a class="reference internal" href="#_CPPv2N7ostendo6WindowE" title="ostendo::Window">Window</a> <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo5EnterE3Var6Window" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Handles form user input enter key. Provides functionality for different <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> types for the user input of enter key. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> after action is applied. </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>, <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">in_var</span></code>: <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> to apply action to. </li>
+<li><code class="docutils literal"><span class="pre">win</span></code>: <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> to display to. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo9BackspaceE3Var6Window">
+<span id="ostendo::Backspace__Var.Window"></span><span class="target" id="Pessumnamespaceostendo_1ab4fddb801c2f32c114a4e3ef0c9bc953"></span><a class="reference internal" href="#_CPPv27ostendo" title="ostendo">ostendo</a>::<a class="reference internal" href="#_CPPv2N7ostendo3VarE" title="ostendo::Var">Var</a> <code class="descname">Backspace</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N7ostendo3VarE" title="ostendo::Var">Var</a> <em>in_var</em>, <a class="reference internal" href="#_CPPv2N7ostendo6WindowE" title="ostendo::Window">Window</a> <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo9BackspaceE3Var6Window" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Handles form user input backspace key. Provides functionality for different <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> types for the user input of backspace key. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> after action is applied. </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>, <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">in_var</span></code>: <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> to apply action to. </li>
+<li><code class="docutils literal"><span class="pre">win</span></code>: <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> to display to. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo3AddE3Vari6Window">
+<span id="ostendo::Add__Var.i.Window"></span><span class="target" id="Pessumnamespaceostendo_1ac7a01c5f1ce53b6361e62f349f8f5ee4"></span><a class="reference internal" href="#_CPPv27ostendo" title="ostendo">ostendo</a>::<a class="reference internal" href="#_CPPv2N7ostendo3VarE" title="ostendo::Var">Var</a> <code class="descname">Add</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N7ostendo3VarE" title="ostendo::Var">Var</a> <em>in_var</em>, int <em>ch</em>, <a class="reference internal" href="#_CPPv2N7ostendo6WindowE" title="ostendo::Window">Window</a> <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo3AddE3Vari6Window" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Handles form user input of any other key. Provides functionality for different <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> types for the user input of any other key. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> after action is applied. </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a>, <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">in_var</span></code>: <a class="reference internal" href="#Pessumstructostendo_1_1Var"><span class="std std-ref">Var</span></a> to apply action to. </li>
+<li><code class="docutils literal"><span class="pre">ch</span></code>: Character representation of key input. </li>
+<li><code class="docutils literal"><span class="pre">win</span></code>: <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> to display to. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo4MenuEN7ostendo6WindowENSt6vectorINSt6stringEEE">
+<span id="ostendo::Menu__ostendo::Window.std::vector:ss:"></span><span class="target" id="Pessumnamespaceostendo_1a7046839a0becea8636f4136c94b4cc31"></span>std::string <code class="descname">Menu</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27ostendo" title="ostendo">ostendo</a>::<a class="reference internal" href="#_CPPv2N7ostendo6WindowE" title="ostendo::Window">Window</a> <em>win</em>, std::vector&lt;std::string&gt; <em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo4MenuEN7ostendo6WindowENSt6vectorINSt6stringEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Menu function for selecting an option from a set. This function takes a set of options, and a window, then provides a simple user interface for selecting one of the provided options. This selected option is then returned. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>String from selected option of Options. </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">win</span></code>: <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> to use to display all options. </li>
+<li><code class="docutils literal"><span class="pre">options</span></code>: Options that the user must select from. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo11InitOstendoEbi">
+<span id="ostendo::InitOstendo__b.i"></span><span class="target" id="Pessumnamespaceostendo_1acada6eef78aaae2a103761e6b3122a7c"></span>void <code class="descname">InitOstendo</code><span class="sig-paren">(</span>bool <em>color</em> = false, int <em>time_out</em> = -1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo11InitOstendoEbi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initializes Ostendo/Ncurses. </p>
+<p>Initializes ncurses with default settings, and enables keypad input, and reads std_scr data. Optionaly enables color, disables cursor, and sets input timeout time. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1a4c5850c8a109e159e874ecce8a5dc62a"><span class="std std-ref">std_scr</span></a>, <a class="reference internal" href="#Pessumnamespaceostendo_1ab45e3689aa0cb8a2e3a175c0aed97880"><span class="std std-ref">windows</span></a>, <a class="reference internal" href="#Pessumnamespaceostendo_1aaece4e9a0bcd75df4724bf97c628c12e"><span class="std std-ref">color_init</span></a>, <a class="reference internal" href="#Pessumnamespaceostendo_1ae151d449ffec660866ee7c8ac75892da"><span class="std std-ref">TermOstendo()</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">color</span></code>: Determines if colors should be enabled. </li>
+<li><code class="docutils literal"><span class="pre">cursor</span></code>: Determines if cursor should be disabled. </li>
+<li><code class="docutils literal"><span class="pre">time_out</span></code>: Sets the time out time for intput. -1 for no time out. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo11TermOstendoEv">
+<span id="ostendo::TermOstendo"></span><span class="target" id="Pessumnamespaceostendo_1ae151d449ffec660866ee7c8ac75892da"></span>void <code class="descname">TermOstendo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo11TermOstendoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Terminates Ostendo/Ncurses. </p>
+<p>Terminates ncurses, and returns the console to standard settings. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1acada6eef78aaae2a103761e6b3122a7c"><span class="std std-ref">InitOstendo()</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo10InitWindowENSt6stringE">
+<span id="ostendo::InitWindow__ss"></span><span class="target" id="Pessumnamespaceostendo_1a47ee72208333eea02c3737d540d0267b"></span>void <code class="descname">InitWindow</code><span class="sig-paren">(</span>std::string <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo10InitWindowENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a new window. </p>
+<p>Creates a new window, and adds it to windows. The window has the same dimensions of std_scr. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1ab45e3689aa0cb8a2e3a175c0aed97880"><span class="std std-ref">windows</span></a>, <a class="reference internal" href="#Pessumnamespaceostendo_1a4c5850c8a109e159e874ecce8a5dc62a"><span class="std std-ref">std_scr</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">name</span></code>: The name of the window for the key in windows map. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo10InitWindowENSt6stringEii">
+<span id="ostendo::InitWindow__ss.i.i"></span><span class="target" id="Pessumnamespaceostendo_1a9a1f177f0bc76d81901078af708114f6"></span>void <code class="descname">InitWindow</code><span class="sig-paren">(</span>std::string <em>name</em>, int <em>width</em>, int <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo10InitWindowENSt6stringEii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a new window. </p>
+<p>Creates a new window, and adds it to windows. The window is positioned at 0,0 with given width and height. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1ab45e3689aa0cb8a2e3a175c0aed97880"><span class="std std-ref">windows</span></a>, <a class="reference internal" href="#Pessumnamespaceostendo_1a4c5850c8a109e159e874ecce8a5dc62a"><span class="std std-ref">std_scr</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">name</span></code>: The name of the window for the key in windows map. </li>
+<li><code class="docutils literal"><span class="pre">width</span></code>: The width of the window in characters. </li>
+<li><code class="docutils literal"><span class="pre">height</span></code>: The height of the window in characters. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo10InitWindowENSt6stringEiiii">
+<span id="ostendo::InitWindow__ss.i.i.i.i"></span><span class="target" id="Pessumnamespaceostendo_1a471c4077531c8fd99d79c1faf7a0d09e"></span>void <code class="descname">InitWindow</code><span class="sig-paren">(</span>std::string <em>name</em>, int <em>width</em>, int <em>height</em>, int <em>x</em>, int <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo10InitWindowENSt6stringEiiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a new window. </p>
+<p>Creates a new window, and adds it to windows. The window is at a given position with a given width and height. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1ab45e3689aa0cb8a2e3a175c0aed97880"><span class="std std-ref">windows</span></a>, <a class="reference internal" href="#Pessumnamespaceostendo_1a4c5850c8a109e159e874ecce8a5dc62a"><span class="std std-ref">std_scr</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">name</span></code>: The name of the window for the key in windows map. </li>
+<li><code class="docutils literal"><span class="pre">width</span></code>: The width of the window in characters. </li>
+<li><code class="docutils literal"><span class="pre">height</span></code>: The height of the window in characters. </li>
+<li><code class="docutils literal"><span class="pre">x</span></code>: The x position of the window in characters from the left. </li>
+<li><code class="docutils literal"><span class="pre">y</span></code>: the y position of the window in characters from the top. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo10TermWindowENSt6stringE">
+<span id="ostendo::TermWindow__ss"></span><span class="target" id="Pessumnamespaceostendo_1a8d3e9d8ec26e75c7fd77ef392ecd6e06"></span>void <code class="descname">TermWindow</code><span class="sig-paren">(</span>std::string <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo10TermWindowENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Terminates a window. </p>
+<p>Termainates a specified window from the windows map. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1ab45e3689aa0cb8a2e3a175c0aed97880"><span class="std std-ref">windows</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">name</span></code>: The name of the window to be deleted. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo10LoadColorsEv">
+<span id="ostendo::LoadColors"></span><span class="target" id="Pessumnamespaceostendo_1a892fb62097748762befae0441bcc4f0a"></span>void <code class="descname">LoadColors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo10LoadColorsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Loads console color pairs. </p>
+<p>Loads every combination of the console color pairs, if colors are initialized. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumnamespaceostendo_1aaece4e9a0bcd75df4724bf97c628c12e"><span class="std std-ref">color_init</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo7TextBoxEN7ostendo6WindowENSt6stringE">
+<span id="ostendo::TextBox__ostendo::Window.ss"></span><span class="target" id="Pessumnamespaceostendo_1a3d2c591339109330938a42d576c9e81d"></span>std::string <code class="descname">TextBox</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27ostendo" title="ostendo">ostendo</a>::<a class="reference internal" href="#_CPPv2N7ostendo6WindowE" title="ostendo::Window">Window</a> <em>win</em>, std::string <em>base</em> = &quot;&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo7TextBoxEN7ostendo6WindowENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Function for basic extended text entry from user. This function alows the user to write text to a text box, and when compleated, the writen text is formated into a string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>String of what user entered. </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">win</span></code>: window to display to. </li>
+<li><code class="docutils literal"><span class="pre">base</span></code>: Starting string to display in text box. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo7TextBoxEN7ostendo6WindowENSt6vectorINSt6stringEEE">
+<span id="ostendo::TextBox__ostendo::Window.std::vector:ss:"></span><span class="target" id="Pessumnamespaceostendo_1a2f50af8d4996899c0906b9c78e045e84"></span>std::string <code class="descname">TextBox</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27ostendo" title="ostendo">ostendo</a>::<a class="reference internal" href="#_CPPv2N7ostendo6WindowE" title="ostendo::Window">Window</a> <em>win</em>, std::vector&lt;std::string&gt; <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo7TextBoxEN7ostendo6WindowENSt6vectorINSt6stringEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Function for basic extended text entry from user. This function alows the user to write text to a text box, and when compleated, the writen text is formated into a string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>String of what user entered. </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">win</span></code>: window to display to. </li>
+<li><code class="docutils literal"><span class="pre">base</span></code>: Starting vector of strings representing different lines of text. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo8VTextBoxEN7ostendo6WindowENSt6stringE">
+<span id="ostendo::VTextBox__ostendo::Window.ss"></span><span class="target" id="Pessumnamespaceostendo_1a96fb1afad5e7a28a2c1f63066930683f"></span>std::vector&lt;std::string&gt; <code class="descname">VTextBox</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27ostendo" title="ostendo">ostendo</a>::<a class="reference internal" href="#_CPPv2N7ostendo6WindowE" title="ostendo::Window">Window</a> <em>win</em>, std::string <em>base</em> = &quot;&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo8VTextBoxEN7ostendo6WindowENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Function for basic extended text entry from user. This function alows the user to write text to a text box, and when compleated, the writen text is formated into a a vector of strings, each representing a lines of text. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Vector of strings representing the different lines of input from the user. </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">win</span></code>: window to display to. </li>
+<li><code class="docutils literal"><span class="pre">base</span></code>: Starting string to display in text box. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo8VTextBoxEN7ostendo6WindowENSt6vectorINSt6stringEEE">
+<span id="ostendo::VTextBox__ostendo::Window.std::vector:ss:"></span><span class="target" id="Pessumnamespaceostendo_1ac2ce30296ad60b1e02258e3d5c1e8b4f"></span>std::vector&lt;std::string&gt; <code class="descname">VTextBox</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27ostendo" title="ostendo">ostendo</a>::<a class="reference internal" href="#_CPPv2N7ostendo6WindowE" title="ostendo::Window">Window</a> <em>win</em>, std::vector&lt;std::string&gt; <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo8VTextBoxEN7ostendo6WindowENSt6vectorINSt6stringEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Function for basic extended text entry from user. This function alows the user to write text to a text box, and when compleated, the writen text is formated into a a vector of strings, each representing a lines of text. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Vector of strings representing the different lines of input from the user. </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">win</span></code>: window to display to. </li>
+<li><code class="docutils literal"><span class="pre">base</span></code>: Starting vector of stirngs representing different lines of text. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo12DisplayLinesEN7ostendo6WindowENSt6vectorINSt6stringEEEiRi">
+<span id="ostendo::DisplayLines__ostendo::Window.std::vector:ss:.i.iR"></span><span class="target" id="Pessumnamespaceostendo_1a9bb1a56540aa7a03b6e8af5a347950d2"></span>void <code class="descname">DisplayLines</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27ostendo" title="ostendo">ostendo</a>::<a class="reference internal" href="#_CPPv2N7ostendo6WindowE" title="ostendo::Window">Window</a> <em>win</em>, std::vector&lt;std::string&gt; <em>lines</em>, int <em>current_line</em>, int &amp;<em>start_line</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo12DisplayLinesEN7ostendo6WindowENSt6vectorINSt6stringEEEiRi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Displays lines from a vector of strings. Displays the lines from a vector of string to a given window, and auto centers the current line, so that it is always on screen. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">win</span></code>: <a class="reference internal" href="#Pessumclassostendo_1_1Window"><span class="std std-ref">Window</span></a> to display to. </li>
+<li><code class="docutils literal"><span class="pre">lines</span></code>: Vector of string to display. </li>
+<li><code class="docutils literal"><span class="pre">current_line</span></code>: Current line to center in window. </li>
+<li><code class="docutils literal"><span class="pre">start_line</span></code>: line of vector to begin display from. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo8make_posEiiii">
+<span id="ostendo::make_pos__i.i.i.i"></span><span class="target" id="Pessumnamespaceostendo_1a5703ea1e4f426c0216fc7f36708a4539"></span><a class="reference internal" href="#_CPPv2N7ostendo3PosE" title="ostendo::Pos">Pos</a> <code class="descname">make_pos</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, int <em>w</em>, int <em>h</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo8make_posEiiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a new position object. </p>
+<p>Creates position object given the four terms. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Pos"><span class="std std-ref">Pos</span></a> New position structure from given values. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">x</span></code>: X term for position. </li>
+<li><code class="docutils literal"><span class="pre">y</span></code>: Y term for position. </li>
+<li><code class="docutils literal"><span class="pre">w</span></code>: Width term for position. </li>
+<li><code class="docutils literal"><span class="pre">h</span></code>: Height term for position. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7ostendo8make_posEii">
+<span id="ostendo::make_pos__i.i"></span><span class="target" id="Pessumnamespaceostendo_1a182badf5647b8bae4d48aa1e447b9d80"></span><a class="reference internal" href="#_CPPv2N7ostendo3PosE" title="ostendo::Pos">Pos</a> <code class="descname">make_pos</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7ostendo8make_posEii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a new position object. </p>
+<p>Creates a position object given two terms. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="#Pessumstructostendo_1_1Pos"><span class="std std-ref">Pos</span></a> New position structure from given values. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">x</span></code>: X term for position. </li>
+<li><code class="docutils literal"><span class="pre">y</span></code>: Y term for position. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Variables</p>
+<dl class="member">
+<dt id="_CPPv2N7ostendo7std_scrE">
+<span id="ostendo::std_scr__Pos"></span><span class="target" id="Pessumnamespaceostendo_1a4c5850c8a109e159e874ecce8a5dc62a"></span><a class="reference internal" href="#_CPPv2N7ostendo3PosE" title="ostendo::Pos">Pos</a> <code class="descname">std_scr</code><a class="headerlink" href="#_CPPv2N7ostendo7std_scrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Width and height data for full window, measured at startup. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo7windowsE">
+<span id="ostendo::windows__std::map:ss.Window:"></span><span class="target" id="Pessumnamespaceostendo_1ab45e3689aa0cb8a2e3a175c0aed97880"></span>std::map&lt;std::string, <a class="reference internal" href="#_CPPv2N7ostendo6WindowE" title="ostendo::Window">Window</a>&gt; <code class="descname">windows</code><a class="headerlink" href="#_CPPv2N7ostendo7windowsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Optional map for windows, to link windows with given name. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo9win_indexE">
+<span id="ostendo::win_index__i"></span><span class="target" id="Pessumnamespaceostendo_1a3267a8b4ac0d3934af4bf5f8079d0f72"></span>int <code class="descname">win_index</code> = 0<a class="headerlink" href="#_CPPv2N7ostendo9win_indexE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Current window index, from windows map. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N7ostendo10color_initE">
+<span id="ostendo::color_init__b"></span><span class="target" id="Pessumnamespaceostendo_1aaece4e9a0bcd75df4724bf97c628c12e"></span>bool <code class="descname">color_init</code> = false<a class="headerlink" href="#_CPPv2N7ostendo10color_initE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Boolian to check if colors have been initialized. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessum_8ycm__extra__conf_8py"></span><em>file</em> <code class="descname">.ycm_extra_conf.py</code></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="FlagsForFile">
+<span class="target" id="Pessum_8ycm__extra__conf_8py_1a51f8bcdc9a3b791e6a88d798e6c786b3"></span><code class="descname">FlagsForFile</code><span class="sig-paren">(</span><em>filename filename</em>, <em>kwargs kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#FlagsForFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumconf_8py"></span><em>file</em> <code class="descname">conf.py</code></dt>
+<dd></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumostendo_8h"></span><em>file</em> <code class="descname">ostendo.h</code></dt>
+<dd><em>#include &#8220;ostendo_files/ostendo_headers.hpp&#8221;</em></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumform_8cpp"></span><em>file</em> <code class="descname">form.cpp</code></dt>
+<dd><em>#include &lt;ncurses.h&gt;</em><em>#include &lt;vector&gt;</em><em>#include &#8220;form.hpp&#8221;</em><em>#include &#8220;menu.hpp&#8221;</em><em>#include &#8220;types.hpp&#8221;</em><em>#include &#8220;window.hpp&#8221;</em></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumform_8d"></span><em>file</em> <code class="descname">form.d</code></dt>
+<dd></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumform_8hpp"></span><em>file</em> <code class="descname">form.hpp</code></dt>
+<dd><em>#include &lt;vector&gt;</em><em>#include &#8220;types.hpp&#8221;</em><em>#include &#8220;window.hpp&#8221;</em></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessummenu_8cpp"></span><em>file</em> <code class="descname">menu.cpp</code></dt>
+<dd><em>#include &lt;ncurses.h&gt;</em><em>#include &lt;string&gt;</em><em>#include &lt;vector&gt;</em><em>#include &#8220;menu.hpp&#8221;</em><em>#include &#8220;types.hpp&#8221;</em><em>#include &#8220;window.hpp&#8221;</em></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessummenu_8d"></span><em>file</em> <code class="descname">menu.d</code></dt>
+<dd></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessummenu_8hpp"></span><em>file</em> <code class="descname">menu.hpp</code></dt>
+<dd><em>#include &lt;string&gt;</em><em>#include &lt;vector&gt;</em><em>#include &#8220;window.hpp&#8221;</em></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumostendo_8cpp"></span><em>file</em> <code class="descname">ostendo.cpp</code></dt>
+<dd><em>#include &lt;ncurses.h&gt;</em><em>#include &lt;pessum.h&gt;</em><em>#include &lt;string&gt;</em><em>#include &#8220;ostendo.hpp&#8221;</em><em>#include &#8220;types.hpp&#8221;</em></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumostendo_8d"></span><em>file</em> <code class="descname">ostendo.d</code></dt>
+<dd></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumostendo_8hpp"></span><em>file</em> <code class="descname">ostendo.hpp</code></dt>
+<dd><em>#include &lt;map&gt;</em><em>#include &lt;queue&gt;</em><em>#include &lt;string&gt;</em><em>#include &lt;utility&gt;</em><em>#include &#8220;types.hpp&#8221;</em><em>#include &#8220;window.hpp&#8221;</em></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumostendo__headers_8hpp"></span><em>file</em> <code class="descname">ostendo_headers.hpp</code></dt>
+<dd><em>#include &#8220;form.hpp&#8221;</em><em>#include &#8220;menu.hpp&#8221;</em><em>#include &#8220;ostendo.hpp&#8221;</em><em>#include &#8220;text_box.hpp&#8221;</em><em>#include &#8220;types.hpp&#8221;</em><em>#include &#8220;window.hpp&#8221;</em></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumtext__box_8cpp"></span><em>file</em> <code class="descname">text_box.cpp</code></dt>
+<dd><em>#include &lt;ncurses.h&gt;</em><em>#include &lt;pessum.h&gt;</em><em>#include &lt;string&gt;</em><em>#include &#8220;text_box.hpp&#8221;</em><em>#include &#8220;window.hpp&#8221;</em></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumtext__box_8d"></span><em>file</em> <code class="descname">text_box.d</code></dt>
+<dd></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumtext__box_8hpp"></span><em>file</em> <code class="descname">text_box.hpp</code></dt>
+<dd><em>#include &#8220;window.hpp&#8221;</em></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumtypes_8hpp"></span><em>file</em> <code class="descname">types.hpp</code></dt>
+<dd><em>#include &lt;string&gt;</em><em>#include &lt;vector&gt;</em></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumwindow_8cpp"></span><em>file</em> <code class="descname">window.cpp</code></dt>
+<dd><em>#include &lt;ncurses.h&gt;</em><em>#include &lt;pessum.h&gt;</em><em>#include &lt;string&gt;</em><em>#include &#8220;ostendo.hpp&#8221;</em><em>#include &#8220;types.hpp&#8221;</em><em>#include &#8220;window.hpp&#8221;</em></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumwindow_8d"></span><em>file</em> <code class="descname">window.d</code></dt>
+<dd></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumwindow_8hpp"></span><em>file</em> <code class="descname">window.hpp</code></dt>
+<dd><em>#include &lt;ncurses.h&gt;</em><em>#include &lt;map&gt;</em><em>#include &lt;string&gt;</em><em>#include &lt;vector&gt;</em><em>#include &#8220;types.hpp&#8221;</em></dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumsource_8cpp"></span><em>file</em> <code class="descname">source.cpp</code></dt>
+<dd><em>#include &lt;ncurses.h&gt;</em><em>#include &lt;pessum.h&gt;</em><em>#include &lt;iostream&gt;</em><em>#include &#8220;ostendo_files/ostendo_headers.hpp&#8221;</em><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv24mainiA_Pc">
+<span id="main__i.cCPA"></span><span class="target" id="Pessumsource_8cpp_1abf9e6b7e6f15df4b525a2e7705ba3089"></span>int <code class="descname">main</code><span class="sig-paren">(</span>int <em>argc</em>, char <em class="property">const</em> *<em>argv</em>[]<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv24mainiA_Pc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="file">
+<dt>
+<span class="target" id="Pessumsource_8d"></span><em>file</em> <code class="descname">source.d</code></dt>
+<dd></dd></dl>
+
+<dl class="dir">
+<dt>
+<span class="target" id="Pessumdir_49e56c817e5e54854c35e136979f97ca"></span><em>dir</em> <code class="descname">docs</code></dt>
+<dd></dd></dl>
+
+<dl class="dir">
+<dt>
+<span class="target" id="Pessumdir_e676ba5e4f125fe81b730ebad032f00e"></span><em>dir</em> <code class="descname">ostendo_files</code></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to Pessum&#8217;s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Arden Rasmussen.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,719 @@
+\hypertarget{namespaceostendo}{}\section{ostendo Namespace Reference}
+\label{namespaceostendo}\index{ostendo@{ostendo}}
+
+
+Core namespace for all Ostendo methods.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structostendo_1_1Pos}{Pos}
+\begin{DoxyCompactList}\small\item\em Structure to contains position/size data. \end{DoxyCompactList}\item 
+struct \hyperlink{structostendo_1_1Var}{Var}
+\begin{DoxyCompactList}\small\item\em Structure to use as general variable. \end{DoxyCompactList}\item 
+class \hyperlink{classostendo_1_1Window}{Window}
+\begin{DoxyCompactList}\small\item\em Core of everything output to the console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespaceostendo_ae78fb0e171a88eb8820d8d6a894463f4}{Var\+Type} \{ \hyperlink{namespaceostendo_ae78fb0e171a88eb8820d8d6a894463f4ab2b3795a506a3e38b4c00c96b9193b81}{I\+NT} = 0, 
+\hyperlink{namespaceostendo_ae78fb0e171a88eb8820d8d6a894463f4a62b746a7f8691e7b0010c7c78cc3714b}{D\+O\+U\+B\+LE} = 1, 
+\hyperlink{namespaceostendo_ae78fb0e171a88eb8820d8d6a894463f4a26583ec8ca995b14e769c98e6025bbb3}{S\+T\+R\+I\+NG} = 2, 
+\hyperlink{namespaceostendo_ae78fb0e171a88eb8820d8d6a894463f4a8c79b343b56c9861211e496c7276fb64}{B\+O\+OL} = 3
+ \}\begin{DoxyCompactList}\small\item\em Declares the posible types of the variable structure. \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespaceostendo_aa031b855a10fa72d112d6b7287c8f2ec}{W\+I\+N\+D\+O\+W\+\_\+\+P\+A\+R\+TS} \{ \hyperlink{namespaceostendo_aa031b855a10fa72d112d6b7287c8f2eca26a94c1892f3cbff5ab7e6d31b5cb77c}{W\+I\+N\+\_\+\+B\+O\+R\+D\+ER} = 1, 
+\hyperlink{namespaceostendo_aa031b855a10fa72d112d6b7287c8f2eca9c4bc15f158c6523e71a9a66b020fbab}{W\+I\+N\+\_\+\+T\+I\+T\+LE} = 2, 
+\hyperlink{namespaceostendo_aa031b855a10fa72d112d6b7287c8f2eca177402ad0ac6b02593972fedbc58020e}{W\+I\+N\+\_\+\+T\+E\+XT} = 3, 
+\hyperlink{namespaceostendo_aa031b855a10fa72d112d6b7287c8f2ecac01b3c91073d3e21325cc8a082cd7baa}{W\+I\+N\+\_\+\+B\+A\+C\+K\+G\+R\+O\+U\+ND} = 4
+ \}\begin{DoxyCompactList}\small\item\em Declaration for different components of the window. \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6}{A\+T\+T\+RS} \{ \\*
+\hyperlink{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6aaf0b8945bf817b057d16dabd79fdbf05}{A\+L\+T\+C\+H\+AR} = 1, 
+\hyperlink{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6a0ad98e6d41bc73832fa0cec6194d02d3}{B\+L\+I\+NK} = 2, 
+\hyperlink{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6a434b908118752e03181b584a12f497fc}{B\+O\+LD} = 3, 
+\hyperlink{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6a6e9f2e6ee917da1f2ebfa80cf004c442}{D\+IM} = 4, 
+\\*
+\hyperlink{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6ae4cc920865a0016b81290e5259d9f60f}{I\+N\+V\+IS} = 5, 
+\hyperlink{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6af6041deb5c5e9bdc72db61bef8bbb0fd}{P\+R\+O\+T\+E\+CT} = 5, 
+\hyperlink{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6a88187ffc48ef6b41163c10634644e1a8}{R\+E\+V\+E\+R\+SE} = 6, 
+\hyperlink{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6a50201ccd0790154700be098072253dcd}{S\+T\+A\+N\+D\+O\+UT} = 7, 
+\\*
+\hyperlink{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6af00877dea0b044edc80f9205f5695f0d}{U\+N\+D\+E\+R\+L\+I\+NE} = 8
+ \}\begin{DoxyCompactList}\small\item\em Declaration for different output attributes. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{structostendo_1_1Var}{Var} $>$ \hyperlink{namespaceostendo_a6de3757551a0461ef565d035547e4408}{Form} (\hyperlink{classostendo_1_1Window}{ostendo\+::\+Window} win, std\+::vector$<$ \hyperlink{structostendo_1_1Var}{Var} $>$ fields)
+\item 
+std\+::string \hyperlink{namespaceostendo_a75491bb403d248c50aafc1f5eb310d75}{Get\+Var\+Str} (\hyperlink{structostendo_1_1Var}{Var} in\+\_\+var, int width)
+\item 
+\hyperlink{structostendo_1_1Var}{Var} \hyperlink{namespaceostendo_a0eff2d6c60790fa96f06511e3a01f3a4}{Down\+Arrow} (\hyperlink{structostendo_1_1Var}{Var} in\+\_\+var, \hyperlink{classostendo_1_1Window}{Window} win)
+\item 
+\hyperlink{structostendo_1_1Var}{Var} \hyperlink{namespaceostendo_abd61a4387f4057a821127c78c5de14df}{Up\+Arrow} (\hyperlink{structostendo_1_1Var}{Var} in\+\_\+var, \hyperlink{classostendo_1_1Window}{Window} win)
+\item 
+\hyperlink{structostendo_1_1Var}{Var} \hyperlink{namespaceostendo_a9306123175f6b620de11b774fbfb5ec5}{Right\+Arrow} (\hyperlink{structostendo_1_1Var}{Var} in\+\_\+var, \hyperlink{classostendo_1_1Window}{Window} win)
+\item 
+\hyperlink{structostendo_1_1Var}{Var} \hyperlink{namespaceostendo_ab912de20925f952a5056414bfbdaeeda}{Left\+Arrow} (\hyperlink{structostendo_1_1Var}{Var} in\+\_\+var, \hyperlink{classostendo_1_1Window}{Window} win)
+\item 
+\hyperlink{structostendo_1_1Var}{Var} \hyperlink{namespaceostendo_a9279674ead9b9c27ebc228430c1abfbe}{Enter} (\hyperlink{structostendo_1_1Var}{Var} in\+\_\+var, \hyperlink{classostendo_1_1Window}{Window} win)
+\item 
+\hyperlink{structostendo_1_1Var}{Var} \hyperlink{namespaceostendo_ab4fddb801c2f32c114a4e3ef0c9bc953}{Backspace} (\hyperlink{structostendo_1_1Var}{Var} in\+\_\+var, \hyperlink{classostendo_1_1Window}{Window} win)
+\item 
+\hyperlink{structostendo_1_1Var}{Var} \hyperlink{namespaceostendo_ac7a01c5f1ce53b6361e62f349f8f5ee4}{Add} (\hyperlink{structostendo_1_1Var}{Var} in\+\_\+var, int ch, \hyperlink{classostendo_1_1Window}{Window} win)
+\item 
+std\+::string \hyperlink{namespaceostendo_a7046839a0becea8636f4136c94b4cc31}{Menu} (\hyperlink{classostendo_1_1Window}{ostendo\+::\+Window} win, std\+::vector$<$ std\+::string $>$ options)
+\item 
+void \hyperlink{namespaceostendo_acada6eef78aaae2a103761e6b3122a7c}{Init\+Ostendo} (bool color=false, int time\+\_\+out=-\/1)
+\begin{DoxyCompactList}\small\item\em Initializes Ostendo/\+Ncurses. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceostendo_ae151d449ffec660866ee7c8ac75892da}{Term\+Ostendo} ()
+\begin{DoxyCompactList}\small\item\em Terminates Ostendo/\+Ncurses. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceostendo_a47ee72208333eea02c3737d540d0267b}{Init\+Window} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Creates a new window. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceostendo_a9a1f177f0bc76d81901078af708114f6}{Init\+Window} (std\+::string name, int width, int height)
+\begin{DoxyCompactList}\small\item\em Creates a new window. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceostendo_a471c4077531c8fd99d79c1faf7a0d09e}{Init\+Window} (std\+::string name, int width, int height, int x, int y)
+\begin{DoxyCompactList}\small\item\em Creates a new window. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceostendo_a8d3e9d8ec26e75c7fd77ef392ecd6e06}{Term\+Window} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Terminates a window. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceostendo_a892fb62097748762befae0441bcc4f0a}{Load\+Colors} ()
+\begin{DoxyCompactList}\small\item\em Loads console color pairs. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{namespaceostendo_a3d2c591339109330938a42d576c9e81d}{Text\+Box} (\hyperlink{classostendo_1_1Window}{ostendo\+::\+Window} win, std\+::string base=\char`\"{}\char`\"{})
+\item 
+std\+::string \hyperlink{namespaceostendo_a2f50af8d4996899c0906b9c78e045e84}{Text\+Box} (\hyperlink{classostendo_1_1Window}{ostendo\+::\+Window} win, std\+::vector$<$ std\+::string $>$ base)
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{namespaceostendo_a96fb1afad5e7a28a2c1f63066930683f}{V\+Text\+Box} (\hyperlink{classostendo_1_1Window}{ostendo\+::\+Window} win, std\+::string base=\char`\"{}\char`\"{})
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{namespaceostendo_ac2ce30296ad60b1e02258e3d5c1e8b4f}{V\+Text\+Box} (\hyperlink{classostendo_1_1Window}{ostendo\+::\+Window} win, std\+::vector$<$ std\+::string $>$ base)
+\item 
+void \hyperlink{namespaceostendo_a9bb1a56540aa7a03b6e8af5a347950d2}{Display\+Lines} (\hyperlink{classostendo_1_1Window}{ostendo\+::\+Window} win, std\+::vector$<$ std\+::string $>$ lines, int current\+\_\+line, int \&start\+\_\+line)
+\item 
+\hyperlink{structostendo_1_1Pos}{Pos} \hyperlink{namespaceostendo_a5703ea1e4f426c0216fc7f36708a4539}{make\+\_\+pos} (int x, int y, int w, int h)
+\begin{DoxyCompactList}\small\item\em Creates a new position object. \end{DoxyCompactList}\item 
+\hyperlink{structostendo_1_1Pos}{Pos} \hyperlink{namespaceostendo_a182badf5647b8bae4d48aa1e447b9d80}{make\+\_\+pos} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Creates a new position object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structostendo_1_1Pos}{Pos} \hyperlink{namespaceostendo_a4c5850c8a109e159e874ecce8a5dc62a}{std\+\_\+scr}
+\item 
+std\+::map$<$ std\+::string, \hyperlink{classostendo_1_1Window}{Window} $>$ \hyperlink{namespaceostendo_ab45e3689aa0cb8a2e3a175c0aed97880}{windows}
+\item 
+int \hyperlink{namespaceostendo_a3267a8b4ac0d3934af4bf5f8079d0f72}{win\+\_\+index} = 0
+\item 
+bool \hyperlink{namespaceostendo_aaece4e9a0bcd75df4724bf97c628c12e}{color\+\_\+init} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Core namespace for all Ostendo methods. 
+
+\subsection{Enumeration Type Documentation}
+\index{ostendo@{ostendo}!A\+T\+T\+RS@{A\+T\+T\+RS}}
+\index{A\+T\+T\+RS@{A\+T\+T\+RS}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{A\+T\+T\+RS}{ATTRS}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ostendo\+::\+A\+T\+T\+RS}}\hypertarget{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6}{}\label{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6}
+
+
+Declaration for different output attributes. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+L\+T\+C\+H\+AR@{A\+L\+T\+C\+H\+AR}!ostendo@{ostendo}}\index{ostendo@{ostendo}!A\+L\+T\+C\+H\+AR@{A\+L\+T\+C\+H\+AR}}\item[{\em 
+A\+L\+T\+C\+H\+AR\hypertarget{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6aaf0b8945bf817b057d16dabd79fdbf05}{}\label{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6aaf0b8945bf817b057d16dabd79fdbf05}
+}]Uses alternate character set. \index{B\+L\+I\+NK@{B\+L\+I\+NK}!ostendo@{ostendo}}\index{ostendo@{ostendo}!B\+L\+I\+NK@{B\+L\+I\+NK}}\item[{\em 
+B\+L\+I\+NK\hypertarget{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6a0ad98e6d41bc73832fa0cec6194d02d3}{}\label{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6a0ad98e6d41bc73832fa0cec6194d02d3}
+}]Sets output to blinking (If posible in terminal emulator). \index{B\+O\+LD@{B\+O\+LD}!ostendo@{ostendo}}\index{ostendo@{ostendo}!B\+O\+LD@{B\+O\+LD}}\item[{\em 
+B\+O\+LD\hypertarget{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6a434b908118752e03181b584a12f497fc}{}\label{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6a434b908118752e03181b584a12f497fc}
+}]Sets output to bold. \index{D\+IM@{D\+IM}!ostendo@{ostendo}}\index{ostendo@{ostendo}!D\+IM@{D\+IM}}\item[{\em 
+D\+IM\hypertarget{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6a6e9f2e6ee917da1f2ebfa80cf004c442}{}\label{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6a6e9f2e6ee917da1f2ebfa80cf004c442}
+}]Sets output to dim colors. \index{I\+N\+V\+IS@{I\+N\+V\+IS}!ostendo@{ostendo}}\index{ostendo@{ostendo}!I\+N\+V\+IS@{I\+N\+V\+IS}}\item[{\em 
+I\+N\+V\+IS\hypertarget{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6ae4cc920865a0016b81290e5259d9f60f}{}\label{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6ae4cc920865a0016b81290e5259d9f60f}
+}]Sets output text to be invisable. \index{P\+R\+O\+T\+E\+CT@{P\+R\+O\+T\+E\+CT}!ostendo@{ostendo}}\index{ostendo@{ostendo}!P\+R\+O\+T\+E\+CT@{P\+R\+O\+T\+E\+CT}}\item[{\em 
+P\+R\+O\+T\+E\+CT\hypertarget{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6af6041deb5c5e9bdc72db61bef8bbb0fd}{}\label{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6af6041deb5c5e9bdc72db61bef8bbb0fd}
+}]Sets output mode to protected. \index{R\+E\+V\+E\+R\+SE@{R\+E\+V\+E\+R\+SE}!ostendo@{ostendo}}\index{ostendo@{ostendo}!R\+E\+V\+E\+R\+SE@{R\+E\+V\+E\+R\+SE}}\item[{\em 
+R\+E\+V\+E\+R\+SE\hypertarget{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6a88187ffc48ef6b41163c10634644e1a8}{}\label{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6a88187ffc48ef6b41163c10634644e1a8}
+}]Sets output to reverse mode. \index{S\+T\+A\+N\+D\+O\+UT@{S\+T\+A\+N\+D\+O\+UT}!ostendo@{ostendo}}\index{ostendo@{ostendo}!S\+T\+A\+N\+D\+O\+UT@{S\+T\+A\+N\+D\+O\+UT}}\item[{\em 
+S\+T\+A\+N\+D\+O\+UT\hypertarget{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6a50201ccd0790154700be098072253dcd}{}\label{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6a50201ccd0790154700be098072253dcd}
+}]Sets output to be heighlighted. \index{U\+N\+D\+E\+R\+L\+I\+NE@{U\+N\+D\+E\+R\+L\+I\+NE}!ostendo@{ostendo}}\index{ostendo@{ostendo}!U\+N\+D\+E\+R\+L\+I\+NE@{U\+N\+D\+E\+R\+L\+I\+NE}}\item[{\em 
+U\+N\+D\+E\+R\+L\+I\+NE\hypertarget{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6af00877dea0b044edc80f9205f5695f0d}{}\label{namespaceostendo_a804202ffcab31ce4e007ff0c9d5249c6af00877dea0b044edc80f9205f5695f0d}
+}]Sets output to be underlined. \end{description}
+\end{Desc}
+\index{ostendo@{ostendo}!Var\+Type@{Var\+Type}}
+\index{Var\+Type@{Var\+Type}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Var\+Type}{VarType}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ostendo\+::\+Var\+Type}}\hypertarget{namespaceostendo_ae78fb0e171a88eb8820d8d6a894463f4}{}\label{namespaceostendo_ae78fb0e171a88eb8820d8d6a894463f4}
+
+
+Declares the posible types of the variable structure. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+NT@{I\+NT}!ostendo@{ostendo}}\index{ostendo@{ostendo}!I\+NT@{I\+NT}}\item[{\em 
+I\+NT\hypertarget{namespaceostendo_ae78fb0e171a88eb8820d8d6a894463f4ab2b3795a506a3e38b4c00c96b9193b81}{}\label{namespaceostendo_ae78fb0e171a88eb8820d8d6a894463f4ab2b3795a506a3e38b4c00c96b9193b81}
+}]Sets the variable type to be integer \index{D\+O\+U\+B\+LE@{D\+O\+U\+B\+LE}!ostendo@{ostendo}}\index{ostendo@{ostendo}!D\+O\+U\+B\+LE@{D\+O\+U\+B\+LE}}\item[{\em 
+D\+O\+U\+B\+LE\hypertarget{namespaceostendo_ae78fb0e171a88eb8820d8d6a894463f4a62b746a7f8691e7b0010c7c78cc3714b}{}\label{namespaceostendo_ae78fb0e171a88eb8820d8d6a894463f4a62b746a7f8691e7b0010c7c78cc3714b}
+}]Sets the variable type to be doubles \index{S\+T\+R\+I\+NG@{S\+T\+R\+I\+NG}!ostendo@{ostendo}}\index{ostendo@{ostendo}!S\+T\+R\+I\+NG@{S\+T\+R\+I\+NG}}\item[{\em 
+S\+T\+R\+I\+NG\hypertarget{namespaceostendo_ae78fb0e171a88eb8820d8d6a894463f4a26583ec8ca995b14e769c98e6025bbb3}{}\label{namespaceostendo_ae78fb0e171a88eb8820d8d6a894463f4a26583ec8ca995b14e769c98e6025bbb3}
+}]Sets the variable type to be strings \index{B\+O\+OL@{B\+O\+OL}!ostendo@{ostendo}}\index{ostendo@{ostendo}!B\+O\+OL@{B\+O\+OL}}\item[{\em 
+B\+O\+OL\hypertarget{namespaceostendo_ae78fb0e171a88eb8820d8d6a894463f4a8c79b343b56c9861211e496c7276fb64}{}\label{namespaceostendo_ae78fb0e171a88eb8820d8d6a894463f4a8c79b343b56c9861211e496c7276fb64}
+}]Sets the variable type to be boolians \end{description}
+\end{Desc}
+\index{ostendo@{ostendo}!W\+I\+N\+D\+O\+W\+\_\+\+P\+A\+R\+TS@{W\+I\+N\+D\+O\+W\+\_\+\+P\+A\+R\+TS}}
+\index{W\+I\+N\+D\+O\+W\+\_\+\+P\+A\+R\+TS@{W\+I\+N\+D\+O\+W\+\_\+\+P\+A\+R\+TS}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{W\+I\+N\+D\+O\+W\+\_\+\+P\+A\+R\+TS}{WINDOW_PARTS}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ostendo\+::\+W\+I\+N\+D\+O\+W\+\_\+\+P\+A\+R\+TS}}\hypertarget{namespaceostendo_aa031b855a10fa72d112d6b7287c8f2ec}{}\label{namespaceostendo_aa031b855a10fa72d112d6b7287c8f2ec}
+
+
+Declaration for different components of the window. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{W\+I\+N\+\_\+\+B\+O\+R\+D\+ER@{W\+I\+N\+\_\+\+B\+O\+R\+D\+ER}!ostendo@{ostendo}}\index{ostendo@{ostendo}!W\+I\+N\+\_\+\+B\+O\+R\+D\+ER@{W\+I\+N\+\_\+\+B\+O\+R\+D\+ER}}\item[{\em 
+W\+I\+N\+\_\+\+B\+O\+R\+D\+ER\hypertarget{namespaceostendo_aa031b855a10fa72d112d6b7287c8f2eca26a94c1892f3cbff5ab7e6d31b5cb77c}{}\label{namespaceostendo_aa031b855a10fa72d112d6b7287c8f2eca26a94c1892f3cbff5ab7e6d31b5cb77c}
+}]Selects the window border. \index{W\+I\+N\+\_\+\+T\+I\+T\+LE@{W\+I\+N\+\_\+\+T\+I\+T\+LE}!ostendo@{ostendo}}\index{ostendo@{ostendo}!W\+I\+N\+\_\+\+T\+I\+T\+LE@{W\+I\+N\+\_\+\+T\+I\+T\+LE}}\item[{\em 
+W\+I\+N\+\_\+\+T\+I\+T\+LE\hypertarget{namespaceostendo_aa031b855a10fa72d112d6b7287c8f2eca9c4bc15f158c6523e71a9a66b020fbab}{}\label{namespaceostendo_aa031b855a10fa72d112d6b7287c8f2eca9c4bc15f158c6523e71a9a66b020fbab}
+}]Selects the window title. \index{W\+I\+N\+\_\+\+T\+E\+XT@{W\+I\+N\+\_\+\+T\+E\+XT}!ostendo@{ostendo}}\index{ostendo@{ostendo}!W\+I\+N\+\_\+\+T\+E\+XT@{W\+I\+N\+\_\+\+T\+E\+XT}}\item[{\em 
+W\+I\+N\+\_\+\+T\+E\+XT\hypertarget{namespaceostendo_aa031b855a10fa72d112d6b7287c8f2eca177402ad0ac6b02593972fedbc58020e}{}\label{namespaceostendo_aa031b855a10fa72d112d6b7287c8f2eca177402ad0ac6b02593972fedbc58020e}
+}]Selects the window test. \index{W\+I\+N\+\_\+\+B\+A\+C\+K\+G\+R\+O\+U\+ND@{W\+I\+N\+\_\+\+B\+A\+C\+K\+G\+R\+O\+U\+ND}!ostendo@{ostendo}}\index{ostendo@{ostendo}!W\+I\+N\+\_\+\+B\+A\+C\+K\+G\+R\+O\+U\+ND@{W\+I\+N\+\_\+\+B\+A\+C\+K\+G\+R\+O\+U\+ND}}\item[{\em 
+W\+I\+N\+\_\+\+B\+A\+C\+K\+G\+R\+O\+U\+ND\hypertarget{namespaceostendo_aa031b855a10fa72d112d6b7287c8f2ecac01b3c91073d3e21325cc8a082cd7baa}{}\label{namespaceostendo_aa031b855a10fa72d112d6b7287c8f2ecac01b3c91073d3e21325cc8a082cd7baa}
+}]Selects the window background. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{ostendo@{ostendo}!Add@{Add}}
+\index{Add@{Add}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Add(\+Var in\+\_\+var, int ch, Window win)}{Add(Var in_var, int ch, Window win)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ostendo\+::\+Var} ostendo\+::\+Add (
+\begin{DoxyParamCaption}
+\item[{{\bf Var}}]{in\+\_\+var, }
+\item[{int}]{ch, }
+\item[{{\bf Window}}]{win}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_ac7a01c5f1ce53b6361e62f349f8f5ee4}{}\label{namespaceostendo_ac7a01c5f1ce53b6361e62f349f8f5ee4}
+Handles form user input of any other key. Provides functionality for different \hyperlink{structostendo_1_1Var}{Var} types for the user input of any other key. 
+\begin{DoxyParams}{Parameters}
+{\em in\+\_\+var} & \hyperlink{structostendo_1_1Var}{Var} to apply action to. \\
+\hline
+{\em ch} & Character representation of key input. \\
+\hline
+{\em win} & \hyperlink{classostendo_1_1Window}{Window} to display to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{structostendo_1_1Var}{Var} after action is applied. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structostendo_1_1Var}{Var}, \hyperlink{classostendo_1_1Window}{Window} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Backspace@{Backspace}}
+\index{Backspace@{Backspace}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Backspace(\+Var in\+\_\+var, Window win)}{Backspace(Var in_var, Window win)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ostendo\+::\+Var} ostendo\+::\+Backspace (
+\begin{DoxyParamCaption}
+\item[{{\bf Var}}]{in\+\_\+var, }
+\item[{{\bf Window}}]{win}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_ab4fddb801c2f32c114a4e3ef0c9bc953}{}\label{namespaceostendo_ab4fddb801c2f32c114a4e3ef0c9bc953}
+Handles form user input backspace key. Provides functionality for different \hyperlink{structostendo_1_1Var}{Var} types for the user input of backspace key. 
+\begin{DoxyParams}{Parameters}
+{\em in\+\_\+var} & \hyperlink{structostendo_1_1Var}{Var} to apply action to. \\
+\hline
+{\em win} & \hyperlink{classostendo_1_1Window}{Window} to display to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{structostendo_1_1Var}{Var} after action is applied. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structostendo_1_1Var}{Var}, \hyperlink{classostendo_1_1Window}{Window} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Display\+Lines@{Display\+Lines}}
+\index{Display\+Lines@{Display\+Lines}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Display\+Lines(ostendo\+::\+Window win, std\+::vector$<$ std\+::string $>$ lines, int current\+\_\+line, int \&start\+\_\+line)}{DisplayLines(ostendo::Window win, std::vector< std::string > lines, int current_line, int &start_line)}}]{\setlength{\rightskip}{0pt plus 5cm}void ostendo\+::\+Display\+Lines (
+\begin{DoxyParamCaption}
+\item[{{\bf ostendo\+::\+Window}}]{win, }
+\item[{std\+::vector$<$ std\+::string $>$}]{lines, }
+\item[{int}]{current\+\_\+line, }
+\item[{int \&}]{start\+\_\+line}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_a9bb1a56540aa7a03b6e8af5a347950d2}{}\label{namespaceostendo_a9bb1a56540aa7a03b6e8af5a347950d2}
+Displays lines from a vector of strings. Displays the lines from a vector of string to a given window, and auto centers the current line, so that it is always on screen. 
+\begin{DoxyParams}{Parameters}
+{\em win} & \hyperlink{classostendo_1_1Window}{Window} to display to. \\
+\hline
+{\em lines} & Vector of string to display. \\
+\hline
+{\em current\+\_\+line} & Current line to center in window. \\
+\hline
+{\em start\+\_\+line} & line of vector to begin display from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classostendo_1_1Window}{Window} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Down\+Arrow@{Down\+Arrow}}
+\index{Down\+Arrow@{Down\+Arrow}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Down\+Arrow(\+Var in\+\_\+var, Window win)}{DownArrow(Var in_var, Window win)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ostendo\+::\+Var} ostendo\+::\+Down\+Arrow (
+\begin{DoxyParamCaption}
+\item[{{\bf Var}}]{in\+\_\+var, }
+\item[{{\bf Window}}]{win}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_a0eff2d6c60790fa96f06511e3a01f3a4}{}\label{namespaceostendo_a0eff2d6c60790fa96f06511e3a01f3a4}
+Handles form user input arrow key down. Provides functionality for different \hyperlink{structostendo_1_1Var}{Var} types for the user input of down arrow key. 
+\begin{DoxyParams}{Parameters}
+{\em in\+\_\+var} & \hyperlink{structostendo_1_1Var}{Var} to apply action to. \\
+\hline
+{\em win} & \hyperlink{classostendo_1_1Window}{Window} to display to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{structostendo_1_1Var}{Var} after action is applied. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structostendo_1_1Var}{Var}, \hyperlink{classostendo_1_1Window}{Window} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Enter@{Enter}}
+\index{Enter@{Enter}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Enter(\+Var in\+\_\+var, Window win)}{Enter(Var in_var, Window win)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ostendo\+::\+Var} ostendo\+::\+Enter (
+\begin{DoxyParamCaption}
+\item[{{\bf Var}}]{in\+\_\+var, }
+\item[{{\bf Window}}]{win}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_a9279674ead9b9c27ebc228430c1abfbe}{}\label{namespaceostendo_a9279674ead9b9c27ebc228430c1abfbe}
+Handles form user input enter key. Provides functionality for different \hyperlink{structostendo_1_1Var}{Var} types for the user input of enter key. 
+\begin{DoxyParams}{Parameters}
+{\em in\+\_\+var} & \hyperlink{structostendo_1_1Var}{Var} to apply action to. \\
+\hline
+{\em win} & \hyperlink{classostendo_1_1Window}{Window} to display to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{structostendo_1_1Var}{Var} after action is applied. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structostendo_1_1Var}{Var}, \hyperlink{classostendo_1_1Window}{Window} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Form@{Form}}
+\index{Form@{Form}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Form(ostendo\+::\+Window win, std\+::vector$<$ Var $>$ fields)}{Form(ostendo::Window win, std::vector< Var > fields)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf ostendo\+::\+Var} $>$ ostendo\+::\+Form (
+\begin{DoxyParamCaption}
+\item[{{\bf ostendo\+::\+Window}}]{win, }
+\item[{std\+::vector$<$ {\bf Var} $>$}]{fields}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_a6de3757551a0461ef565d035547e4408}{}\label{namespaceostendo_a6de3757551a0461ef565d035547e4408}
+Simple form function to get several inputs from the user. This function takes a window, and a set of inputs to request of the user. After the user enters the values for the requested inputs, the values are returned. 
+\begin{DoxyParams}{Parameters}
+{\em win} & \hyperlink{classostendo_1_1Window}{Window} to use for displaying inputs. \\
+\hline
+{\em fields} & Vector of \hyperlink{structostendo_1_1Var}{Var}\textquotesingle{}s for taking in input from the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of \hyperlink{structostendo_1_1Var}{Var}\textquotesingle{}s filled with user input. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classostendo_1_1Window}{Window}, \hyperlink{structostendo_1_1Var}{Var} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Get\+Var\+Str@{Get\+Var\+Str}}
+\index{Get\+Var\+Str@{Get\+Var\+Str}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Get\+Var\+Str(\+Var in\+\_\+var, int width)}{GetVarStr(Var in_var, int width)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string ostendo\+::\+Get\+Var\+Str (
+\begin{DoxyParamCaption}
+\item[{{\bf Var}}]{in\+\_\+var, }
+\item[{int}]{width}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_a75491bb403d248c50aafc1f5eb310d75}{}\label{namespaceostendo_a75491bb403d248c50aafc1f5eb310d75}
+Gets the string representation of the variable to display. This function reads the \hyperlink{structostendo_1_1Var}{Var} object, and creates a string to represent the data stored by the object. 
+\begin{DoxyParams}{Parameters}
+{\em in\+\_\+var} & \hyperlink{structostendo_1_1Var}{Var} to interpret. \\
+\hline
+{\em width} & Maximum width for return string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation of in\+\_\+var. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structostendo_1_1Var}{Var}. 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Init\+Ostendo@{Init\+Ostendo}}
+\index{Init\+Ostendo@{Init\+Ostendo}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Init\+Ostendo(bool color=false, int time\+\_\+out=-\/1)}{InitOstendo(bool color=false, int time_out=-1)}}]{\setlength{\rightskip}{0pt plus 5cm}void ostendo\+::\+Init\+Ostendo (
+\begin{DoxyParamCaption}
+\item[{bool}]{color = {\ttfamily false}, }
+\item[{int}]{time\+\_\+out = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_acada6eef78aaae2a103761e6b3122a7c}{}\label{namespaceostendo_acada6eef78aaae2a103761e6b3122a7c}
+
+
+Initializes Ostendo/\+Ncurses. 
+
+Initializes ncurses with default settings, and enables keypad input, and reads std\+\_\+scr data. Optionaly enables color, disables cursor, and sets input timeout time. 
+\begin{DoxyParams}{Parameters}
+{\em color} & Determines if colors should be enabled. \\
+\hline
+{\em cursor} & Determines if cursor should be disabled. \\
+\hline
+{\em time\+\_\+out} & Sets the time out time for intput. -\/1 for no time out. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{namespaceostendo_a4c5850c8a109e159e874ecce8a5dc62a}{std\+\_\+scr}, \hyperlink{namespaceostendo_ab45e3689aa0cb8a2e3a175c0aed97880}{windows}, \hyperlink{namespaceostendo_aaece4e9a0bcd75df4724bf97c628c12e}{color\+\_\+init}, \hyperlink{namespaceostendo_ae151d449ffec660866ee7c8ac75892da}{Term\+Ostendo()} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Init\+Window@{Init\+Window}}
+\index{Init\+Window@{Init\+Window}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Init\+Window(std\+::string name)}{InitWindow(std::string name)}}]{\setlength{\rightskip}{0pt plus 5cm}void ostendo\+::\+Init\+Window (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_a47ee72208333eea02c3737d540d0267b}{}\label{namespaceostendo_a47ee72208333eea02c3737d540d0267b}
+
+
+Creates a new window. 
+
+Creates a new window, and adds it to windows. The window has the same dimensions of std\+\_\+scr. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the window for the key in windows map. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{namespaceostendo_ab45e3689aa0cb8a2e3a175c0aed97880}{windows}, \hyperlink{namespaceostendo_a4c5850c8a109e159e874ecce8a5dc62a}{std\+\_\+scr} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Init\+Window@{Init\+Window}}
+\index{Init\+Window@{Init\+Window}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Init\+Window(std\+::string name, int width, int height)}{InitWindow(std::string name, int width, int height)}}]{\setlength{\rightskip}{0pt plus 5cm}void ostendo\+::\+Init\+Window (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{name, }
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_a9a1f177f0bc76d81901078af708114f6}{}\label{namespaceostendo_a9a1f177f0bc76d81901078af708114f6}
+
+
+Creates a new window. 
+
+Creates a new window, and adds it to windows. The window is positioned at 0,0 with given width and height. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the window for the key in windows map. \\
+\hline
+{\em width} & The width of the window in characters. \\
+\hline
+{\em height} & The height of the window in characters. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{namespaceostendo_ab45e3689aa0cb8a2e3a175c0aed97880}{windows}, \hyperlink{namespaceostendo_a4c5850c8a109e159e874ecce8a5dc62a}{std\+\_\+scr} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Init\+Window@{Init\+Window}}
+\index{Init\+Window@{Init\+Window}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Init\+Window(std\+::string name, int width, int height, int x, int y)}{InitWindow(std::string name, int width, int height, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void ostendo\+::\+Init\+Window (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{name, }
+\item[{int}]{width, }
+\item[{int}]{height, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_a471c4077531c8fd99d79c1faf7a0d09e}{}\label{namespaceostendo_a471c4077531c8fd99d79c1faf7a0d09e}
+
+
+Creates a new window. 
+
+Creates a new window, and adds it to windows. The window is at a given position with a given width and height. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the window for the key in windows map. \\
+\hline
+{\em width} & The width of the window in characters. \\
+\hline
+{\em height} & The height of the window in characters. \\
+\hline
+{\em x} & The x position of the window in characters from the left. \\
+\hline
+{\em y} & the y position of the window in characters from the top. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{namespaceostendo_ab45e3689aa0cb8a2e3a175c0aed97880}{windows}, \hyperlink{namespaceostendo_a4c5850c8a109e159e874ecce8a5dc62a}{std\+\_\+scr} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Left\+Arrow@{Left\+Arrow}}
+\index{Left\+Arrow@{Left\+Arrow}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Left\+Arrow(\+Var in\+\_\+var, Window win)}{LeftArrow(Var in_var, Window win)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ostendo\+::\+Var} ostendo\+::\+Left\+Arrow (
+\begin{DoxyParamCaption}
+\item[{{\bf Var}}]{in\+\_\+var, }
+\item[{{\bf Window}}]{win}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_ab912de20925f952a5056414bfbdaeeda}{}\label{namespaceostendo_ab912de20925f952a5056414bfbdaeeda}
+Handles form user input arrow key left. Provides functionality for different \hyperlink{structostendo_1_1Var}{Var} types for the user input of left arrow key. 
+\begin{DoxyParams}{Parameters}
+{\em in\+\_\+var} & \hyperlink{structostendo_1_1Var}{Var} to apply action to. \\
+\hline
+{\em win} & \hyperlink{classostendo_1_1Window}{Window} to display to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{structostendo_1_1Var}{Var} after action is applied. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structostendo_1_1Var}{Var}, \hyperlink{classostendo_1_1Window}{Window} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Load\+Colors@{Load\+Colors}}
+\index{Load\+Colors@{Load\+Colors}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Load\+Colors()}{LoadColors()}}]{\setlength{\rightskip}{0pt plus 5cm}void ostendo\+::\+Load\+Colors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_a892fb62097748762befae0441bcc4f0a}{}\label{namespaceostendo_a892fb62097748762befae0441bcc4f0a}
+
+
+Loads console color pairs. 
+
+Loads every combination of the console color pairs, if colors are initialized. \begin{DoxySeeAlso}{See also}
+\hyperlink{namespaceostendo_aaece4e9a0bcd75df4724bf97c628c12e}{color\+\_\+init} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!make\+\_\+pos@{make\+\_\+pos}}
+\index{make\+\_\+pos@{make\+\_\+pos}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{make\+\_\+pos(int x, int y, int w, int h)}{make_pos(int x, int y, int w, int h)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} ostendo\+::make\+\_\+pos (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{w, }
+\item[{int}]{h}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{namespaceostendo_a5703ea1e4f426c0216fc7f36708a4539}{}\label{namespaceostendo_a5703ea1e4f426c0216fc7f36708a4539}
+
+
+Creates a new position object. 
+
+Creates position object given the four terms. 
+\begin{DoxyParams}{Parameters}
+{\em x} & X term for position. \\
+\hline
+{\em y} & Y term for position. \\
+\hline
+{\em w} & Width term for position. \\
+\hline
+{\em h} & Height term for position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{structostendo_1_1Pos}{Pos} New position structure from given values. 
+\end{DoxyReturn}
+\index{ostendo@{ostendo}!make\+\_\+pos@{make\+\_\+pos}}
+\index{make\+\_\+pos@{make\+\_\+pos}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{make\+\_\+pos(int x, int y)}{make_pos(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} ostendo\+::make\+\_\+pos (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{namespaceostendo_a182badf5647b8bae4d48aa1e447b9d80}{}\label{namespaceostendo_a182badf5647b8bae4d48aa1e447b9d80}
+
+
+Creates a new position object. 
+
+Creates a position object given two terms. 
+\begin{DoxyParams}{Parameters}
+{\em x} & X term for position. \\
+\hline
+{\em y} & Y term for position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{structostendo_1_1Pos}{Pos} New position structure from given values. 
+\end{DoxyReturn}
+\index{ostendo@{ostendo}!Menu@{Menu}}
+\index{Menu@{Menu}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Menu(ostendo\+::\+Window win, std\+::vector$<$ std\+::string $>$ options)}{Menu(ostendo::Window win, std::vector< std::string > options)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string ostendo\+::\+Menu (
+\begin{DoxyParamCaption}
+\item[{{\bf ostendo\+::\+Window}}]{win, }
+\item[{std\+::vector$<$ std\+::string $>$}]{options}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_a7046839a0becea8636f4136c94b4cc31}{}\label{namespaceostendo_a7046839a0becea8636f4136c94b4cc31}
+Menu function for selecting an option from a set. This function takes a set of options, and a window, then provides a simple user interface for selecting one of the provided options. This selected option is then returned. 
+\begin{DoxyParams}{Parameters}
+{\em win} & \hyperlink{classostendo_1_1Window}{Window} to use to display all options. \\
+\hline
+{\em options} & Options that the user must select from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String from selected option of Options. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classostendo_1_1Window}{Window} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Right\+Arrow@{Right\+Arrow}}
+\index{Right\+Arrow@{Right\+Arrow}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Right\+Arrow(\+Var in\+\_\+var, Window win)}{RightArrow(Var in_var, Window win)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ostendo\+::\+Var} ostendo\+::\+Right\+Arrow (
+\begin{DoxyParamCaption}
+\item[{{\bf Var}}]{in\+\_\+var, }
+\item[{{\bf Window}}]{win}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_a9306123175f6b620de11b774fbfb5ec5}{}\label{namespaceostendo_a9306123175f6b620de11b774fbfb5ec5}
+Handles form user input arrow key right. Provides functionality for different \hyperlink{structostendo_1_1Var}{Var} types for the user input of right arrow key. 
+\begin{DoxyParams}{Parameters}
+{\em in\+\_\+var} & \hyperlink{structostendo_1_1Var}{Var} to apply action to. \\
+\hline
+{\em win} & \hyperlink{classostendo_1_1Window}{Window} to display to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{structostendo_1_1Var}{Var} after action is applied. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structostendo_1_1Var}{Var}, \hyperlink{classostendo_1_1Window}{Window} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Term\+Ostendo@{Term\+Ostendo}}
+\index{Term\+Ostendo@{Term\+Ostendo}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Term\+Ostendo()}{TermOstendo()}}]{\setlength{\rightskip}{0pt plus 5cm}void ostendo\+::\+Term\+Ostendo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_ae151d449ffec660866ee7c8ac75892da}{}\label{namespaceostendo_ae151d449ffec660866ee7c8ac75892da}
+
+
+Terminates Ostendo/\+Ncurses. 
+
+Terminates ncurses, and returns the console to standard settings. \begin{DoxySeeAlso}{See also}
+\hyperlink{namespaceostendo_acada6eef78aaae2a103761e6b3122a7c}{Init\+Ostendo()} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Term\+Window@{Term\+Window}}
+\index{Term\+Window@{Term\+Window}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Term\+Window(std\+::string name)}{TermWindow(std::string name)}}]{\setlength{\rightskip}{0pt plus 5cm}void ostendo\+::\+Term\+Window (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_a8d3e9d8ec26e75c7fd77ef392ecd6e06}{}\label{namespaceostendo_a8d3e9d8ec26e75c7fd77ef392ecd6e06}
+
+
+Terminates a window. 
+
+Termainates a specified window from the windows map. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the window to be deleted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{namespaceostendo_ab45e3689aa0cb8a2e3a175c0aed97880}{windows} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Text\+Box@{Text\+Box}}
+\index{Text\+Box@{Text\+Box}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Text\+Box(ostendo\+::\+Window win, std\+::string base="""")}{TextBox(ostendo::Window win, std::string base="")}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string ostendo\+::\+Text\+Box (
+\begin{DoxyParamCaption}
+\item[{{\bf ostendo\+::\+Window}}]{win, }
+\item[{std\+::string}]{base = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_a3d2c591339109330938a42d576c9e81d}{}\label{namespaceostendo_a3d2c591339109330938a42d576c9e81d}
+Function for basic extended text entry from user. This function alows the user to write text to a text box, and when compleated, the writen text is formated into a string. 
+\begin{DoxyParams}{Parameters}
+{\em win} & window to display to. \\
+\hline
+{\em base} & Starting string to display in text box. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String of what user entered. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classostendo_1_1Window}{Window} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Text\+Box@{Text\+Box}}
+\index{Text\+Box@{Text\+Box}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Text\+Box(ostendo\+::\+Window win, std\+::vector$<$ std\+::string $>$ base)}{TextBox(ostendo::Window win, std::vector< std::string > base)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string ostendo\+::\+Text\+Box (
+\begin{DoxyParamCaption}
+\item[{{\bf ostendo\+::\+Window}}]{win, }
+\item[{std\+::vector$<$ std\+::string $>$}]{base}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_a2f50af8d4996899c0906b9c78e045e84}{}\label{namespaceostendo_a2f50af8d4996899c0906b9c78e045e84}
+Function for basic extended text entry from user. This function alows the user to write text to a text box, and when compleated, the writen text is formated into a string. 
+\begin{DoxyParams}{Parameters}
+{\em win} & window to display to. \\
+\hline
+{\em base} & Starting vector of strings representing different lines of text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String of what user entered. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classostendo_1_1Window}{Window} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!Up\+Arrow@{Up\+Arrow}}
+\index{Up\+Arrow@{Up\+Arrow}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{Up\+Arrow(\+Var in\+\_\+var, Window win)}{UpArrow(Var in_var, Window win)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ostendo\+::\+Var} ostendo\+::\+Up\+Arrow (
+\begin{DoxyParamCaption}
+\item[{{\bf Var}}]{in\+\_\+var, }
+\item[{{\bf Window}}]{win}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_abd61a4387f4057a821127c78c5de14df}{}\label{namespaceostendo_abd61a4387f4057a821127c78c5de14df}
+Handles form user input arrow key up. Provides functionality for different \hyperlink{structostendo_1_1Var}{Var} types for the user input of up arrow key. 
+\begin{DoxyParams}{Parameters}
+{\em in\+\_\+var} & \hyperlink{structostendo_1_1Var}{Var} to apply action to. \\
+\hline
+{\em win} & \hyperlink{classostendo_1_1Window}{Window} to display to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{structostendo_1_1Var}{Var} after action is applied. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structostendo_1_1Var}{Var}, \hyperlink{classostendo_1_1Window}{Window} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!V\+Text\+Box@{V\+Text\+Box}}
+\index{V\+Text\+Box@{V\+Text\+Box}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{V\+Text\+Box(ostendo\+::\+Window win, std\+::string base="""")}{VTextBox(ostendo::Window win, std::string base="")}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::string $>$ ostendo\+::\+V\+Text\+Box (
+\begin{DoxyParamCaption}
+\item[{{\bf ostendo\+::\+Window}}]{win, }
+\item[{std\+::string}]{base = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_a96fb1afad5e7a28a2c1f63066930683f}{}\label{namespaceostendo_a96fb1afad5e7a28a2c1f63066930683f}
+Function for basic extended text entry from user. This function alows the user to write text to a text box, and when compleated, the writen text is formated into a a vector of strings, each representing a lines of text. 
+\begin{DoxyParams}{Parameters}
+{\em win} & window to display to. \\
+\hline
+{\em base} & Starting string to display in text box. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of strings representing the different lines of input from the user. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classostendo_1_1Window}{Window} 
+\end{DoxySeeAlso}
+\index{ostendo@{ostendo}!V\+Text\+Box@{V\+Text\+Box}}
+\index{V\+Text\+Box@{V\+Text\+Box}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{V\+Text\+Box(ostendo\+::\+Window win, std\+::vector$<$ std\+::string $>$ base)}{VTextBox(ostendo::Window win, std::vector< std::string > base)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::string $>$ ostendo\+::\+V\+Text\+Box (
+\begin{DoxyParamCaption}
+\item[{{\bf ostendo\+::\+Window}}]{win, }
+\item[{std\+::vector$<$ std\+::string $>$}]{base}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceostendo_ac2ce30296ad60b1e02258e3d5c1e8b4f}{}\label{namespaceostendo_ac2ce30296ad60b1e02258e3d5c1e8b4f}
+Function for basic extended text entry from user. This function alows the user to write text to a text box, and when compleated, the writen text is formated into a a vector of strings, each representing a lines of text. 
+\begin{DoxyParams}{Parameters}
+{\em win} & window to display to. \\
+\hline
+{\em base} & Starting vector of stirngs representing different lines of text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of strings representing the different lines of input from the user. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classostendo_1_1Window}{Window} 
+\end{DoxySeeAlso}
+
+
+\subsection{Variable Documentation}
+\index{ostendo@{ostendo}!color\+\_\+init@{color\+\_\+init}}
+\index{color\+\_\+init@{color\+\_\+init}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{color\+\_\+init}{color_init}}]{\setlength{\rightskip}{0pt plus 5cm}bool ostendo\+::color\+\_\+init = false}\hypertarget{namespaceostendo_aaece4e9a0bcd75df4724bf97c628c12e}{}\label{namespaceostendo_aaece4e9a0bcd75df4724bf97c628c12e}
+Boolian to check if colors have been initialized. \index{ostendo@{ostendo}!std\+\_\+scr@{std\+\_\+scr}}
+\index{std\+\_\+scr@{std\+\_\+scr}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{std\+\_\+scr}{std_scr}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} ostendo\+::std\+\_\+scr}\hypertarget{namespaceostendo_a4c5850c8a109e159e874ecce8a5dc62a}{}\label{namespaceostendo_a4c5850c8a109e159e874ecce8a5dc62a}
+Width and height data for full window, measured at startup. \index{ostendo@{ostendo}!win\+\_\+index@{win\+\_\+index}}
+\index{win\+\_\+index@{win\+\_\+index}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{win\+\_\+index}{win_index}}]{\setlength{\rightskip}{0pt plus 5cm}int ostendo\+::win\+\_\+index = 0}\hypertarget{namespaceostendo_a3267a8b4ac0d3934af4bf5f8079d0f72}{}\label{namespaceostendo_a3267a8b4ac0d3934af4bf5f8079d0f72}
+Current window index, from windows map. \index{ostendo@{ostendo}!windows@{windows}}
+\index{windows@{windows}!ostendo@{ostendo}}
+\subsubsection[{\texorpdfstring{windows}{windows}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$ std\+::string, {\bf Window} $>$ ostendo\+::windows}\hypertarget{namespaceostendo_ab45e3689aa0cb8a2e3a175c0aed97880}{}\label{namespaceostendo_ab45e3689aa0cb8a2e3a175c0aed97880}
+Optional map for windows, to link windows with given name. 
