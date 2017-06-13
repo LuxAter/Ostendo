@@ -1,7 +1,6 @@
 SHELL =     /bin/zsh
 CPP_FILES = $(wildcard *.cpp)
 OBJ_FILES = $(notdir $(CPP_FILES:.cpp=.o))
-COLOR = MAGENTA
 
 all: $(OBJ_FILES) subsystem
 
@@ -20,4 +19,3 @@ all: $(OBJ_FILES) subsystem
 
 .PHONY : subsystem
 subsystem:
-	#sub_dirs

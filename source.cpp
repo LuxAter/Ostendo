@@ -1,15 +1,11 @@
-#include <ncurses.h>
 #include <pessum.h>
-#include <iostream>
 #include "ostendo_files/ostendo_headers.hpp"
 
+using namespace ostendo;
+
 int main(int argc, char const* argv[]) {
-  ostendo::InitOstendo(true, 1);
-  ostendo::Window win;
-  win.ToggleBorder();
-  win.ToggleTitle("HELLO");
-  TextBox(win);
-  ostendo::TermOstendo();
+  InitOstendo(RAW | CURSOR);
+  TermOstendo();
   pessum::SaveLog("out.log");
   return 0;
 }
