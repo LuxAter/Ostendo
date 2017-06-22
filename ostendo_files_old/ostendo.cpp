@@ -1,7 +1,7 @@
+#include "ostendo.hpp"
 #include <ncurses.h>
 #include <pessum.h>
 #include <string>
-#include "ostendo.hpp"
 #include "types.hpp"
 
 namespace ostendo {
@@ -21,7 +21,8 @@ void ostendo::InitOstendo(bool color, int time_out) {
   timeout(time_out);
   if (color == true) {
     if (has_colors() == FALSE) {
-      pessum::Log(pessum::WARNING, "Current terminal does not support color", "ostendo/InitOstendo");
+      pessum::Log(pessum::WARNING, "Current terminal does not support color",
+                  "ostendo/InitOstendo");
     } else {
       start_color();
       LoadColors();

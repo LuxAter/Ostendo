@@ -1,8 +1,10 @@
 #include "ostendo.hpp"
 #include <ncurses.h>
 #include <pessum.h>
+#include "size.hpp"
 
 namespace ostendo {
+  Size std_scr;
   bool ostendo_cbreak = false, ostendo_raw = false, ostendo_echo = false,
        ostendo_cursor = false, ostendo_color = false;
   int ostendo_time_delay;
@@ -27,6 +29,9 @@ void ostendo::InitOstendo(unsigned int state) {
     if ((state & CURSOR) != 0) {
       g_cursor = true;
     }
+    if ((state & COLOR) != 0) {
+      Color(true);
+    }
   }
   Cbreak(g_cbreak);
   Raw(g_raw);
@@ -50,7 +55,7 @@ bool ostendo::Cbreak(int setting) {
     nocbreak();
     ostendo_cbreak = setting;
   }
-  return (ostendo_cbreak);
+  return ostendo_cbreak;
 }
 
 bool ostendo::Raw(int setting) {
@@ -61,7 +66,7 @@ bool ostendo::Raw(int setting) {
     noraw();
     ostendo_raw = setting;
   }
-  return (ostendo_raw);
+  return ostendo_raw;
 }
 
 bool ostendo::Echo(int setting) {
@@ -72,7 +77,7 @@ bool ostendo::Echo(int setting) {
     noecho();
     ostendo_echo = setting;
   }
-  return (ostendo_echo);
+  return ostendo_echo;
 }
 
 bool ostendo::Cursor(int setting) {
@@ -83,7 +88,7 @@ bool ostendo::Cursor(int setting) {
     curs_set(0);
     ostendo_cursor = setting;
   }
-  return (ostendo_cursor);
+  return ostendo_cursor;
 }
 
 int ostendo::TimeOut(int setting) {
@@ -91,10 +96,11 @@ int ostendo::TimeOut(int setting) {
     timeout(setting);
     ostendo_time_delay = setting;
   }
-  return (ostendo_time_delay);
+  return ostendo_time_delay;
 }
 
 bool ostendo::Color(int setting) {
+  ostendo_color = setting;
   if (setting == true) {
     if (has_colors() == false) {
       pessum::Log(pessum::WARNING, "Terminal emulator does not support colors",
@@ -102,9 +108,17 @@ bool ostendo::Color(int setting) {
     } else {
       start_color();
     }
-  } else if (setting == false) {
   }
-  return (ostendo_color);
+  return ostendo_color;
+}
+
+void ostendo::SetStdScr(WINDOW *win) {
+  if (win != NULL) {
+    std_scr = Size(0, 0, 0, 0, -1);
+    getmaxyx(win, std_scr.h, std_scr.w);
+  } else {
+    std_scr = Size(0, 0, 0, 0, -1);
+  }
 }
 
 void ostendo::GetVersion(int &major, int &minor, int &patch) {

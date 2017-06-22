@@ -5,8 +5,12 @@
 using namespace ostendo;
 
 int main(int argc, char const* argv[]) {
-  InitOstendo(RAW);
+  InitOstendo(RAW | COLOR);
+  Window win(BORDER | TITLE, 10, 10, 10, 10, "Ostendo");
+  // wprintw(win(), "Hello World!");
+  // win.Show();
   while (getch() == ERR) {
+    refresh();
   }
   TermOstendo();
   pessum::SaveLog("out.log");
