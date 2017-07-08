@@ -1,5 +1,8 @@
 #include "window.hpp"
 
+#include <stdarg.h>
+#include <string>
+
 #include <ncurses.h>
 #include <pessum/pessum.hpp>
 
@@ -91,6 +94,61 @@ bool ostendo::Window::GetBorder() { return border_; }
 
 bool ostendo::Window::GetTitle() { return title_; }
 
+std::string ostendo::Window::GetTitleStr() { return title_str_; }
+
+bool ostendo::Window::GetAutoUpdate() { return auto_update_; }
+
+void ostendo::Window::Scale(int dwidth, int dheight) {
+  pos_.w += dwidth;
+  pos_.h += dheight;
+  if (ptr_ != NULL) {
+    Resize();
+  }
+}
+
+void ostendo::Window::Resize(int width, int height) {
+  pos_.w = width;
+  pos_.h = height;
+  if (ptr_ != NULL) {
+    Resize();
+  }
+}
+
+void ostendo::Window::Translate(int dx, int dy) {
+  pos_.x += dx;
+  pos_.y += dy;
+  if (ptr_ != NULL) {
+    Move();
+  }
+}
+
+void ostendo::Window::SetPosition(int x, int y) {
+  pos_.x = x;
+  pos_.y = y;
+  if (ptr_ != NULL) {
+    Move();
+  }
+}
+
+void ostendo::Window::SetPosition(int width, int height, int x, int y) {
+  pos_.w = width;
+  pos_.h = height;
+  pos_.x = x;
+  pos_.y = y;
+  if (ptr_ != NULL) {
+    Resize();
+    Move();
+  }
+}
+
+void ostendo::Window::SetPosition(Position pos) {
+  pos_ = pos;
+  if (ptr_ != NULL) {
+    Resize();
+    Move();
+  }
+}
+
 ostendo::Position ostendo::Window::GetPosition() {
   pessum::Log(pessum::DATA, "%ix%i @ (%i,%i,%i)",
               "ostendo::Window::GetPosition", pos_.w, pos_.h, pos_.x, pos_.y,
@@ -98,9 +156,69 @@ ostendo::Position ostendo::Window::GetPosition() {
   return pos_;
 }
 
+void ostendo::Window::SetCursor(int x, int y) {
+  if (ptr_ != NULL) {
+    wmove(*ptr_, y, x);
+  }
+}
+
+void ostendo::Window::GetCursor(int& x, int& y) {
+  if (ptr_ != NULL) {
+    getyx(*ptr_, x, y);
+  }
+}
+
+void ostendo::Window::Print(std::string fmt, ...) {
+  if (ptr_ == NULL) {
+    return;
+  }
+}
+
+void ostendo::Window::mvPrint(int x, int y, std::string fmt, ...) {
+  int curs_x, curs_y;
+  GetCursor(curs_x, curs_y);
+  if (x == -1) {
+    x = curs_x;
+  }
+  if (y == -1) {
+    y = curs_y;
+  }
+  va_list args;
+  va_start(args, fmt);
+  std::string str = FormatString(fmt, args);
+  mvwprintw(*ptr_, y, x, str.c_str());
+  if (auto_update_ == true) {
+    Update();
+  }
+}
+
 void ostendo::Window::Update() {
   if (ptr_ != NULL) {
     wrefresh(*ptr_);
+  }
+}
+
+void ostendo::Window::Clear() {
+  if (ptr_ != NULL) {
+    wclear(*ptr_);
+  }
+}
+
+void ostendo::Window::ClearAll() {
+  if (ptr_ != NULL) {
+    wclear(*ptr_);
+    bool border_set = border_;
+    bool title_set = title_;
+    title_ = false;
+    border_ = false;
+    if (border_set == true) {
+      EraseBorder();
+    }
+    if (title_set == true) {
+      EraseTitle();
+    }
+    border_ = border_set;
+    title_ = title_set;
   }
 }
 
@@ -113,8 +231,6 @@ void ostendo::Window::GenerateWindow() {
     if (ptr_ == NULL) {
       pessum::Log(pessum::ERROR, "Failed to initialize window",
                   "ostendo::Window::GenerateWindow");
-    } else {
-      pessum::Log(pessum::SUCCESS, "Generated Window", "");
     }
   }
 }
@@ -204,4 +320,56 @@ void ostendo::Window::EraseBorder() {
   if (title_ == true) {
     DrawTitle();
   }
+}
+
+void ostendo::Window::Resize() {
+  if (ptr_ != NULL) {
+    if (pos_.w != 0 && pos_.h != 0) {
+      ClearAll();
+      wresize(*ptr_, pos_.h, pos_.w);
+      Update();
+      if (border_ == true) {
+        DrawBorder();
+      }
+      if (title_ == true) {
+        DrawTitle();
+      }
+    } else {
+      pessum::Log(pessum::WARNING, "New window size is invalid %ix%i",
+                  "ostendo::Window::Resize", pos_.w, pos_.h);
+    }
+  }
+}
+
+void ostendo::Window::Move() {
+  if (ptr_ != NULL) {
+    if (pos_.w >= 0 && pos_.h >= 0) {
+      ClearAll();
+      mvwin(*ptr_, pos_.y, pos_.x);
+      Update();
+      if (border_ == true) {
+        DrawBorder();
+      }
+      if (title_ == true) {
+        DrawTitle();
+      }
+    } else {
+      pessum::Log(pessum::WARNING, "New window position is invalid (%i,%i)",
+                  "ostendo::Window::Resize", pos_.x, pos_.y);
+    }
+  }
+}
+
+std::string ostendo::Window::FormatString(std::string fmt, va_list args) {
+  std::string formated_str = "";
+  va_list buff_args;
+  va_copy(buff_args, args);
+  ssize_t buff_size = vsnprintf(NULL, 0, fmt.c_str(), buff_args);
+  char* formated_string = new char[buff_size + 1];
+  formated_string[buff_size] = '\0';
+  vsprintf(formated_string, fmt.c_str(), args);
+  formated_str = std::string(formated_string);
+  va_end(buff_args);
+  va_end(args);
+  return formated_str;
 }
