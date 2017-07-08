@@ -5,9 +5,11 @@
 
 #include <ncurses.h>
 
+#include "position.hpp"
+
 #define OSTENDO_VERSION_MAJOR 0
 #define OSTENDO_VERSION_MINOR 5
-#define OSTENDO_VERSION_PATCH 0
+#define OSTENDO_VERSION_PATCH 2
 
 namespace ostendo {
   enum InitOptions {
@@ -19,7 +21,7 @@ namespace ostendo {
     COLOR = (1u << 5)
   };
 
-  extern std::array<int, 5> std_scr;
+  extern Position std_scr;
 
   void InitOstendo(unsigned int state = 0);
   void TermOstendo();
@@ -38,7 +40,7 @@ namespace ostendo {
   bool GetColor();
   int GetTimeOut();
 
-  std::array<int, 5> GetPosition(WINDOW* win);
+  Position GetPosition(WINDOW* win);
 
   void GetVersion(int& major, int& minor, int& patch);
 }  // namespace ostendo
