@@ -21,13 +21,9 @@ void ostendo::InitOstendo(unsigned int state) {
   initscr();
   if ((state & CBREAK) != 0) {
     SetCbreak(true);
-  } else {
-    SetCbreak(false);
   }
   if ((state & RAW) != 0 && (state & CBREAK) == 0) {
     SetRaw(true);
-  } else {
-    SetRaw(false);
   }
   if ((state & ECHO) != 0) {
     SetEcho(true);
@@ -44,13 +40,11 @@ void ostendo::InitOstendo(unsigned int state) {
   } else {
     SetColor(false);
   }
-  SetEcho(false);
-  std_scr = GetPosition(stdscr);
   refresh();
+  std_scr = GetPosition(stdscr);
 }
 
 void ostendo::TermOstendo() {
-  refresh();
   if (ostendo_cbreak == true) {
     SetCbreak(false);
   }

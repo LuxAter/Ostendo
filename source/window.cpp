@@ -38,6 +38,15 @@ ostendo::Window::~Window() {
   ptr_ = NULL;
 }
 
+void ostendo::Window::DeleteWindow() {
+  if (ptr_.use_count() == 1) {
+    wclear(*ptr_);
+    wrefresh(*ptr_);
+    delwin(*ptr_);
+  }
+  ptr_ = NULL;
+}
+
 void ostendo::Window::SetBorder(bool setting) {
   if (border_ != setting && ptr_ != NULL) {
     border_ = setting;
@@ -90,6 +99,8 @@ void ostendo::Window::SetTitlePosition(int position) {
 
 void ostendo::Window::SetAutoUpdate(bool setting) { auto_update_ = setting; }
 
+void ostendo::Window::SetWordBreak(bool setting) { word_break_ = setting; }
+
 bool ostendo::Window::GetBorder() { return border_; }
 
 bool ostendo::Window::GetTitle() { return title_; }
@@ -97,6 +108,8 @@ bool ostendo::Window::GetTitle() { return title_; }
 std::string ostendo::Window::GetTitleStr() { return title_str_; }
 
 bool ostendo::Window::GetAutoUpdate() { return auto_update_; }
+
+bool ostendo::Window::GetWordBreak() { return word_break_; }
 
 void ostendo::Window::Scale(int dwidth, int dheight) {
   pos_.w += dwidth;
@@ -158,19 +171,36 @@ ostendo::Position ostendo::Window::GetPosition() {
 
 void ostendo::Window::SetCursor(int x, int y) {
   if (ptr_ != NULL) {
-    wmove(*ptr_, y, x);
+    cursor_[0] = x;
+    cursor_[1] = y;
   }
 }
 
 void ostendo::Window::GetCursor(int& x, int& y) {
   if (ptr_ != NULL) {
-    getyx(*ptr_, x, y);
+    x = cursor_[0];
+    y = cursor_[1];
   }
 }
+
+void ostendo::Window::SetBufferSize(int size) {
+  if (size > pos_.h) {
+    buffer_.resize(size);
+  }
+}
+
+int ostendo::Window::GetBufferSize() { return buffer_.size(); }
 
 void ostendo::Window::Print(std::string fmt, ...) {
   if (ptr_ == NULL) {
     return;
+  }
+  va_list args;
+  va_start(args, fmt);
+  std::string str = FormatString(fmt, args);
+  wprintw(*ptr_, str.c_str());
+  if (auto_update_ == true) {
+    Update();
   }
 }
 
@@ -186,7 +216,8 @@ void ostendo::Window::mvPrint(int x, int y, std::string fmt, ...) {
   va_list args;
   va_start(args, fmt);
   std::string str = FormatString(fmt, args);
-  mvwprintw(*ptr_, y, x, str.c_str());
+  // mvwprintw(*ptr_, y, x, str.c_str());
+  PrintBlock(x, y, str);
   if (auto_update_ == true) {
     Update();
   }
@@ -372,4 +403,18 @@ std::string ostendo::Window::FormatString(std::string fmt, va_list args) {
   va_end(buff_args);
   va_end(args);
   return formated_str;
+}
+
+void ostendo::Window::PrintBlock(int x, int y, std::string str) {
+  mvwprintw(*ptr_, y, x, str.c_str());
+}
+
+void ostendo::Window::AddToBuffer(int x, int y, std::string str) {
+  if (y < buffer_.size()) {
+    int buffer_index = pos_.h - y;
+    std::string buffer_str = buffer_[buffer_index];
+    buffer_str.erase(x, GetFormatedLength(str));
+    buffer_str.insert(x, str);
+    buffer_[buffer_index] = buffer_str;
+  }
 }
