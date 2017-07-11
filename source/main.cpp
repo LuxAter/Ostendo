@@ -4,9 +4,9 @@
 using namespace ostendo;
 
 int main(int argc, const char* argv[]) {
-  InitOstendo(CBREAK);
+  InitOstendo(COLOR | CBREAK);
   Window win("Ostendo", TITLE | BORDER | AUTO_UPDATE);
-  win.mvPrint(0, 0, "$fg:blue$Hello $fg:red;bg:green$ARDEN$0$ $$%i", 15);
+  win.mvPrint(0, 0, "Hello Arden");
   int key = ERR;
   while (key != int('q')) {
     key = getch();

@@ -1,7 +1,7 @@
 SHELL = /bin/bash
 
 export SOURCE_DIR = source
-export TEST_DIR = 
+export TEST_DIR =
 export BUILD_DIR = build
 
 export COMPILER = clang++
@@ -48,7 +48,7 @@ $(shell \
 )
 endef
 
-define Line = 
+define Line =
 $(shell printf '%0.1s' "$(2)"{1..$(1)})
 endef
 
@@ -63,10 +63,10 @@ define check =
 endef
 
 define cross =
-  printf "%b\n" "$(ERR_COLOR)\xE2\x9D\x8C $(NO_COLOR)"
+  printf "%b\n" "$(ERR_COLOR)\xE2\x9C\x98 $(NO_COLOR)"
 endef
 
-all: start source-make test-make 
+all: start source-make test-make
 	printf "%b%s%b\n" "$(WHITE)" "$(call Line,$(WIDTH),=)" "$(NO_COLOR)"
 	printf "%b\n" "$(WHITE)Compleated Compiling $(NAME)$(NO_COLOR)"
 
@@ -118,7 +118,7 @@ install: all
 	  fi;\
 	  printf "%b%s%b\n" "$(INSTALL_COLOR)" "$(call Line,$(WIDTH),=)" "$(NO_COLOR)"; \
 	  printf "%b\n" "$(INSTALL_COLOR)Installed $(NAME) lib$(NO_COLOR)"; \
-	fi 
+	fi
 
 else
 install:all
@@ -152,7 +152,7 @@ uninstall:
 	  fi; \
 	  printf "%b%s%b\n" "$(INSTALL_COLOR)" "$(call Line,$(WIDTH),=)" "$(NO_COLOR)"; \
 	  printf "%b\n" "$(INSTALL_COLOR)Uninstalled $(NAME) lib$(NO_COLOR)"; \
-	fi 
+	fi
 
 
 else
@@ -200,4 +200,3 @@ test-clean:
 	  printf "%b\n" "$(CLEAN_COLOR)TEST$(NO_COLOR)"; \
 	  cd $(TEST_DIR) && $(MAKE) clean; \
 	fi
-

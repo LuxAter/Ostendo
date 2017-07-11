@@ -2,7 +2,7 @@ SHELL = /bin/bash
 
 DIR = source
 
-define Line = 
+define Line =
 $(shell printf '%0.1s' "$(2)"{1..$(1)})
 endef
 
@@ -42,7 +42,7 @@ define check =
 endef
 
 define cross =
-  printf "%b\n" "$(ERR_COLOR)\xE2\x9D\x8C $(NO_COLOR)"
+  printf "%b\n" "$(ERR_COLOR)\xE2\x9C\x98 $(NO_COLOR)"
 endef
 
 SRC_FILES = $(shell find -name "*.cpp")
@@ -58,7 +58,7 @@ $(BASE_PATH)/$(BUILD_DIR)/$(DIR)/%.o: %.cpp
 
 
 $(EXE): $(OBJ_FILES)
-	$(call Compile,$(COMPILER) $(OBJ_FILES) $(LINK) -o $(EXE),Linking) 
+	$(call Compile,$(COMPILER) $(OBJ_FILES) $(LINK) -o $(EXE),Linking)
 
 .PHONY : clean
 clean:

@@ -4,7 +4,7 @@ DIR = test
 
 GTEST = -I/usr/local/include/gtest -lgtest -lgtest_main -lpthread
 
-define Line = 
+define Line =
 $(shell printf '%0.1s' "$(2)"{1..$(1)})
 endef
 
@@ -44,7 +44,7 @@ define check =
 endef
 
 define cross =
-  printf "%b\n" "$(ERR_COLOR)\xE2\x9D\x8C $(NO_COLOR)"
+  printf "%b\n" "$(ERR_COLOR)\xE2\x9C\x98 $(NO_COLOR)"
 endef
 
 TEST_FILES = $(shell find -name "*.cpp")
@@ -61,7 +61,7 @@ $(BASE_PATH)/$(BUILD_DIR)/$(DIR)/%.o: %.cpp
 	$(call Compile,$(COMPILER) -I../$(SOURCE_DIR) $(CPPFLAGS) $< -o $@,Compiling)
 
 $(EXE): $(OBJ_FILES)
-	$(call Compile,$(COMPILER)  -I../$(SOURCE_DIR) $(OBJ_FILES) $(SOURCE_OBJ) $(LINK) -o $(EXE) $(GTEST) ,Linking) 
+	$(call Compile,$(COMPILER)  -I../$(SOURCE_DIR) $(OBJ_FILES) $(SOURCE_OBJ) $(LINK) -o $(EXE) $(GTEST) ,Linking)
 
 .PHONY : clean
 clean:

@@ -1,6 +1,7 @@
 #include "window.hpp"
 
 #include <stdarg.h>
+#include <sstream>
 #include <string>
 
 #include <ncurses.h>
@@ -223,13 +224,19 @@ void ostendo::Window::mvPrint(int x, int y, std::string fmt, ...) {
   }
 }
 
-void ostendo::Window::SetAttribute(int attr, bool setting) {
+void ostendo::Window::ToggleAttribute(int attr, bool setting) {
   if (ptr_ != NULL) {
     if (setting == true) {
       wattron(*ptr_, attr);
     } else if (setting == false) {
       wattroff(*ptr_, attr);
     }
+  }
+}
+
+void ostendo::Window::SetAttribute(unsigned int attr) {
+  if (ptr_ != NULL) {
+    wattrset(*ptr_, attr);
   }
 }
 
@@ -434,7 +441,6 @@ void ostendo::Window::PrintStr(int x, int y, std::string str) {
   }
   for (int i = 0; i < str.size(); i++) {
     if (str[i] == '\n' || block_length + position[0] == buffer_width) {
-      blocks.push_back(new_block);
       mvwprintw(*ptr_, position[1] + offset[1], position[0] + offset[0],
                 new_block.c_str());
       position[1]++;
@@ -442,6 +448,11 @@ void ostendo::Window::PrintStr(int x, int y, std::string str) {
       block_length = 0;
       new_block = std::string();
     } else if (str[i] == '$') {
+      mvwprintw(*ptr_, position[1] + offset[1], position[0] + offset[0],
+                new_block.c_str());
+      position[0] += block_length;
+      block_length = 0;
+      new_block = std::string();
       std::string escape_block_in;
       i++;
       while (str[i] != '$' && i < str.size()) {
@@ -464,23 +475,113 @@ std::string ostendo::Window::ReadEscapeBlock(std::string str) {
   std::string return_str;
   if (str.size() == 0) {
     return ("$");
+  } else if (str == "0") {
+    SetColor(DEFAULT, DEFAULT);
+    SetAttribute(0);
   }
-  pessum::Log(pessum::TRACE, "%s", "", str.c_str());
   std::vector<std::string> blocks;
+  std::stringstream ss(str);
   std::string new_block;
-  for (int i = 0; i < str.size(); i++) {
-    if (str[i] == ';') {
-      blocks.push_back(new_block);
-      new_block = std::string();
-    } else {
-      new_block += str[i];
+  while (std::getline(ss, new_block, ';')) {
+    blocks.push_back(new_block);
+    pessum::Log(pessum::DEBUG, "%s", "", new_block.c_str());
+  }
+  pessum::Log(pessum::INFO);
+  for (int i = 0; i < blocks.size(); i++) {
+    std::vector<std::string> args;
+    std::stringstream ss_b(blocks[i]);
+    std::string new_block_opt;
+    while (std::getline(ss_b, new_block_opt, ':')) {
+      args.push_back(new_block_opt);
+      pessum::Log(pessum::DEBUG, "%s", "", new_block_opt.c_str());
+    }
+    if (args.size() == 1) {
+      if (args[0] == "c") {
+        color_ = {{DEFAULT, DEFAULT}};
+        UpdateColor();
+      } else if (args[0] == "a") {
+        SetAttribute(0);
+      } else {
+        SetAttribute(ParseAttr(args)[0]);
+      }
+    } else if (args.size() == 2) {
+      if (args[0] == "fg") {
+        color_[0] = ParseColor(args[1]);
+        UpdateColor();
+      } else if (args[0] == "bg") {
+        color_[1] = ParseColor(args[1]);
+        UpdateColor();
+      } else {
+        std::array<int, 2> attr = ParseAttr(args);
+        if (attr[1] == 1) {
+          ToggleAttribute(attr[0], true);
+        } else if (attr[1] == 2) {
+          ToggleAttribute(attr[0], false);
+        } else if (attr[1] == 3) {
+          SetAttribute(attr[0]);
+        }
+      }
     }
   }
-  blocks.push_back(new_block);
-  for (int i = 0; i < blocks.size(); i++) {
-    pessum::Log(pessum::DATA, "%s", "", blocks[i].c_str());
-  }
+  pessum::Log(pessum::INFO);
   return return_str;
+}
+
+std::array<int, 2> ostendo::Window::ParseAttr(std::vector<std::string> args) {
+  std::array<int, 2> attr = {{0, 3}};
+  if (args[0] == "ac") {
+    attr[0] = ALTCHARSET;
+  } else if (args[0] == "bl") {
+    attr[0] = BLINK;
+  } else if (args[0] == "bo") {
+    attr[0] = BOLD;
+  } else if (args[0] == "di") {
+    attr[0] = DIM;
+  } else if (args[0] == "in") {
+    attr[0] = INVIS;
+  } else if (args[0] == "pr") {
+    attr[0] = PROTECT;
+  } else if (args[0] == "re") {
+    attr[0] = REVERSE;
+  } else if (args[0] == "st") {
+    attr[0] = STANDOUT;
+  } else if (args[0] == "un") {
+    attr[0] = UNDERLINE;
+  }
+  if (args.size() == 2) {
+    if (args[1] == "0" || args[1] == "off") {
+      attr[1] = 2;
+    } else if (args[1] == "1" || args[1] == "on") {
+      attr[1] = 1;
+    } else if (args[1] == "2" || args[1] == "set") {
+      attr[1] = 3;
+    }
+  }
+  return attr;
+}
+
+int ostendo::Window::ParseColor(std::string str) {
+  int color = BLACK;
+  if (str == "black" || str == "0") {
+    color = BLACK;
+  } else if (str == "red" || str == "1") {
+    color = RED;
+  } else if (str == "green" || str == "2") {
+    color = GREEN;
+  } else if (str == "yellow" || str == "3") {
+    color = YELLOW;
+  } else if (str == "blue" || str == "4") {
+    color = BLUE;
+  } else if (str == "magenta" || str == "5") {
+    color = MAGENTA;
+  } else if (str == "cyan" || str == "6") {
+    color = CYAN;
+  } else if (str == "white" || str == "7") {
+    color = WHITE;
+  } else if (str == "default" || str == "d") {
+    color = DEFAULT;
+  }
+  return color;
 }
 
 void ostendo::Window::UpdateColor() {
@@ -491,6 +592,7 @@ void ostendo::Window::UpdateColor() {
     color_[1] = BLACK;
   }
   if (ptr_ != NULL) {
-    wattron(*ptr_, COLOR_PAIR((short)((color_[0] - 1) * 10 + (color_[1] - 1))));
+    wattron(*ptr_, COLOR_PAIR((short)(color_[0] * 10 + color_[1])));
+    pessum::Log(pessum::DEBUG, "color: %i", "", color_[0] * 10 + color_[1]);
   }
 }

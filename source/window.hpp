@@ -22,15 +22,27 @@ namespace ostendo {
     RIGHT = (1u << 6)
   };
   enum ColorAttribute {
-    DEFAULT = 0,
-    BLACK = 1,
-    BLUE = 2,
-    GREEN = 3,
-    CYAN = 4,
-    RED = 5,
-    MAGENTA = 6,
-    YELLOW = 7,
-    WHITE = 8
+    BLACK = 0,
+    RED = 1,
+    GREEN = 2,
+    YELLOW = 3,
+    BLUE = 4,
+    MAGENTA = 5,
+    CYAN = 6,
+    WHITE = 7,
+    DEFAULT = 8,
+  };
+  enum OutputAttribute {
+    ALTCHARSET = A_ALTCHARSET,
+    BLINK = A_BLINK,
+    BOLD = A_BOLD,
+    DIM = A_DIM,
+    INVIS = A_INVIS,
+    PROTECT = A_PROTECT,
+    REVERSE = A_REVERSE,
+    STANDOUT = A_STANDOUT,
+    UNDERLINE = A_UNDERLINE,
+    NONE
   };
   class Window {
    public:
@@ -76,7 +88,8 @@ namespace ostendo {
     void Print(std::string fmt, ...);
     void mvPrint(int x, int y, std::string fmt, ...);
 
-    void SetAttribute(int attr, bool setting);
+    void ToggleAttribute(int attr, bool setting);
+    void SetAttribute(unsigned int attr);
     void SetColor(int foreground, int background);
 
     void Update();
@@ -101,7 +114,9 @@ namespace ostendo {
 
     void PrintStr(int x, int y, std::string str);
     std::string ReadEscapeBlock(std::string str);
+    std::array<int, 2> ParseAttr(std::vector<std::string> args);
 
+    int ParseColor(std::string str);
     void UpdateColor();
 
     bool auto_update_ = false, title_ = false, border_ = false,
@@ -113,11 +128,11 @@ namespace ostendo {
         {ACS_VLINE, ACS_VLINE, ACS_HLINE, ACS_HLINE, ACS_ULCORNER, ACS_URCORNER,
          ACS_LLCORNER, ACS_LRCORNER, ACS_RTEE, ACS_LTEE}};
     std::array<int, 2> cursor_ = {{0, 0}};
-    std::array<int, 2> color_ = {{DEFAULT, DEFAULT}};
+    std::array<int, 2> color_ = {{WHITE, BLACK}};
     std::vector<std::string> buffer_;
 
     std::shared_ptr<WINDOW*> ptr_ = NULL;
   };
-};
+}  // namespace ostendo
 
 #endif

@@ -22,5 +22,5 @@ namespace ostendo {
 
    private:
   };
-}
+}  // namespace ostendo
 #endif
