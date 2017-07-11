@@ -1,0 +1,41 @@
+[
+    {
+        "arguments": [
+            "c++", 
+            "-c", 
+            "-std=c++11", 
+            "-w", 
+            "-o", 
+            "/home/arden/Programming/libraries/ostendo/build/source/./ostendo_core.o", 
+            "ostendo_core.cpp"
+        ], 
+        "directory": "/home/arden/Programming/libraries/ostendo/source", 
+        "file": "ostendo_core.cpp"
+    }, 
+    {
+        "arguments": [
+            "c++", 
+            "-c", 
+            "-std=c++11", 
+            "-w", 
+            "-o", 
+            "/home/arden/Programming/libraries/ostendo/build/source/./main.o", 
+            "main.cpp"
+        ], 
+        "directory": "/home/arden/Programming/libraries/ostendo/source", 
+        "file": "main.cpp"
+    }, 
+    {
+        "arguments": [
+            "c++", 
+            "-c", 
+            "-std=c++11", 
+            "-w", 
+            "-o", 
+            "/home/arden/Programming/libraries/ostendo/build/source/./window.o", 
+            "window.cpp"
+        ], 
+        "directory": "/home/arden/Programming/libraries/ostendo/source", 
+        "file": "window.cpp"
+    }
+]

@@ -105,6 +105,11 @@ void ostendo::SetColor(bool setting) {
   if (ostendo_color == true) {
     if (has_colors()) {
       start_color();
+      for (int i = 0; i <= 7; i++) {
+        for (int j = 0; j <= 7; j++) {
+          init_pair((short)(i * 10 + j), (short)i, (short)j);
+        }
+      }
     } else {
       pessum::Log(pessum::ERROR, "Terminal emulator does not support colors",
                   "ostendo::SetColor");

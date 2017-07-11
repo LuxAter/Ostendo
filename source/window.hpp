@@ -21,6 +21,17 @@ namespace ostendo {
     LEFT = (1u << 5),
     RIGHT = (1u << 6)
   };
+  enum ColorAttribute {
+    DEFAULT = 0,
+    BLACK = 1,
+    BLUE = 2,
+    GREEN = 3,
+    CYAN = 4,
+    RED = 5,
+    MAGENTA = 6,
+    YELLOW = 7,
+    WHITE = 8
+  };
   class Window {
    public:
     Window();
@@ -65,6 +76,9 @@ namespace ostendo {
     void Print(std::string fmt, ...);
     void mvPrint(int x, int y, std::string fmt, ...);
 
+    void SetAttribute(int attr, bool setting);
+    void SetColor(int foreground, int background);
+
     void Update();
     void Clear();
     void ClearAll();
@@ -85,9 +99,10 @@ namespace ostendo {
 
     std::string FormatString(std::string fmt, va_list args);
 
-    void PrintBlock(int x, int y, std::string str);
-    int GetFormatedLength(std::string str);
-    void AddToBuffer(int x, int y, std::string str);
+    void PrintStr(int x, int y, std::string str);
+    std::string ReadEscapeBlock(std::string str);
+
+    void UpdateColor();
 
     bool auto_update_ = false, title_ = false, border_ = false,
          word_break_ = false;
@@ -98,6 +113,7 @@ namespace ostendo {
         {ACS_VLINE, ACS_VLINE, ACS_HLINE, ACS_HLINE, ACS_ULCORNER, ACS_URCORNER,
          ACS_LLCORNER, ACS_LRCORNER, ACS_RTEE, ACS_LTEE}};
     std::array<int, 2> cursor_ = {{0, 0}};
+    std::array<int, 2> color_ = {{DEFAULT, DEFAULT}};
     std::vector<std::string> buffer_;
 
     std::shared_ptr<WINDOW*> ptr_ = NULL;

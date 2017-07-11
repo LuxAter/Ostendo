@@ -198,29 +198,44 @@ void ostendo::Window::Print(std::string fmt, ...) {
   va_list args;
   va_start(args, fmt);
   std::string str = FormatString(fmt, args);
-  wprintw(*ptr_, str.c_str());
+  PrintStr(cursor_[0], cursor_[1], str);
   if (auto_update_ == true) {
     Update();
   }
 }
 
 void ostendo::Window::mvPrint(int x, int y, std::string fmt, ...) {
-  int curs_x, curs_y;
-  GetCursor(curs_x, curs_y);
+  if (ptr_ == NULL) {
+    return;
+  }
   if (x == -1) {
-    x = curs_x;
+    x = cursor_[0];
   }
   if (y == -1) {
-    y = curs_y;
+    y = cursor_[1];
   }
   va_list args;
   va_start(args, fmt);
   std::string str = FormatString(fmt, args);
-  // mvwprintw(*ptr_, y, x, str.c_str());
-  PrintBlock(x, y, str);
+  PrintStr(x, y, str);
   if (auto_update_ == true) {
     Update();
   }
+}
+
+void ostendo::Window::SetAttribute(int attr, bool setting) {
+  if (ptr_ != NULL) {
+    if (setting == true) {
+      wattron(*ptr_, attr);
+    } else if (setting == false) {
+      wattroff(*ptr_, attr);
+    }
+  }
+}
+
+void ostendo::Window::SetColor(int foreground, int background) {
+  color_ = {{foreground, background}};
+  UpdateColor();
 }
 
 void ostendo::Window::Update() {
@@ -405,16 +420,77 @@ std::string ostendo::Window::FormatString(std::string fmt, va_list args) {
   return formated_str;
 }
 
-void ostendo::Window::PrintBlock(int x, int y, std::string str) {
-  mvwprintw(*ptr_, y, x, str.c_str());
+void ostendo::Window::PrintStr(int x, int y, std::string str) {
+  std::vector<std::string> blocks;
+  int block_length, buffer_width = pos_.w;
+  std::array<int, 2> offset = {{0, 0}};
+  std::array<int, 2> position = {{x, y}};
+  std::string new_block;
+  if (border_ == true) {
+    buffer_width -= 2;
+    offset = {{1, 1}};
+  } else if (title_ == true) {
+    offset = {{0, 1}};
+  }
+  for (int i = 0; i < str.size(); i++) {
+    if (str[i] == '\n' || block_length + position[0] == buffer_width) {
+      blocks.push_back(new_block);
+      mvwprintw(*ptr_, position[1] + offset[1], position[0] + offset[0],
+                new_block.c_str());
+      position[1]++;
+      position[0] = 0;
+      block_length = 0;
+      new_block = std::string();
+    } else if (str[i] == '$') {
+      std::string escape_block_in;
+      i++;
+      while (str[i] != '$' && i < str.size()) {
+        escape_block_in += str[i];
+        i++;
+      }
+      std::string escape_block_out = ReadEscapeBlock(escape_block_in);
+      new_block += escape_block_out;
+      block_length += escape_block_out.size();
+    } else {
+      new_block += str[i];
+      block_length++;
+    }
+  }
+  mvwprintw(*ptr_, position[1] + offset[1], position[0] + offset[0],
+            new_block.c_str());
 }
 
-void ostendo::Window::AddToBuffer(int x, int y, std::string str) {
-  if (y < buffer_.size()) {
-    int buffer_index = pos_.h - y;
-    std::string buffer_str = buffer_[buffer_index];
-    buffer_str.erase(x, GetFormatedLength(str));
-    buffer_str.insert(x, str);
-    buffer_[buffer_index] = buffer_str;
+std::string ostendo::Window::ReadEscapeBlock(std::string str) {
+  std::string return_str;
+  if (str.size() == 0) {
+    return ("$");
+  }
+  pessum::Log(pessum::TRACE, "%s", "", str.c_str());
+  std::vector<std::string> blocks;
+  std::string new_block;
+  for (int i = 0; i < str.size(); i++) {
+    if (str[i] == ';') {
+      blocks.push_back(new_block);
+      new_block = std::string();
+    } else {
+      new_block += str[i];
+    }
+  }
+  blocks.push_back(new_block);
+  for (int i = 0; i < blocks.size(); i++) {
+    pessum::Log(pessum::DATA, "%s", "", blocks[i].c_str());
+  }
+  return return_str;
+}
+
+void ostendo::Window::UpdateColor() {
+  if (color_[0] == DEFAULT) {
+    color_[0] = WHITE;
+  }
+  if (color_[1] == DEFAULT) {
+    color_[1] = BLACK;
+  }
+  if (ptr_ != NULL) {
+    wattron(*ptr_, COLOR_PAIR((short)((color_[0] - 1) * 10 + (color_[1] - 1))));
   }
 }

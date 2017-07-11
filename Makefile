@@ -72,8 +72,6 @@ all: start source-make test-make
 
 .PHONY : clean
 clean: start-clean source-clean test-clean
-	if [[ -e compile_commands.json ]]; then rm compile_commands.json; fi
-	if [[ -e $(BUILD_DIR)/lib$(NAME).a ]]; then rm $(BUILD_DIR)/lib$(NAME).a; fi
 	printf "%b%s%b\n" "$(CLEAN_COLOR)" "$(call Line,$(WIDTH),=)" "$(NO_COLOR)"
 	printf "%b\n" "$(CLEAN_COLOR)Compleated Cleaning$(NO_COLOR)"
 
