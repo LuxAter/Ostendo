@@ -183,15 +183,6 @@ void ostendo::Window::GetCursor(int& x, int& y) {
     y = cursor_[1];
   }
 }
-
-void ostendo::Window::SetBufferSize(int size) {
-  if (size > pos_.h) {
-    buffer_.resize(size);
-  }
-}
-
-int ostendo::Window::GetBufferSize() { return buffer_.size(); }
-
 void ostendo::Window::Print(std::string fmt, ...) {
   if (ptr_ == NULL) {
     return;
@@ -245,6 +236,38 @@ void ostendo::Window::SetColor(int foreground, int background) {
   UpdateColor();
 }
 
+void ostendo::Window::SetBaseColor(int window_element, int foreground,
+                                   int background) {
+  base_color_[window_element] = {{foreground, background}};
+  if (window_element == WE_BASE) {
+    if (ptr_ != NULL) {
+      wbkgd(*ptr_,
+            COLOR_PAIR((short)(base_color_[0][0] * 10 + base_color_[0][1])));
+      if (title_ == true) {
+        EraseTitle();
+        DrawTitle();
+      }
+      if (border_ == true) {
+        EraseBorder();
+        DrawBorder();
+      }
+    }
+  } else if (window_element == WE_TITLE) {
+    EraseTitle();
+    DrawTitle();
+  } else if (window_element == WE_BORDER) {
+    EraseBorder();
+    DrawBorder();
+  }
+  if (auto_update_ == true) {
+    Update();
+  }
+}
+
+void ostendo::Window::SetLastLineAction(int action) {
+  last_line_action_ = action;
+}
+
 void ostendo::Window::Update() {
   if (ptr_ != NULL) {
     wrefresh(*ptr_);
@@ -253,12 +276,19 @@ void ostendo::Window::Update() {
 
 void ostendo::Window::Clear() {
   if (ptr_ != NULL) {
+    color_ = base_color_[0];
+    UpdateColor();
     wclear(*ptr_);
+  }
+  if (auto_update_ == true) {
+    Update();
   }
 }
 
 void ostendo::Window::ClearAll() {
   if (ptr_ != NULL) {
+    color_ = base_color_[0];
+    UpdateColor();
     wclear(*ptr_);
     bool border_set = border_;
     bool title_set = title_;
@@ -272,6 +302,30 @@ void ostendo::Window::ClearAll() {
     }
     border_ = border_set;
     title_ = title_set;
+  }
+  if (auto_update_ == true) {
+    Update();
+  }
+}
+
+void ostendo::Window::ClearLine(int line) {
+  if (line == -1) {
+    line = cursor_[1];
+  }
+  if (ptr_ != NULL) {
+    int width = pos_.w;
+    std::array<int, 2> offset = {{0, 0}};
+    std::string new_block;
+    if (border_ == true) {
+      width -= 2;
+      offset = {{1, 1}};
+    } else if (title_ == true) {
+      offset = {{0, 1}};
+    }
+    mvwhline(*ptr_, line + offset[1], offset[0], ' ', width);
+  }
+  if (auto_update_ == true) {
+    Update();
   }
 }
 
@@ -307,6 +361,9 @@ void ostendo::Window::ReadState(unsigned int state) {
   if ((state & AUTO_UPDATE) != 0) {
     SetAutoUpdate(true);
   }
+  if ((state & WORD_BREAK) != 0) {
+    SetWordBreak(true);
+  }
 }
 
 void ostendo::Window::DrawTitle() {
@@ -325,16 +382,20 @@ void ostendo::Window::DrawTitle() {
     }
   }
   if (border_ == true) {
+    color_ = base_color_[2];
+    UpdateColor();
     mvwaddch(*ptr_, 0, title_start - 1, border_char_set_[8]);
-  }
-  mvwprintw(*ptr_, 0, title_start, title_str_.c_str());
-  if (border_ == true) {
     mvwaddch(*ptr_, 0, title_start + title_width, border_char_set_[9]);
   }
+  color_ = base_color_[3];
+  UpdateColor();
+  mvwprintw(*ptr_, 0, title_start, title_str_.c_str());
   Update();
 }
 
 void ostendo::Window::DrawBorder() {
+  color_ = base_color_[2];
+  UpdateColor();
   wborder(*ptr_, border_char_set_[0], border_char_set_[1], border_char_set_[2],
           border_char_set_[3], border_char_set_[4], border_char_set_[5],
           border_char_set_[6], border_char_set_[7]);
@@ -360,14 +421,20 @@ void ostendo::Window::EraseTitle() {
     }
   }
   if (border_ == true) {
+    color_ = base_color_[3];
+    UpdateColor();
     mvwhline(*ptr_, 0, title_start - 1, border_char_set_[2], title_width + 2);
   } else if (border_ == false) {
+    color_ = base_color_[0];
+    UpdateColor();
     mvwhline(*ptr_, 0, title_start, ' ', title_width);
   }
   Update();
 }
 
 void ostendo::Window::EraseBorder() {
+  color_ = base_color_[0];
+  UpdateColor();
   wborder(*ptr_, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
   Update();
   if (title_ == true) {
@@ -429,28 +496,43 @@ std::string ostendo::Window::FormatString(std::string fmt, va_list args) {
 
 void ostendo::Window::PrintStr(int x, int y, std::string str) {
   std::vector<std::string> blocks;
-  int block_length, buffer_width = pos_.w;
+  int block_length, buffer_width = pos_.w, buffer_height = pos_.h;
   std::array<int, 2> offset = {{0, 0}};
-  std::array<int, 2> position = {{x, y}};
+  cursor_ = {{x, y}};
   std::string new_block;
   if (border_ == true) {
     buffer_width -= 2;
+    buffer_height -= 2;
     offset = {{1, 1}};
   } else if (title_ == true) {
     offset = {{0, 1}};
+    buffer_height -= 1;
   }
+  color_ = base_color_[1];
+  UpdateColor();
   for (int i = 0; i < str.size(); i++) {
-    if (str[i] == '\n' || block_length + position[0] == buffer_width) {
-      mvwprintw(*ptr_, position[1] + offset[1], position[0] + offset[0],
+    if (str[i] == '\n' || block_length + cursor_[0] == buffer_width) {
+      if (str[i] != '\n' && word_break_ == true) {
+        while (i >= 0 && str[i] != ' ' && new_block.size() > 0) {
+          new_block.pop_back();
+          i--;
+        }
+        i++;
+      }
+      mvwprintw(*ptr_, cursor_[1] + offset[1], cursor_[0] + offset[0],
                 new_block.c_str());
-      position[1]++;
-      position[0] = 0;
+      cursor_[1]++;
+      cursor_[0] = 0;
       block_length = 0;
       new_block = std::string();
-    } else if (str[i] == '$') {
-      mvwprintw(*ptr_, position[1] + offset[1], position[0] + offset[0],
+      if (cursor_[1] >= buffer_height) {
+        HandleLastLine();
+      }
+    }
+    if (str[i] == '$') {
+      mvwprintw(*ptr_, cursor_[1] + offset[1], cursor_[0] + offset[0],
                 new_block.c_str());
-      position[0] += block_length;
+      cursor_[0] += block_length;
       block_length = 0;
       new_block = std::string();
       std::string escape_block_in;
@@ -462,13 +544,16 @@ void ostendo::Window::PrintStr(int x, int y, std::string str) {
       std::string escape_block_out = ReadEscapeBlock(escape_block_in);
       new_block += escape_block_out;
       block_length += escape_block_out.size();
-    } else {
+    } else if (str[i] != '\n') {
       new_block += str[i];
       block_length++;
     }
   }
-  mvwprintw(*ptr_, position[1] + offset[1], position[0] + offset[0],
+  mvwprintw(*ptr_, cursor_[1] + offset[1], cursor_[0] + offset[0],
             new_block.c_str());
+  cursor_[0] += new_block.size();
+  color_ = base_color_[0];
+  UpdateColor();
 }
 
 std::string ostendo::Window::ReadEscapeBlock(std::string str) {
@@ -486,7 +571,6 @@ std::string ostendo::Window::ReadEscapeBlock(std::string str) {
     blocks.push_back(new_block);
     pessum::Log(pessum::DEBUG, "%s", "", new_block.c_str());
   }
-  pessum::Log(pessum::INFO);
   for (int i = 0; i < blocks.size(); i++) {
     std::vector<std::string> args;
     std::stringstream ss_b(blocks[i]);
@@ -523,7 +607,6 @@ std::string ostendo::Window::ReadEscapeBlock(std::string str) {
       }
     }
   }
-  pessum::Log(pessum::INFO);
   return return_str;
 }
 
@@ -593,6 +676,36 @@ void ostendo::Window::UpdateColor() {
   }
   if (ptr_ != NULL) {
     wattron(*ptr_, COLOR_PAIR((short)(color_[0] * 10 + color_[1])));
-    pessum::Log(pessum::DEBUG, "color: %i", "", color_[0] * 10 + color_[1]);
+  }
+}
+
+void ostendo::Window::HandleLastLine() {
+  if (last_line_action_ == LLA_NONE) {
+    cursor_[1]--;
+    ClearLine();
+  } else if (last_line_action_ == LLA_CLEAR) {
+    Clear();
+    if (title_ == true) {
+      DrawTitle();
+    }
+    if (border_ == true) {
+      DrawBorder();
+    }
+    cursor_[1] = 0;
+  } else if (last_line_action_ == LLA_SCROLL) {
+    cursor_[1]--;
+    std::array<int, 2> start = {{0, 0}};
+    if (border_ == true) {
+      start = {{1, 1}};
+    } else if (title_ == true) {
+      start = {{0, 1}};
+    }
+    for (int i = start[1] + 1; i < pos_.h - start[1]; i++) {
+      for (int j = start[0]; j < pos_.w - start[0]; j++) {
+        unsigned long ch = mvwinch(*ptr_, i, j);
+        mvwaddch(*ptr_, i - 1, j, ch);
+      }
+    }
+    ClearLine();
   }
 }

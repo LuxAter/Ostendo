@@ -11,6 +11,8 @@
 
 #include "position.hpp"
 
+// REVIEW: Clean Code
+
 namespace ostendo {
   enum WindowSettings {
     BORDER = (1u << 0),
@@ -44,6 +46,8 @@ namespace ostendo {
     UNDERLINE = A_UNDERLINE,
     NONE
   };
+  enum LastLineAction { LLA_NONE, LLA_SCROLL, LLA_CLEAR };
+  enum WindowElements { WE_BASE = 0, WE_TEXT = 1, WE_BORDER = 2, WE_TITLE = 3 };
   class Window {
    public:
     Window();
@@ -92,9 +96,14 @@ namespace ostendo {
     void SetAttribute(unsigned int attr);
     void SetColor(int foreground, int background);
 
+    void SetBaseColor(int window_element, int foreground, int background);
+
+    void SetLastLineAction(int action);
+
     void Update();
     void Clear();
     void ClearAll();
+    void ClearLine(int line = -1);
 
    protected:
    private:
@@ -119,14 +128,21 @@ namespace ostendo {
     int ParseColor(std::string str);
     void UpdateColor();
 
+    void HandleLastLine();
+
     bool auto_update_ = false, title_ = false, border_ = false,
          word_break_ = false;
     int title_position_ = CENTER;
+    int last_line_action_ = LLA_NONE;
     std::string title_str_ = "";
     Position pos_;
     std::array<unsigned long, 10> border_char_set_ = {
         {ACS_VLINE, ACS_VLINE, ACS_HLINE, ACS_HLINE, ACS_ULCORNER, ACS_URCORNER,
          ACS_LLCORNER, ACS_LRCORNER, ACS_RTEE, ACS_LTEE}};
+    std::array<std::array<int, 2>, 4> base_color_ = {{{{WHITE, BLACK}},
+                                                      {{WHITE, BLACK}},
+                                                      {{WHITE, BLACK}},
+                                                      {{WHITE, BLACK}}}};
     std::array<int, 2> cursor_ = {{0, 0}};
     std::array<int, 2> color_ = {{WHITE, BLACK}};
     std::vector<std::string> buffer_;
