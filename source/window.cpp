@@ -16,19 +16,52 @@ ostendo::Window::Window(unsigned int state) : pos_(std_scr) {
   ReadState(state);
 }
 
-ostendo::Window::Window(std::string name) : title_str_(name), pos_(std_scr) {
-  GenerateWindow();
-}
-
 ostendo::Window::Window(std::string name, unsigned int state)
     : title_str_(name), pos_(std_scr) {
   GenerateWindow();
   ReadState(state);
 }
 
-ostendo::Window::Window(int width, int height) : pos_(width, height) {
+ostendo::Window::Window(int width, int height, unsigned int state)
+    : pos_(width, height) {
   GenerateWindow();
+  ReadState(state);
 }
+
+ostendo::Window::Window(std::string name, int width, int height,
+                        unsigned int state)
+    : title_str_(name), pos_(width, height) {
+  GenerateWindow();
+  ReadState(state);
+}
+
+ostendo::Window::Window(int width, int height, int x, int y, unsigned int state)
+    : pos_(width, height, x, y) {
+  GenerateWindow();
+  ReadState(state);
+}
+
+ostendo::Window::Window(std::array<int, 4> pos, unsigned int state)
+    : pos_(pos) {
+  GenerateWindow();
+  ReadState(state);
+}
+
+ostendo::Window::Window(std::string name, int width, int height, int x, int y,
+                        unsigned int state)
+    : title_str_(name), pos_(width, height, x, y) {
+  GenerateWindow();
+  ReadState(state);
+}
+
+ostendo::Window::Window(std::string name, std::array<int, 4> pos,
+                        unsigned int state)
+    : title_str_(name), pos_(pos) {
+  GenerateWindow();
+  ReadState(state);
+}
+
+ostendo::Window::Window(const Window& copy) {}
 
 ostendo::Window::~Window() {
   if (ptr_.use_count() == 1) {
@@ -209,6 +242,7 @@ void ostendo::Window::mvPrint(int x, int y, std::string fmt, ...) {
   va_list args;
   va_start(args, fmt);
   std::string str = FormatString(fmt, args);
+  va_end(args);
   PrintStr(x, y, str);
   if (auto_update_ == true) {
     Update();
@@ -261,6 +295,22 @@ void ostendo::Window::SetBaseColor(int window_element, int foreground,
   }
   if (auto_update_ == true) {
     Update();
+  }
+}
+
+void ostendo::Window::SetBorderChars(std::array<unsigned long, 10> char_set) {
+  border_char_set_ = char_set;
+  if (border_ == true) {
+    EraseBorder();
+    DrawBorder();
+  }
+}
+
+void ostendo::Window::SetBorderChar(int character, unsigned long ch) {
+  border_char_set_[character] = ch;
+  if (border_ == true) {
+    EraseBorder();
+    DrawBorder();
   }
 }
 
