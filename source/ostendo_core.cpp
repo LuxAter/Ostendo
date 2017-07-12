@@ -124,15 +124,12 @@ void ostendo::SetTimeOut(int ms) {
 }
 
 ostendo::Position ostendo::GetPosition(WINDOW* win) {
-  std::array<int, 5> ret;
+  std::array<int, 4> ret = {{0, 0, 0, 0}};
   if (win != NULL) {
-    ret = {{0, 0, 0, 0, -1}};
     getmaxyx(win, ret[1], ret[0]);
-  } else {
-    ret = {{0, 0, 0, 0, -1}};
   }
   pessum::Log(pessum::DATA, "%ix%i @ (%i,%i,%i)", "ostendo::GetPosition",
-              ret[0], ret[1], ret[2], ret[3], ret[4]);
+              ret[0], ret[1], ret[2], ret[3]);
   return Position(ret);
 }
 

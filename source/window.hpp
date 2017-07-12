@@ -11,8 +11,6 @@
 
 #include "position.hpp"
 
-// REVIEW: Clean Code
-
 namespace ostendo {
   enum WindowSettings {
     BORDER = (1u << 0),

@@ -165,8 +165,7 @@ void ostendo::Window::SetPosition(Position pos) {
 
 ostendo::Position ostendo::Window::GetPosition() {
   pessum::Log(pessum::DATA, "%ix%i @ (%i,%i,%i)",
-              "ostendo::Window::GetPosition", pos_.w, pos_.h, pos_.x, pos_.y,
-              pos_.z);
+              "ostendo::Window::GetPosition", pos_.w, pos_.h, pos_.x, pos_.y);
   return pos_;
 }
 
@@ -190,6 +189,7 @@ void ostendo::Window::Print(std::string fmt, ...) {
   va_list args;
   va_start(args, fmt);
   std::string str = FormatString(fmt, args);
+  va_end(args);
   PrintStr(cursor_[0], cursor_[1], str);
   if (auto_update_ == true) {
     Update();
@@ -490,7 +490,6 @@ std::string ostendo::Window::FormatString(std::string fmt, va_list args) {
   vsprintf(formated_string, fmt.c_str(), args);
   formated_str = std::string(formated_string);
   va_end(buff_args);
-  va_end(args);
   return formated_str;
 }
 
@@ -537,7 +536,7 @@ void ostendo::Window::PrintStr(int x, int y, std::string str) {
       new_block = std::string();
       std::string escape_block_in;
       i++;
-      while (str[i] != '$' && i < str.size()) {
+      while (i < str.size() && str[i] != '$') {
         escape_block_in += str[i];
         i++;
       }
