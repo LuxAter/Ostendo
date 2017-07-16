@@ -11,6 +11,8 @@
 
 #include "position.hpp"
 
+// TODO: add justification attribute
+
 namespace ostendo {
   // Used for setting window options on creation.
   enum WindowSettings {
@@ -139,6 +141,8 @@ namespace ostendo {
     void Print(std::string fmt, ...);
     // Moves the cursor position, then prints the formated string to the window.
     void mvPrint(int x, int y, std::string fmt, ...);
+    // Returns the length of the print output.
+    int PrintSize(std::string fmt, ...);
 
     // Sets output attribute settings
     void ToggleAttribute(int attr, bool setting);
@@ -195,7 +199,7 @@ namespace ostendo {
     // Prints string at coordinates.
     void PrintStr(int x, int y, std::string str);
     // Reads and applies any escape block entries.
-    std::string ReadEscapeBlock(std::string str);
+    std::string ReadEscapeBlock(std::string str, bool action = true);
     // Parses escape block attributes.
     std::array<int, 2> ParseAttr(std::vector<std::string> args);
 

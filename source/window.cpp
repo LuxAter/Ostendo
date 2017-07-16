@@ -61,7 +61,20 @@ ostendo::Window::Window(std::string name, std::array<int, 4> pos,
   ReadState(state);
 }
 
-ostendo::Window::Window(const Window& copy) {}
+ostendo::Window::Window(const Window& copy)
+    : auto_update_(copy.auto_update_),
+      title_(copy.title_),
+      border_(copy.border_),
+      word_break_(copy.word_break_),
+      title_position_(copy.title_position_),
+      last_line_action_(copy.last_line_action_),
+      title_str_(copy.title_str_),
+      border_char_set_(copy.border_char_set_),
+      base_color_(copy.base_color_),
+      cursor_(copy.cursor_),
+      color_(copy.color_),
+      pos_(copy.pos_),
+      ptr_(copy.ptr_) {}
 
 ostendo::Window::~Window() {
   if (ptr_.use_count() == 1) {
@@ -247,6 +260,55 @@ void ostendo::Window::mvPrint(int x, int y, std::string fmt, ...) {
   if (auto_update_ == true) {
     Update();
   }
+}
+
+int ostendo::Window::PrintSize(std::string fmt, ...) {
+  int total_length = 0;
+  va_list args;
+  va_start(args, fmt);
+  std::string str = FormatString(fmt, args);
+  va_end(args);
+
+  std::vector<std::string> blocks;
+  int block_length, buffer_width = pos_.w, buffer_height = pos_.h;
+  std::string new_block;
+  UpdateColor();
+  for (int i = 0; i < str.size(); i++) {
+    if (str[i] == '\n' || block_length + cursor_[0] == buffer_width) {
+      if (str[i] != '\n' && word_break_ == true) {
+        while (i >= 0 && str[i] != ' ' && new_block.size() > 0) {
+          new_block.pop_back();
+          i--;
+        }
+        i++;
+      }
+      total_length += new_block.size();
+      block_length = 0;
+      new_block = std::string();
+      if (cursor_[1] >= buffer_height) {
+        HandleLastLine();
+      }
+    }
+    if (str[i] == '$') {
+      total_length += new_block.size();
+      block_length = 0;
+      new_block = std::string();
+      std::string escape_block_in;
+      i++;
+      while (i < str.size() && str[i] != '$') {
+        escape_block_in += str[i];
+        i++;
+      }
+      std::string escape_block_out = ReadEscapeBlock(escape_block_in, false);
+      new_block += escape_block_out;
+      block_length += escape_block_out.size();
+    } else if (str[i] != '\n') {
+      new_block += str[i];
+      block_length++;
+    }
+  }
+  total_length += new_block.size();
+  return total_length;
 }
 
 void ostendo::Window::ToggleAttribute(int attr, bool setting) {
@@ -605,11 +667,11 @@ void ostendo::Window::PrintStr(int x, int y, std::string str) {
   UpdateColor();
 }
 
-std::string ostendo::Window::ReadEscapeBlock(std::string str) {
+std::string ostendo::Window::ReadEscapeBlock(std::string str, bool action) {
   std::string return_str;
   if (str.size() == 0) {
     return ("$");
-  } else if (str == "0") {
+  } else if (str == "0" && action == true) {
     SetColor(DEFAULT, DEFAULT);
     SetAttribute(0);
   }
@@ -618,7 +680,6 @@ std::string ostendo::Window::ReadEscapeBlock(std::string str) {
   std::string new_block;
   while (std::getline(ss, new_block, ';')) {
     blocks.push_back(new_block);
-    pessum::Log(pessum::DEBUG, "%s", "", new_block.c_str());
   }
   for (int i = 0; i < blocks.size(); i++) {
     std::vector<std::string> args;
@@ -626,10 +687,9 @@ std::string ostendo::Window::ReadEscapeBlock(std::string str) {
     std::string new_block_opt;
     while (std::getline(ss_b, new_block_opt, ':')) {
       args.push_back(new_block_opt);
-      pessum::Log(pessum::DEBUG, "%s", "", new_block_opt.c_str());
     }
     if (args.size() == 1) {
-      if (args[0] == "c") {
+      if (args[0] == "c" && action == true) {
         color_ = {{DEFAULT, DEFAULT}};
         UpdateColor();
       } else if (args[0] == "a") {
@@ -638,13 +698,13 @@ std::string ostendo::Window::ReadEscapeBlock(std::string str) {
         SetAttribute(ParseAttr(args)[0]);
       }
     } else if (args.size() == 2) {
-      if (args[0] == "fg") {
+      if (args[0] == "fg" && action == true) {
         color_[0] = ParseColor(args[1]);
         UpdateColor();
-      } else if (args[0] == "bg") {
+      } else if (args[0] == "bg" && action == true) {
         color_[1] = ParseColor(args[1]);
         UpdateColor();
-      } else {
+      } else if (action == true) {
         std::array<int, 2> attr = ParseAttr(args);
         if (attr[1] == 1) {
           ToggleAttribute(attr[0], true);

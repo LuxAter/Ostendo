@@ -37,5 +37,18 @@
         ], 
         "directory": "/home/arden/Programming/libraries/ostendo/source", 
         "file": "window.cpp"
+    }, 
+    {
+        "arguments": [
+            "c++", 
+            "-c", 
+            "-std=c++11", 
+            "-w", 
+            "-o", 
+            "/home/arden/Programming/libraries/ostendo/build/source/./menu.o", 
+            "menu.cpp"
+        ], 
+        "directory": "/home/arden/Programming/libraries/ostendo/source", 
+        "file": "menu.cpp"
     }
 ]
