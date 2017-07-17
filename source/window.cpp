@@ -30,13 +30,27 @@ ostendo::Window::Window(int width, int height, unsigned int state)
 
 ostendo::Window::Window(std::string name, int width, int height,
                         unsigned int state)
-    : title_str_(name), pos_(width, height) {
+    : title_str_(name) {
+  if (width == -1) {
+    width = std_scr.w;
+  }
+  if (height == -1) {
+    height = std_scr.h;
+  }
+  pos_ = {width, height};
   GenerateWindow();
   ReadState(state);
 }
 
-ostendo::Window::Window(int width, int height, int x, int y, unsigned int state)
-    : pos_(width, height, x, y) {
+ostendo::Window::Window(int width, int height, int x, int y,
+                        unsigned int state) {
+  if (width == -1) {
+    width = std_scr.w;
+  }
+  if (height == -1) {
+    height = std_scr.h;
+  }
+  pos_ = {width, height, x, y};
   GenerateWindow();
   ReadState(state);
 }
@@ -49,7 +63,14 @@ ostendo::Window::Window(std::array<int, 4> pos, unsigned int state)
 
 ostendo::Window::Window(std::string name, int width, int height, int x, int y,
                         unsigned int state)
-    : title_str_(name), pos_(width, height, x, y) {
+    : title_str_(name) {
+  if (width == -1) {
+    width = std_scr.w;
+  }
+  if (height == -1) {
+    height = std_scr.h;
+  }
+  pos_ = {width, height, x, y};
   GenerateWindow();
   ReadState(state);
 }
@@ -191,6 +212,12 @@ void ostendo::Window::SetPosition(int x, int y) {
 }
 
 void ostendo::Window::SetPosition(int width, int height, int x, int y) {
+  if (width == -1) {
+    pos_.w = std_scr.w;
+  }
+  if (height == -1) {
+    pos_.h = std_scr.h;
+  }
   pos_.w = width;
   pos_.h = height;
   pos_.x = x;
@@ -209,11 +236,7 @@ void ostendo::Window::SetPosition(Position pos) {
   }
 }
 
-ostendo::Position ostendo::Window::GetPosition() {
-  pessum::Log(pessum::DATA, "%ix%i @ (%i,%i,%i)",
-              "ostendo::Window::GetPosition", pos_.w, pos_.h, pos_.x, pos_.y);
-  return pos_;
-}
+ostendo::Position ostendo::Window::GetPosition() { return pos_; }
 
 void ostendo::Window::SetCursor(int x, int y) {
   if (ptr_ != NULL) {
@@ -242,6 +265,17 @@ void ostendo::Window::Print(std::string fmt, ...) {
   }
 }
 
+void ostendo::Window::Print(std::string fmt, va_list args) {
+  if (ptr_ == NULL) {
+    return;
+  }
+  std::string str = FormatString(fmt, args);
+  PrintStr(cursor_[0], cursor_[1], str);
+  if (auto_update_ == true) {
+    Update();
+  }
+}
+
 void ostendo::Window::mvPrint(int x, int y, std::string fmt, ...) {
   if (ptr_ == NULL) {
     return;
@@ -262,12 +296,141 @@ void ostendo::Window::mvPrint(int x, int y, std::string fmt, ...) {
   }
 }
 
+void ostendo::Window::mvPrint(int x, int y, std::string fmt, va_list args) {
+  if (ptr_ == NULL) {
+    return;
+  }
+  if (x == -1) {
+    x = cursor_[0];
+  }
+  if (y == -1) {
+    y = cursor_[1];
+  }
+  std::string str = FormatString(fmt, args);
+  PrintStr(x, y, str);
+  if (auto_update_ == true) {
+    Update();
+  }
+}
+
+void ostendo::Window::bPrint(int position, std::string fmt, ...) {
+  va_list args;
+  va_start(args, fmt);
+  int base_width = PrintSize(fmt, args);
+  va_end(args);
+  int base_start = 0, border_off = 0;
+  if (position == LEFT) {
+    if (border_ == true) {
+      base_start = 2;
+    }
+  } else if (title_position_ == CENTER) {
+    base_start = (pos_.w - base_width) / 2;
+  } else if (title_position_ == RIGHT) {
+    base_start = pos_.w - base_width;
+    if (border_ == true) {
+      base_start -= 2;
+    }
+  }
+  if (border_ == true) {
+    border_off = 1;
+  }
+  if (border_ == true) {
+    color_ = base_color_[2];
+    UpdateColor();
+    mvwaddch(*ptr_, pos_.h - 1, base_start - 1, border_char_set_[8]);
+    mvwaddch(*ptr_, pos_.h - 1, base_start + base_width, border_char_set_[9]);
+  }
+  color_ = base_color_[3];
+  UpdateColor();
+  va_start(args, fmt);
+  mvPrint(base_start - border_off, pos_.h - 2, fmt, args);
+  va_end(args);
+  Update();
+}
+
+void ostendo::Window::bErase(int position, std::string fmt, ...) {
+  va_list args;
+  va_start(args, fmt);
+  int base_width = PrintSize(fmt, args);
+  va_end(args);
+  int base_start = 0;
+  if (title_position_ == LEFT) {
+    if (border_ == true) {
+      base_start = 2;
+    }
+  } else if (title_position_ == CENTER) {
+    base_start = (pos_.w - base_width) / 2;
+  } else if (title_position_ == RIGHT) {
+    base_start = pos_.w - base_width;
+    if (border_ == true) {
+      base_start -= 2;
+    }
+  }
+  if (border_ == true) {
+    color_ = base_color_[3];
+    UpdateColor();
+    mvwhline(*ptr_, pos_.h - 1, base_start - 1, border_char_set_[2],
+             base_width + 2);
+  } else if (border_ == false) {
+    color_ = base_color_[0];
+    UpdateColor();
+    mvwhline(*ptr_, pos_.h - 1, base_start, ' ', base_width);
+  }
+  Update();
+}
+
 int ostendo::Window::PrintSize(std::string fmt, ...) {
   int total_length = 0;
   va_list args;
   va_start(args, fmt);
   std::string str = FormatString(fmt, args);
   va_end(args);
+
+  std::vector<std::string> blocks;
+  int block_length, buffer_width = pos_.w, buffer_height = pos_.h;
+  std::string new_block;
+  UpdateColor();
+  for (int i = 0; i < str.size(); i++) {
+    if (str[i] == '\n' || block_length + cursor_[0] == buffer_width) {
+      if (str[i] != '\n' && word_break_ == true) {
+        while (i >= 0 && str[i] != ' ' && new_block.size() > 0) {
+          new_block.pop_back();
+          i--;
+        }
+        i++;
+      }
+      total_length += new_block.size();
+      block_length = 0;
+      new_block = std::string();
+      if (cursor_[1] >= buffer_height) {
+        HandleLastLine();
+      }
+    }
+    if (str[i] == '$') {
+      total_length += new_block.size();
+      block_length = 0;
+      new_block = std::string();
+      std::string escape_block_in;
+      i++;
+      while (i < str.size() && str[i] != '$') {
+        escape_block_in += str[i];
+        i++;
+      }
+      std::string escape_block_out = ReadEscapeBlock(escape_block_in, false);
+      new_block += escape_block_out;
+      block_length += escape_block_out.size();
+    } else if (str[i] != '\n') {
+      new_block += str[i];
+      block_length++;
+    }
+  }
+  total_length += new_block.size();
+  return total_length;
+}
+
+int ostendo::Window::PrintSize(std::string fmt, va_list args) {
+  int total_length = 0;
+  std::string str = FormatString(fmt, args);
 
   std::vector<std::string> blocks;
   int block_length, buffer_width = pos_.w, buffer_height = pos_.h;
@@ -450,6 +613,8 @@ void ostendo::Window::GenerateWindow() {
     if (ptr_ == NULL) {
       pessum::Log(pessum::ERROR, "Failed to initialize window",
                   "ostendo::Window::GenerateWindow");
+    } else {
+      keypad(*ptr_, true);
     }
   }
 }

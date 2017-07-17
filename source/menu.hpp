@@ -28,16 +28,20 @@ namespace ostendo {
 
    protected:
    private:
+    bool MoveSelection(int key);
     void Display();
     void DisplayCol(int col, int x, int width);
 
     int Longest(int col = -1);
 
+    int ItemIndex();
+
     bool multi_ = false;
 
-    std::array<int, 2> position = {{0, 0}};
+    std::array<int, 2> position_ = {{0, 0}};
 
-    std::array<std::string, 4> selection_setting_;
+    std::array<std::string, 4> selection_setting_ = {
+        {"$st:on$", "$st:off$", "$un:on$", "$un:off$"}};
     std::vector<std::vector<std::pair<bool, std::string>>> items_;
 
     Window win_;

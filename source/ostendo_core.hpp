@@ -9,7 +9,7 @@
 
 #define OSTENDO_VERSION_MAJOR 0
 #define OSTENDO_VERSION_MINOR 5
-#define OSTENDO_VERSION_PATCH 4
+#define OSTENDO_VERSION_PATCH 6
 
 namespace ostendo {
   enum InitOptions {

@@ -139,10 +139,16 @@ namespace ostendo {
 
     // Prints the formated string to the window at the cursor position.
     void Print(std::string fmt, ...);
+    void Print(std::string fmt, va_list args);
     // Moves the cursor position, then prints the formated string to the window.
     void mvPrint(int x, int y, std::string fmt, ...);
+    void mvPrint(int x, int y, std::string fmt, va_list args);
+    // Prints A base line text on the last line(in the bottom border)
+    void bPrint(int position, std::string fmt, ...);
+    void bErase(int Position, std::string fmt, ...);
     // Returns the length of the print output.
     int PrintSize(std::string fmt, ...);
+    int PrintSize(std::string fmt, va_list args);
 
     // Sets output attribute settings
     void ToggleAttribute(int attr, bool setting);

@@ -40,6 +40,7 @@ void ostendo::InitOstendo(unsigned int state) {
   } else {
     SetColor(false);
   }
+  keypad(stdscr, true);
   refresh();
   std_scr = GetPosition(stdscr);
 }
