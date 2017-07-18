@@ -11,9 +11,12 @@
 
 #include "position.hpp"
 
-// TODO: add justification attribute
+// TODO(Arden): Add justification attribute.
+// TODO(Arden): Add scroll bar.
+// TODO(Arden): Split window class.
 
 namespace ostendo {
+  // TODO(Arden): Move WindowSettings to a new headers.
   // Used for setting window options on creation.
   enum WindowSettings {
     BORDER = (1u << 0),
@@ -24,6 +27,7 @@ namespace ostendo {
     LEFT = (1u << 5),
     RIGHT = (1u << 6)
   };
+  // TODO(Arden): Move ColorAttribute to a new header.
   // Used for defining color of output to the window.
   enum ColorAttribute {
     BLACK = 0,
@@ -36,6 +40,7 @@ namespace ostendo {
     WHITE = 7,
     DEFAULT = 8,
   };
+  // TODO(Arden): Move OutputAttribute to a new header.
   // Used for defining additional attributes of output to the window.
   enum OutputAttribute {
     ALTCHARSET = A_ALTCHARSET,
@@ -49,8 +54,10 @@ namespace ostendo {
     UNDERLINE = A_UNDERLINE,
     NONE
   };
+  // TODO(Arden): Move LastLineAction to new header.
   // Used to define the handeling for printing at the final line.
   enum LastLineAction { LLA_NONE, LLA_SCROLL, LLA_CLEAR };
+  // TODO(Arden): Move WindowElements to new header.
   // Used to define the different elements of a window.
   enum WindowElements { WE_BASE = 0, WE_TEXT = 1, WE_BORDER = 2, WE_TITLE = 3 };
   // Base class that controls all ncurses windows, and output to said windows.
@@ -88,22 +95,7 @@ namespace ostendo {
     // Manual Destructor.
     void DeleteWindow();
 
-    // Sets if the border should be drawn or not.
-    void SetBorder(bool setting);
-    // Sets if the title should be drawn or not.
-    void SetTitle(bool setting);
-    // Sets the title string.
-    void SetTitleStr(std::string title);
-    // Sets the title string.
-    void SetTitleStr(const char* title);
-    // Sets the title position(LEFT, CENTER, RIGHT) in the window.
-    void SetTitlePosition(int position);
-    // Sets if the window should auto update at all outputs.
-    void SetAutoUpdate(bool setting);
-    // Sets if the window should automatticaly move the line breaks to not split
-    // words.
-    void SetWordBreak(bool setting);
-
+    // TODO(Arden): Move border/title methods to new file.
     // Checks if the border is drawn.
     bool GetBorder();
     // Checks if the title is drawn.
@@ -115,6 +107,7 @@ namespace ostendo {
     // Checks if the window will break lines at spaces.
     bool GetWordBreak();
 
+    // TODO(Arden): Move resizing/movement to new file?
     // Scales the window relativly to the current size.
     void Scale(int dwidth, int dheight);
     // Sets the size of the window.
@@ -132,6 +125,7 @@ namespace ostendo {
     // Returns the position data of the window.
     Position GetPosition();
 
+    // TODO(Arden): Move printing commands to new file.
     // Sets the cursor position for the window.
     void SetCursor(int x, int y);
     // Returns the current position of the cursor.
@@ -150,6 +144,7 @@ namespace ostendo {
     int PrintSize(std::string fmt, ...);
     int PrintSize(std::string fmt, va_list args);
 
+    // TODO(Arden): Move attributes to new file.
     // Sets output attribute settings
     void ToggleAttribute(int attr, bool setting);
     // Disables all current attribues and sets new ones.
