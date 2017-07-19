@@ -120,6 +120,8 @@ namespace ostendo {
     void SetScrollBar(int position, bool setting);
     // Sets the positoin of the scroll bar
     void SetScroll(int position, int current, int max);
+    void SetScroll(int position, float perc);
+    void MoveScroll(int position, float perc);
 
     // Checks if the border is drawn.
     bool GetBorder();
@@ -133,6 +135,7 @@ namespace ostendo {
     bool GetWordBreak();
     // Checks if a scroll bar is drawn at the current position.
     bool GetScrollBar(int position);
+    float GetScroll(int position);
 
     // TODO(Arden): Move resizing/movement to new file?
     // Scales the window relativly to the current size.
@@ -250,7 +253,7 @@ namespace ostendo {
 
     bool auto_update_ = false, title_ = false, border_ = false,
          word_break_ = false;
-    std::array<std::pair<bool, float>, 4> scrollbars = {
+    std::array<std::pair<bool, float>, 4> scrollbars_ = {
         {std::make_pair(false, 0.0), std::make_pair(false, 0.0),
          std::make_pair(false, 0.0), std::make_pair(false, 0.0)}};
     int title_position_ = CENTER, last_line_action_ = LLA_NONE;
@@ -266,7 +269,7 @@ namespace ostendo {
                                                       {{WHITE, BLACK}}}};
     std::array<int, 2> cursor_ = {{0, 0}};
     std::array<int, 2> color_ = {{WHITE, BLACK}};
-    std::array<int, 4> offset = {{0, 0, 0, 0}};
+    std::array<int, 4> offset_ = {{0, 0, 0, 0}};
 
     Position pos_;
     std::shared_ptr<WINDOW*> ptr_ = NULL;

@@ -132,8 +132,8 @@ ostendo::Position ostendo::GetPosition(WINDOW* win) {
   if (win != NULL) {
     getmaxyx(win, ret[1], ret[0]);
   }
-  pessum::Log(pessum::DATA, "%ix%i @ (%i,%i,%i)", "ostendo::GetPosition",
-              ret[0], ret[1], ret[2], ret[3]);
+  pessum::Log(pessum::DATA, "%ix%i @ (%i,%i)", "ostendo::GetPosition", ret[0],
+              ret[1], ret[2], ret[3]);
   return Position(ret);
 }
 
