@@ -9,6 +9,7 @@ int main(int argc, const char* argv[]) {
   Window win("Ostendo", 20, 20, TITLE | BORDER | AUTO_UPDATE);
   win.SetLastLineAction(LLA_SCROLL);
   // win.Print("Hello ^?\nh\u1998\n");
+  win.SetScroll(SB_LEFT, 5, 10);
   win.SetScrollBar(SB_LEFT, true);
   win.SetScrollBar(SB_RIGHT, true);
   win.Print("Hello World!\nWill this all work as it should? Let's hope so!");

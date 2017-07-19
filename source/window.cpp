@@ -173,11 +173,17 @@ void ostendo::Window::SetWordBreak(bool setting) { word_break_ = setting; }
 
 void ostendo::Window::SetScrollBar(int position, bool setting) {
   if (setting == true) {
-    scrollbars[position] = 0;
+    scrollbars[position].first = true;
   } else if (setting == false) {
-    scrollbars[position] = -1;
+    scrollbars[position].first = false;
   }
   LoadOffset();
+  EraseScrollBar();
+  DrawScrollBar();
+}
+
+void ostendo::Window::SetScroll(int position, int current, int max) {
+  scrollbars[position].second = (float)current / max;
   EraseScrollBar();
   DrawScrollBar();
 }
@@ -193,11 +199,7 @@ bool ostendo::Window::GetAutoUpdate() { return auto_update_; }
 bool ostendo::Window::GetWordBreak() { return word_break_; }
 
 bool ostendo::Window::GetScrollBar(int position) {
-  if (scrollbars[position] != -1) {
-    return true;
-  } else {
-    return false;
-  }
+  return scrollbars[position].first;
 }
 
 void ostendo::Window::Scale(int dwidth, int dheight) {
@@ -692,12 +694,16 @@ void ostendo::Window::DrawBorder() {
 
 void ostendo::Window::DrawScrollBar() {
   std::string left = "\u25c0", right = "\u25b6", up = "\u25b2", down = "\u25bc";
+  std::string bar = "\u2588";
   if (ptr_ != NULL) {
-    if (scrollbars[SB_LEFT] != -1) {
+    if (scrollbars[SB_LEFT].first == true) {
       PrintUni(offset[0] - 1, offset[2], up);
       PrintUni(offset[0] - 1, pos_.h - offset[3] - 1, down);
+      int position =
+          (pos_.h - 2 - offset[2] - offset[3]) * scrollbars[SB_LEFT].second;
+      PrintUni(offset[0] - 1, position + 1 + offset[2], bar);
     }
-    if (scrollbars[SB_RIGHT] != -1) {
+    if (scrollbars[SB_RIGHT].first == true) {
       PrintUni(pos_.w - offset[1], offset[2], up);
       PrintUni(pos_.w - offset[1], pos_.h - offset[3] - 1, down);
     }
@@ -1026,7 +1032,7 @@ void ostendo::Window::LoadOffset() {
     offset[2] += 1;
   }
   for (int i = 0; i < 4; i++) {
-    if (scrollbars[i] != -1) {
+    if (scrollbars[i].first == true) {
       offset[i] += 1;
     }
   }

@@ -118,6 +118,8 @@ namespace ostendo {
     void SetWordBreak(bool setting);
     // Sets if a scroll bar should be drawn at the provided position.
     void SetScrollBar(int position, bool setting);
+    // Sets the positoin of the scroll bar
+    void SetScroll(int position, int current, int max);
 
     // Checks if the border is drawn.
     bool GetBorder();
@@ -248,7 +250,9 @@ namespace ostendo {
 
     bool auto_update_ = false, title_ = false, border_ = false,
          word_break_ = false;
-    std::array<float, 4> scrollbars = {{-1, -1, -1, -1}};
+    std::array<std::pair<bool, float>, 4> scrollbars = {
+        {std::make_pair(false, 0.0), std::make_pair(false, 0.0),
+         std::make_pair(false, 0.0), std::make_pair(false, 0.0)}};
     int title_position_ = CENTER, last_line_action_ = LLA_NONE;
     std::string title_str_ = "";
 
