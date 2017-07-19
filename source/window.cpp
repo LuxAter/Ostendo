@@ -4,7 +4,7 @@
 #include <sstream>
 #include <string>
 
-#include <ncurses.h>
+#include <ncursesw/ncurses.h>
 #include <pessum/pessum.hpp>
 
 #include "ostendo_core.hpp"
@@ -123,6 +123,7 @@ void ostendo::Window::SetBorder(bool setting) {
     } else if (border_ == false) {
       EraseBorder();
     }
+    LoadOffset();
   }
 }
 
@@ -134,6 +135,7 @@ void ostendo::Window::SetTitle(bool setting) {
     } else if (title_ == false) {
       EraseTitle();
     }
+    LoadOffset();
   }
 }
 
@@ -169,6 +171,17 @@ void ostendo::Window::SetAutoUpdate(bool setting) { auto_update_ = setting; }
 
 void ostendo::Window::SetWordBreak(bool setting) { word_break_ = setting; }
 
+void ostendo::Window::SetScrollBar(int position, bool setting) {
+  if (setting == true) {
+    scrollbars[position] = 0;
+  } else if (setting == false) {
+    scrollbars[position] = -1;
+  }
+  LoadOffset();
+  EraseScrollBar();
+  DrawScrollBar();
+}
+
 bool ostendo::Window::GetBorder() { return border_; }
 
 bool ostendo::Window::GetTitle() { return title_; }
@@ -178,6 +191,14 @@ std::string ostendo::Window::GetTitleStr() { return title_str_; }
 bool ostendo::Window::GetAutoUpdate() { return auto_update_; }
 
 bool ostendo::Window::GetWordBreak() { return word_break_; }
+
+bool ostendo::Window::GetScrollBar(int position) {
+  if (scrollbars[position] != -1) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 void ostendo::Window::Scale(int dwidth, int dheight) {
   pos_.w += dwidth;
@@ -318,32 +339,26 @@ void ostendo::Window::bPrint(int position, std::string fmt, ...) {
   va_start(args, fmt);
   int base_width = PrintSize(fmt, args);
   va_end(args);
-  int base_start = 0, border_off = 0;
+  int base_start = 0;
   if (position == LEFT) {
     if (border_ == true) {
-      base_start = 2;
+      base_start = offset[0] + 1;
     }
   } else if (title_position_ == CENTER) {
     base_start = (pos_.w - base_width) / 2;
   } else if (title_position_ == RIGHT) {
-    base_start = pos_.w - base_width;
-    if (border_ == true) {
-      base_start -= 2;
-    }
-  }
-  if (border_ == true) {
-    border_off = 1;
+    base_start = pos_.w - base_width - 1 - offset[1];
   }
   if (border_ == true) {
     color_ = base_color_[2];
     UpdateColor();
-    mvwaddch(*ptr_, pos_.h - 1, base_start - 1, border_char_set_[8]);
-    mvwaddch(*ptr_, pos_.h - 1, base_start + base_width, border_char_set_[9]);
+    mvwaddch(*ptr_, pos_.h - 1, offset[0] - 1, border_char_set_[8]);
+    mvwaddch(*ptr_, pos_.h - 1, offset[0] + base_width, border_char_set_[9]);
   }
   color_ = base_color_[3];
   UpdateColor();
   va_start(args, fmt);
-  mvPrint(base_start - border_off, pos_.h - 2, fmt, args);
+  mvPrint(base_start - offset[0], pos_.h - 2, fmt, args);
   va_end(args);
   Update();
 }
@@ -588,16 +603,9 @@ void ostendo::Window::ClearLine(int line) {
     line = cursor_[1];
   }
   if (ptr_ != NULL) {
-    int width = pos_.w;
-    std::array<int, 2> offset = {{0, 0}};
+    int width = pos_.w - offset[0] - offset[1];
     std::string new_block;
-    if (border_ == true) {
-      width -= 2;
-      offset = {{1, 1}};
-    } else if (title_ == true) {
-      offset = {{0, 1}};
-    }
-    mvwhline(*ptr_, line + offset[1], offset[0], ' ', width);
+    mvwhline(*ptr_, line + offset[2], offset[0], ' ', width);
   }
   if (auto_update_ == true) {
     Update();
@@ -682,6 +690,23 @@ void ostendo::Window::DrawBorder() {
   }
 }
 
+void ostendo::Window::DrawScrollBar() {
+  std::string left = "\u25c0", right = "\u25b6", up = "\u25b2", down = "\u25bc";
+  if (ptr_ != NULL) {
+    if (scrollbars[SB_LEFT] != -1) {
+      PrintUni(offset[0] - 1, offset[2], up);
+      PrintUni(offset[0] - 1, pos_.h - offset[3] - 1, down);
+    }
+    if (scrollbars[SB_RIGHT] != -1) {
+      PrintUni(pos_.w - offset[1], offset[2], up);
+      PrintUni(pos_.w - offset[1], pos_.h - offset[3] - 1, down);
+    }
+    if (auto_update_ == true) {
+      Update();
+    }
+  }
+}
+
 void ostendo::Window::EraseTitle() {
   int title_width = title_str_.size();
   int title_start = 0;
@@ -718,6 +743,8 @@ void ostendo::Window::EraseBorder() {
     DrawTitle();
   }
 }
+
+void ostendo::Window::EraseScrollBar() {}
 
 void ostendo::Window::Resize() {
   if (ptr_ != NULL) {
@@ -772,18 +799,10 @@ std::string ostendo::Window::FormatString(std::string fmt, va_list args) {
 
 void ostendo::Window::PrintStr(int x, int y, std::string str) {
   std::vector<std::string> blocks;
-  int block_length, buffer_width = pos_.w, buffer_height = pos_.h;
-  std::array<int, 2> offset = {{0, 0}};
+  int block_length, buffer_width = pos_.w - offset[0] - offset[1],
+                    buffer_height = pos_.h - offset[2] - offset[3];
   cursor_ = {{x, y}};
   std::string new_block;
-  if (border_ == true) {
-    buffer_width -= 2;
-    buffer_height -= 2;
-    offset = {{1, 1}};
-  } else if (title_ == true) {
-    offset = {{0, 1}};
-    buffer_height -= 1;
-  }
   color_ = base_color_[1];
   UpdateColor();
   for (int i = 0; i < str.size(); i++) {
@@ -795,8 +814,8 @@ void ostendo::Window::PrintStr(int x, int y, std::string str) {
         }
         i++;
       }
-      mvwprintw(*ptr_, cursor_[1] + offset[1], cursor_[0] + offset[0],
-                new_block.c_str());
+      pessum::Log(pessum::DEBUG, "%i,%i", "", offset[0], offset[2]);
+      PrintUni(cursor_[0] + offset[0], cursor_[1] + offset[2], new_block);
       cursor_[1]++;
       cursor_[0] = 0;
       block_length = 0;
@@ -806,8 +825,7 @@ void ostendo::Window::PrintStr(int x, int y, std::string str) {
       }
     }
     if (str[i] == '$') {
-      mvwprintw(*ptr_, cursor_[1] + offset[1], cursor_[0] + offset[0],
-                new_block.c_str());
+      PrintUni(cursor_[0] + offset[0], cursor_[1] + offset[2], new_block);
       cursor_[0] += block_length;
       block_length = 0;
       new_block = std::string();
@@ -825,9 +843,10 @@ void ostendo::Window::PrintStr(int x, int y, std::string str) {
       block_length++;
     }
   }
-  mvwprintw(*ptr_, cursor_[1] + offset[1], cursor_[0] + offset[0],
-            new_block.c_str());
-  cursor_[0] += new_block.size();
+  if (new_block.size() != 0) {
+    PrintUni(cursor_[0] + offset[0], cursor_[1] + offset[2], new_block);
+    cursor_[0] += new_block.size();
+  }
   color_ = base_color_[0];
   UpdateColor();
 }
@@ -917,6 +936,24 @@ std::array<int, 2> ostendo::Window::ParseAttr(std::vector<std::string> args) {
   return attr;
 }
 
+int ostendo::Window::PrintUni(int x, int y, std::string str) {
+  bool has_uni = false;
+  for (int i = 0; i < str.size() && has_uni == false; i++) {
+    if ((unsigned short)str.c_str()[i] > 255) {
+      has_uni = true;
+    }
+  }
+  if (has_uni == true) {
+    const size_t size = str.size();
+    wchar_t wstr[size];
+    mbstowcs(wstr, str.c_str(), size);
+    mvwaddwstr(*ptr_, y, x, wstr);
+  } else if (has_uni == false) {
+    mvwprintw(*ptr_, y, x, str.c_str());
+  }
+  return str.size();
+}
+
 int ostendo::Window::ParseColor(std::string str) {
   int color = BLACK;
   if (str == "black" || str == "0") {
@@ -968,18 +1005,29 @@ void ostendo::Window::HandleLastLine() {
     cursor_[1] = 0;
   } else if (last_line_action_ == LLA_SCROLL) {
     cursor_[1]--;
-    std::array<int, 2> start = {{0, 0}};
-    if (border_ == true) {
-      start = {{1, 1}};
-    } else if (title_ == true) {
-      start = {{0, 1}};
-    }
-    for (int i = start[1] + 1; i < pos_.h - start[1]; i++) {
-      for (int j = start[0]; j < pos_.w - start[0]; j++) {
+    for (int i = offset[2] + 1; i < pos_.h - offset[3]; i++) {
+      for (int j = offset[0]; j < pos_.w - offset[1]; j++) {
         unsigned long ch = mvwinch(*ptr_, i, j);
         mvwaddch(*ptr_, i - 1, j, ch);
       }
     }
     ClearLine();
+  }
+}
+
+void ostendo::Window::LoadOffset() {
+  offset = {{0, 0, 0, 0}};
+  if (border_ == true) {
+    offset[0] += 1;
+    offset[1] += 1;
+    offset[2] += 1;
+    offset[3] += 1;
+  } else if (title_ == true) {
+    offset[2] += 1;
+  }
+  for (int i = 0; i < 4; i++) {
+    if (scrollbars[i] != -1) {
+      offset[i] += 1;
+    }
   }
 }

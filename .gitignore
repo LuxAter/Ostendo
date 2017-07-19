@@ -1,4 +1,6 @@
 *.o
 *.d
 *.log
+.swp
 ostendo
+ostendo-test

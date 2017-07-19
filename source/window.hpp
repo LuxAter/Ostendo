@@ -7,7 +7,7 @@
 #include <tuple>
 #include <vector>
 
-#include <ncurses.h>
+#include <ncursesw/curses.h>
 
 #include "position.hpp"
 
@@ -25,7 +25,7 @@ namespace ostendo {
     WORD_BREAK = (1u << 3),
     CENTER = (1u << 4),
     LEFT = (1u << 5),
-    RIGHT = (1u << 6)
+    RIGHT = (1u << 6),
   };
   // TODO(Arden): Move ColorAttribute to a new header.
   // Used for defining color of output to the window.
@@ -56,10 +56,18 @@ namespace ostendo {
   };
   // TODO(Arden): Move LastLineAction to new header.
   // Used to define the handeling for printing at the final line.
-  enum LastLineAction { LLA_NONE, LLA_SCROLL, LLA_CLEAR };
+  enum LastLineAction { LLA_NONE = 0, LLA_SCROLL = 1, LLA_CLEAR = 2 };
   // TODO(Arden): Move WindowElements to new header.
   // Used to define the different elements of a window.
   enum WindowElements { WE_BASE = 0, WE_TEXT = 1, WE_BORDER = 2, WE_TITLE = 3 };
+  // TODO(Arden): Move ScrollBar Locations to a new header.
+  // Used to define the positions for scroll bars.
+  enum ScrollBarLocation {
+    SB_LEFT = 0,
+    SB_RIGHT = 1,
+    SB_TOP = 2,
+    SB_BOTTOM = 3
+  };
   // Base class that controls all ncurses windows, and output to said windows.
   class Window {
    public:
@@ -95,7 +103,22 @@ namespace ostendo {
     // Manual Destructor.
     void DeleteWindow();
 
-    // TODO(Arden): Move border/title methods to new file.
+    // Sets if border is displayed.
+    void SetBorder(bool setting);
+    // Sets if title is displayed.
+    void SetTitle(bool setting);
+    // Sets the title string.
+    void SetTitleStr(std::string title);
+    void SetTitleStr(const char* title);
+    // Sets the position of the title.
+    void SetTitlePosition(int position);
+    // Sets if the window should autoupdate.
+    void SetAutoUpdate(bool setting);
+    // Sets if output should break with words.
+    void SetWordBreak(bool setting);
+    // Sets if a scroll bar should be drawn at the provided position.
+    void SetScrollBar(int position, bool setting);
+
     // Checks if the border is drawn.
     bool GetBorder();
     // Checks if the title is drawn.
@@ -106,6 +129,8 @@ namespace ostendo {
     bool GetAutoUpdate();
     // Checks if the window will break lines at spaces.
     bool GetWordBreak();
+    // Checks if a scroll bar is drawn at the current position.
+    bool GetScrollBar(int position);
 
     // TODO(Arden): Move resizing/movement to new file?
     // Scales the window relativly to the current size.
@@ -183,11 +208,15 @@ namespace ostendo {
     void DrawTitle();
     // Draws the border.
     void DrawBorder();
+    // Draws scroll bars.
+    void DrawScrollBar();
 
     // Erases the title.
     void EraseTitle();
     // Erases the border.
     void EraseBorder();
+    // Erases scroll bars.
+    void EraseScrollBar();
 
     // Resizes the window.
     void Resize();
@@ -203,6 +232,8 @@ namespace ostendo {
     std::string ReadEscapeBlock(std::string str, bool action = true);
     // Parses escape block attributes.
     std::array<int, 2> ParseAttr(std::vector<std::string> args);
+    // Does the final unicode enabled printing
+    int PrintUni(int x, int y, std::string str);
 
     // Parses color string to integer value.
     int ParseColor(std::string str);
@@ -212,8 +243,12 @@ namespace ostendo {
     // Handles printing on last line of window.
     void HandleLastLine();
 
+    // Determins output offsets.
+    void LoadOffset();
+
     bool auto_update_ = false, title_ = false, border_ = false,
          word_break_ = false;
+    std::array<float, 4> scrollbars = {{-1, -1, -1, -1}};
     int title_position_ = CENTER, last_line_action_ = LLA_NONE;
     std::string title_str_ = "";
 
@@ -227,6 +262,7 @@ namespace ostendo {
                                                       {{WHITE, BLACK}}}};
     std::array<int, 2> cursor_ = {{0, 0}};
     std::array<int, 2> color_ = {{WHITE, BLACK}};
+    std::array<int, 4> offset = {{0, 0, 0, 0}};
 
     Position pos_;
     std::shared_ptr<WINDOW*> ptr_ = NULL;

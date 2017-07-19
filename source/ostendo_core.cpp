@@ -2,6 +2,8 @@
 
 #include <array>
 
+#include <locale.h>
+
 #include <ncurses.h>
 #include <pessum/pessum.hpp>
 
@@ -41,6 +43,7 @@ void ostendo::InitOstendo(unsigned int state) {
     SetColor(false);
   }
   keypad(stdscr, true);
+  setlocale(LC_ALL, "");
   refresh();
   std_scr = GetPosition(stdscr);
 }

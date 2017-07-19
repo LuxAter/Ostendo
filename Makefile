@@ -6,7 +6,7 @@ export BUILD_DIR = build
 
 export COMPILER = clang++
 export CPPFLAGS = -MMD -std=c++11 -w -c
-export LINK = -lpessum -lncurses
+export LINK = -lpessum -lncursesw
 export NAME = ostendo
 export TYPE = lib
 
