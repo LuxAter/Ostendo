@@ -15,7 +15,7 @@ void ostendo::Menu::DeleteMenu() {
   items_.clear();
 }
 
-void ostendo::Menu::SetWindow(Window win) { win_ = win; }
+void ostendo::Menu::SetWindow(Window win) { win_ = Window(win); }
 
 std::string ostendo::Menu::Run() {
   bool running = true, update = true;
@@ -25,6 +25,7 @@ std::string ostendo::Menu::Run() {
   MoveSelection(KEY_LEFT);
   MoveSelection(KEY_DOWN);
   MoveSelection(KEY_UP);
+  // win_.Print("$fg:red$Hello World$0$Hello");
   while (running == true) {
     if (update == true) {
       update = false;
@@ -267,13 +268,32 @@ bool ostendo::Menu::MoveSelection(int key) {
 }
 
 void ostendo::Menu::Display() {
-  int width = Longest(-1) + 1;
+  int width = Longest(-1) + 2;
+  int begin = 0, end = items_.size();
   win_.GetPosition();
   if (win_.GetPosition().w > items_.size() * width && items_.size() > 0) {
     width = win_.GetPosition().w / items_.size();
+  } else if (win_.GetPosition().w < items_.size() * width) {
+    // Begin scroll columns??
+    win_.SetScrollBar(SB_BOTTOM, true);
+    win_.SetScroll(SB_BOTTOM, position_[0], items_.size() - 1);
+    std::array<int, 4> win_offset = win_.GetOffSet();
+    int screen_count =
+        (win_.GetPosition().w - win_offset[0] - win_offset[1]) / width;
+    begin = position_[0] - (screen_count / 2);
+    end = begin + screen_count;
+    if (begin < 0) {
+      begin = 0;
+      end = screen_count - 1;
+    }
+    if (end >= items_.size()) {
+      end = items_.size();
+      begin = end - screen_count;
+    }
   }
-  for (int i = 0; i < items_.size(); i++) {
-    DisplayCol(i, width * i, width);
+  int x = 0;
+  for (int i = begin; i < items_.size() && i < end; i++, x += width) {
+    DisplayCol(i, x, width);
   }
   if (multi_ == true) {
     win_.bErase(CENTER, "%sDone%s", selection_setting_[0].c_str(),
@@ -289,21 +309,46 @@ void ostendo::Menu::Display() {
 }
 
 void ostendo::Menu::DisplayCol(int col, int x, int width) {
-  int height = 1;
+  int height = 2;
+  int begin = 0, end = items_[col].size();
   if (win_.GetPosition().h > items_[col].size() * height &&
       items_[col].size() > 0) {
     height = win_.GetPosition().h / items_[col].size();
+    if (win_.GetScrollBar(SB_RIGHT) == true) {
+      win_.SetScroll(SB_RIGHT, position_[1], items_[col].size() - 1);
+    }
+  } else {
+    // Begin scroll column
+    if (position_[0] == col) {
+      win_.SetScrollBar(SB_RIGHT, true);
+      win_.SetScroll(SB_RIGHT, position_[1], items_[col].size() - 1);
+    }
+    std::array<int, 4> win_offset = win_.GetOffSet();
+    int screen_count =
+        (win_.GetPosition().h - win_offset[2] - win_offset[3]) / 2;
+    begin = position_[1] - (screen_count / 2);
+    end = begin + screen_count;
+    if (begin < 0) {
+      begin = 0;
+      end = screen_count;
+    }
+    if (end >= items_[col].size()) {
+      end = items_[col].size();
+      begin = end - screen_count;
+    }
   }
   int y = 0;
-  for (int i = 0; i < items_[col].size(); i++, y += height) {
+  for (int i = begin; i < items_[col].size() && i < end; i++, y += height) {
     std::string str = items_[col][i].second;
     if (items_[col][i].first == true) {
       str = selection_setting_[2] + str + selection_setting_[3];
     }
     if (position_[0] == col && position_[1] == i) {
+      // str = "a: $un:on$ hello " + str + " $0$ hello";
       str = selection_setting_[0] + str + selection_setting_[1];
     }
     str = std::string((width - win_.PrintSize(str)) / 2, ' ') + str;
+    // pessum::Log(pessum::DEBUG, "%i", "", win_.PrintSize(str));
     win_.mvPrint(x, y, str);
   }
 }

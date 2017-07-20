@@ -185,7 +185,11 @@ void ostendo::Window::SetScrollBar(int position, bool setting) {
 }
 
 void ostendo::Window::SetScroll(int position, int current, int max) {
-  scrollbars_[position].second = (float)current / max;
+  if (max != 0) {
+    scrollbars_[position].second = (float)current / max;
+  } else {
+    scrollbars_[position].second = 1.0;
+  }
   EraseScrollBar();
   DrawScrollBar();
 }
@@ -279,6 +283,8 @@ void ostendo::Window::SetPosition(Position pos) {
 
 ostendo::Position ostendo::Window::GetPosition() { return pos_; }
 
+std::array<int, 4> ostendo::Window::GetOffSet() { return offset_; }
+
 void ostendo::Window::SetCursor(int x, int y) {
   if (ptr_ != NULL) {
     cursor_[0] = x;
@@ -364,16 +370,16 @@ void ostendo::Window::bPrint(int position, std::string fmt, ...) {
     if (border_ == true) {
       base_start = offset_[0] + 1;
     }
-  } else if (title_position_ == CENTER) {
+  } else if (position == CENTER) {
     base_start = (pos_.w - base_width) / 2;
-  } else if (title_position_ == RIGHT) {
+  } else if (position == RIGHT) {
     base_start = pos_.w - base_width - 1 - offset_[1];
   }
   if (border_ == true) {
     color_ = base_color_[2];
     UpdateColor();
-    mvwaddch(*ptr_, pos_.h - 1, offset_[0] - 1, border_char_set_[8]);
-    mvwaddch(*ptr_, pos_.h - 1, offset_[0] + base_width, border_char_set_[9]);
+    mvwaddch(*ptr_, pos_.h - 1, base_start - 1, border_char_set_[8]);
+    mvwaddch(*ptr_, pos_.h - 1, base_start + base_width, border_char_set_[9]);
   }
   color_ = base_color_[3];
   UpdateColor();
@@ -1016,10 +1022,12 @@ std::array<int, 2> ostendo::Window::ParseAttr(std::vector<std::string> args) {
       attr[1] = 3;
     }
   }
+  pessum::Log(pessum::SUCCESS, "%i <- %i", "", attr[0], A_UNDERLINE);
   return attr;
 }
 
 int ostendo::Window::PrintUni(int x, int y, std::string str) {
+  pessum::Log(pessum::TRACE);
   bool has_uni = false;
   for (int i = 0; i < str.size() && has_uni == false; i++) {
     if ((unsigned short)str.c_str()[i] > 255) {

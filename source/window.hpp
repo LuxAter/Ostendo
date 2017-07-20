@@ -12,7 +12,6 @@
 #include "position.hpp"
 
 // TODO(Arden): Add justification attribute.
-// TODO(Arden): Add scroll bar.
 // TODO(Arden): Split window class.
 
 namespace ostendo {
@@ -154,6 +153,7 @@ namespace ostendo {
 
     // Returns the position data of the window.
     Position GetPosition();
+    std::array<int, 4> GetOffSet();
 
     // TODO(Arden): Move printing commands to new file.
     // Sets the cursor position for the window.
