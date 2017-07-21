@@ -39,6 +39,8 @@ namespace ostendo {
    private:
     void Display();
 
+    void AddChar(int ch);
+
     int selected = 0;
     std::vector<std::array<std::string, 3>> items_;
     std::array<std::string, 6> selection_setting_ = {

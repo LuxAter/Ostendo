@@ -1,18 +1,21 @@
 #include "form.hpp"
 
+#include <regex>
+
 #include <ncurses.h>
+#include <pessum/pessum.hpp>
 
 #include "macros.hpp"
 #include "window.hpp"
 
 std::vector<std::string> RegExrs{
-    "^[+-]?[0-9]+$",
-    "^[+-]?(?:[0-9]*[.,])?[0-9]+$",
-    "^[A-Za-z0-9_]+$",
-    "^.+$"
-    "^[0-1]?[0-9][-/.][0-3]?[0-9][-/.][0-9]?[0-9]?[0-9]{2}$",
-    "^[0-2]?[0-9]:[0-5][0-9]$",
-    "^[0-1]?[0-9]?[0-9]%$"};
+    "[+-]?[0-9]+",
+    "[+-]?([0-9]*[.,])?[0-9]+",
+    "[A-Za-z0-9_]+",
+    ".+"
+    "[0-1]?[0-9][-/.][0-3]?[0-9][-/.][0-9]?[0-9]?[0-9]{2}",
+    "[0-2]?[0-9]:[0-5][0-9]",
+    "[0-1]?[0-9]?[0-9]%"};
 
 void ostendo::Form::DeleteForm() {
   win_.DeleteWindow();
@@ -32,15 +35,16 @@ void ostendo::Form::Run() {
       Display();
     }
     in = getch();
-    if (in == int('q')) {
-      running = false;
-    } else if (in == KEY_ENTER) {
+    if (in == KEY_ENTER) {
       running = false;
     } else if (in == KEY_DOWN && selected < items_.size() - 1) {
       selected++;
       update = true;
     } else if (in == KEY_UP && selected > 0) {
       selected--;
+      update = true;
+    } else {
+      AddChar(in);
       update = true;
     }
   }
@@ -70,4 +74,13 @@ void ostendo::Form::Display() {
     win_.mvPrint(0, y, str);
   }
   win_.Update();
+}
+
+void ostendo::Form::AddChar(int ch) {
+  bool add = false;
+  std::string current_str = items_[selected][2] + char(ch);
+  // TODO(Arden): Add regex interpreter
+  if (add == true) {
+    items_[selected][2] += char(ch);
+  }
 }

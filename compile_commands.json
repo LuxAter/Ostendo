@@ -6,6 +6,19 @@
             "-std=c++11", 
             "-w", 
             "-o", 
+            "/home/arden/Programming/libraries/ostendo/build/source/./form.o", 
+            "form.cpp"
+        ], 
+        "directory": "/home/arden/Programming/libraries/ostendo/source", 
+        "file": "form.cpp"
+    }, 
+    {
+        "arguments": [
+            "c++", 
+            "-c", 
+            "-std=c++11", 
+            "-w", 
+            "-o", 
             "/home/arden/Programming/libraries/ostendo/build/source/./ostendo_core.o", 
             "ostendo_core.cpp"
         ], 

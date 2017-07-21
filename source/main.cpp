@@ -1,10 +1,12 @@
 #include <pessum/pessum.h>
 #include "ostendo.hpp"
 
+#include <regex>
 #include <string>
 #include <vector>
 
 // BUG(Arden): std::to_string causes attibutes to fail.
+// BUG(Arden): std::regex causes attibutes to fail.
 
 using namespace ostendo;
 
