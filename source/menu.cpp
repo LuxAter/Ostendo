@@ -274,7 +274,6 @@ void ostendo::Menu::Display() {
   if (win_.GetPosition().w > items_.size() * width && items_.size() > 0) {
     width = win_.GetPosition().w / items_.size();
   } else if (win_.GetPosition().w < items_.size() * width) {
-    // Begin scroll columns??
     win_.SetScrollBar(SB_BOTTOM, true);
     win_.SetScroll(SB_BOTTOM, position_[0], items_.size() - 1);
     std::array<int, 4> win_offset = win_.GetOffSet();
@@ -318,7 +317,6 @@ void ostendo::Menu::DisplayCol(int col, int x, int width) {
       win_.SetScroll(SB_RIGHT, position_[1], items_[col].size() - 1);
     }
   } else {
-    // Begin scroll column
     if (position_[0] == col) {
       win_.SetScrollBar(SB_RIGHT, true);
       win_.SetScroll(SB_RIGHT, position_[1], items_[col].size() - 1);
@@ -344,11 +342,9 @@ void ostendo::Menu::DisplayCol(int col, int x, int width) {
       str = selection_setting_[2] + str + selection_setting_[3];
     }
     if (position_[0] == col && position_[1] == i) {
-      // str = "a: $un:on$ hello " + str + " $0$ hello";
       str = selection_setting_[0] + str + selection_setting_[1];
     }
     str = std::string((width - win_.PrintSize(str)) / 2, ' ') + str;
-    // pessum::Log(pessum::DEBUG, "%i", "", win_.PrintSize(str));
     win_.mvPrint(x, y, str);
   }
 }

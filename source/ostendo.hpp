@@ -1,3 +1,4 @@
+#include "form.hpp"
 #include "menu.hpp"
 #include "ostendo_core.hpp"
 #include "position.hpp"

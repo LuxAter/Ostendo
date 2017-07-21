@@ -1,6 +1,0 @@
-#include "window.hpp"
-#include "window_border.hpp"
-#include "window_position.hpp"
-#include "window_printer.hpp"
-#include "window_scrollbar.hpp"
-#include "window_title.hpp"

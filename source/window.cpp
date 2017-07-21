@@ -1022,12 +1022,10 @@ std::array<int, 2> ostendo::Window::ParseAttr(std::vector<std::string> args) {
       attr[1] = 3;
     }
   }
-  pessum::Log(pessum::SUCCESS, "%i <- %i", "", attr[0], A_UNDERLINE);
   return attr;
 }
 
 int ostendo::Window::PrintUni(int x, int y, std::string str) {
-  pessum::Log(pessum::TRACE);
   bool has_uni = false;
   for (int i = 0; i < str.size() && has_uni == false; i++) {
     if ((unsigned short)str.c_str()[i] > 255) {
