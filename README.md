@@ -1,0 +1,5 @@
+# Ostendo
+
+## Introduction
+
+Ncurses library

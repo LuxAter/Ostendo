@@ -1,6 +1,7 @@
 *.o
 *.d
 *.log
-.swp
+*.swp
+build/*
 ostendo
-ostendo-test
+unit-test

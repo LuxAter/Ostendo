@@ -1,0 +1,3 @@
+# Ostendo #
+
+Ncurses library
