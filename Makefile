@@ -1,7 +1,7 @@
 SHELL = /bin/bash
 
 export NAME= ostendo
-export LINK= -lncurses
+export LINK= -lncursesw
 export INCLUDE=
 export TYPE= lib
 

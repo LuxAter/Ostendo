@@ -1,5 +1,5 @@
-# Ostendo
+# Ostendo #
 
-## Introduction
+## Introduction ##
 
-Ncurses library
+Ostendo is a library to provide highlevel interface to ncurses libaries.

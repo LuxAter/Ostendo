@@ -1,0 +1,95 @@
+[
+    {
+        "arguments": [
+            "c++", 
+            "-c", 
+            "-I/home/arden/Programming/libraries/ostendo/include", 
+            "-std=c++11", 
+            "-w", 
+            "-fprofile-arcs", 
+            "-ftest-coverage", 
+            "-o", 
+            "/home/arden/Programming/libraries/ostendo/build/source/./main.o", 
+            "main.cpp"
+        ], 
+        "directory": "/home/arden/Programming/libraries/ostendo/source", 
+        "file": "main.cpp"
+    }, 
+    {
+        "arguments": [
+            "c++", 
+            "-c", 
+            "-I/home/arden/Programming/libraries/ostendo/include", 
+            "-std=c++11", 
+            "-w", 
+            "-fprofile-arcs", 
+            "-ftest-coverage", 
+            "-o", 
+            "/home/arden/Programming/libraries/ostendo/build/source/./ostendo_core.o", 
+            "ostendo_core.cpp"
+        ], 
+        "directory": "/home/arden/Programming/libraries/ostendo/source", 
+        "file": "ostendo_core.cpp"
+    }, 
+    {
+        "arguments": [
+            "c++", 
+            "-c", 
+            "-I/home/arden/Programming/libraries/ostendo/include", 
+            "-std=c++11", 
+            "-w", 
+            "-fprofile-arcs", 
+            "-ftest-coverage", 
+            "-o", 
+            "/home/arden/Programming/libraries/ostendo/build/source/./log.o", 
+            "log.cpp"
+        ], 
+        "directory": "/home/arden/Programming/libraries/ostendo/source", 
+        "file": "log.cpp"
+    }, 
+    {
+        "arguments": [
+            "c++", 
+            "-c", 
+            "-isystem", 
+            "/home/arden/Programming/libraries/ostendo/external/googletest/googletest/include", 
+            "-I/home/arden/Programming/libraries/ostendo/external/googletest/googletest", 
+            "-pthread", 
+            "-o", 
+            "/home/arden/Programming/libraries/ostendo/build/gtest/gtests_main.o", 
+            "googletest/googletest/src/gtest_main.cc"
+        ], 
+        "directory": "/home/arden/Programming/libraries/ostendo/external", 
+        "file": "googletest/googletest/src/gtest_main.cc"
+    }, 
+    {
+        "arguments": [
+            "c++", 
+            "-c", 
+            "-I/home/arden/Programming/libraries/ostendo/include", 
+            "-I/home/arden/Programming/libraries/ostendo/external/googletest/googletest/include", 
+            "-std=c++11", 
+            "-w", 
+            "-o", 
+            "/home/arden/Programming/libraries/ostendo/build/test/./test_tmp.o", 
+            "test_tmp.cpp"
+        ], 
+        "directory": "/home/arden/Programming/libraries/ostendo/test", 
+        "file": "test_tmp.cpp"
+    }, 
+    {
+        "arguments": [
+            "c++", 
+            "-c", 
+            "-isystem", 
+            "/home/arden/Programming/libraries/ostendo/external/googletest/googletest/include", 
+            "-I/home/arden/Programming/libraries/ostendo/external/googletest/googletest", 
+            "-pthread", 
+            "-o", 
+            "/home/arden/Programming/libraries/ostendo/build/gtest/gtest-all.o", 
+            "googletest/googletest/src/gtest-all.cc"
+        ], 
+        "directory": "/home/arden/Programming/libraries/ostendo/external", 
+        "file": "googletest/googletest/src/gtest-all.cc"
+    }
+]
