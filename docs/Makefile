@@ -1,11 +1,12 @@
 # Minimal makefile for Sphinx documentation
+#
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = Ostendo 
-SOURCEDIR     = source
-BUILDDIR      = build
+SPHINXPROJ    = Ostendo
+SOURCEDIR     = .
+BUILDDIR      = _build
 
 # Put it first so that "make" without argument is like "make help".
 help:
